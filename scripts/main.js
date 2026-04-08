@@ -3,6 +3,7 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const state = {
     lang: getInitialLanguage(),
+    theme: getInitialTheme(),
     filter: "all",
     revealObserver: null,
     sectionObserver: null
@@ -15,10 +16,11 @@
   function init() {
     cacheDom();
     bindEvents();
+    applyTheme(state.theme, { persist: false });
     render();
     updateYear();
-    updateBackToTop();
-    window.addEventListener("scroll", updateBackToTop, { passive: true });
+    updateBackToTop(getPage());
+    window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleResize);
   }
 
@@ -26,7 +28,10 @@
     dom.siteNav = document.getElementById("site-nav");
     dom.navToggle = document.getElementById("nav-toggle");
     dom.navList = document.getElementById("primary-menu");
+    dom.themeSwitch = document.getElementById("theme-switch");
+    dom.themeButtons = Array.from(dom.themeSwitch.querySelectorAll("[data-theme]"));
     dom.langSwitch = document.getElementById("lang-switch");
+    dom.langButtons = Array.from(dom.langSwitch.querySelectorAll("[data-lang]"));
     dom.brandName = document.getElementById("brand-name");
     dom.brandRole = document.getElementById("brand-role");
     dom.heroEyebrow = document.getElementById("hero-eyebrow");
@@ -73,19 +78,23 @@
 
   function bindEvents() {
     dom.navToggle.addEventListener("click", toggleMenu);
+    dom.themeSwitch.addEventListener("click", handleThemeClick);
+    dom.themeSwitch.addEventListener("keydown", handleThemeKeydown);
     dom.langSwitch.addEventListener("click", handleLanguageClick);
     dom.projectFilters.addEventListener("click", handleFilterClick);
     dom.contactForm.addEventListener("submit", handleContactSubmit);
     dom.siteNav.addEventListener("click", handleNavClick);
     dom.backToTop.addEventListener("click", scrollToTop);
-    document.addEventListener("keydown", handleKeydown);
+    document.addEventListener("keydown", handleGlobalKeydown);
     document.addEventListener("click", handleDocumentClick);
   }
 
   function render() {
     const page = getPage();
+
     document.documentElement.lang = state.lang;
     state.filter = page.projects.filters.includes(state.filter) ? state.filter : "all";
+
     applySeo(page);
     renderHeader(page);
     renderHero(page);
@@ -99,20 +108,34 @@
     renderContact(page);
     renderFooter(page);
     updateLanguageButtons();
+    updateThemeButtons(page);
     updateNavToggleLabel(page);
-    updateBackToTop();
+    updateBackToTop(page);
     setupProfileImage(page);
     setupRevealObserver();
     setupSectionObserver();
+    handleScroll();
   }
 
   function renderHeader(page) {
     dom.brandName.textContent = app.settings.fullName;
     dom.brandRole.textContent = page.header.brandRole;
     dom.langSwitch.setAttribute("aria-label", page.header.langLabel);
+    dom.themeSwitch.setAttribute("aria-label", page.header.themeLabel);
     dom.navList.innerHTML = page.header.nav
       .map((item) => `<li><a href="#${item.id}" data-section="${item.id}">${item.label}</a></li>`)
       .join("");
+
+    dom.themeButtons.forEach((button) => {
+      const themeName = button.dataset.theme;
+      const label = page.header.themes[themeName];
+      const labelElement = button.querySelector(".theme-button-label");
+      if (labelElement) {
+        labelElement.textContent = label;
+      }
+      button.setAttribute("aria-label", label);
+      button.title = label;
+    });
   }
 
   function renderHero(page) {
@@ -190,50 +213,57 @@
   }
 
   function renderProjects(page) {
+    const activeFilter = state.filter;
+    const items = activeFilter === "all"
+      ? page.projects.items
+      : page.projects.items.filter((item) => item.filters.includes(activeFilter));
+
     dom.projectFilterLabel.textContent = page.projects.filterLabel;
     dom.projectFilters.innerHTML = [
-      `<button class="filter-button${state.filter === "all" ? " is-active" : ""}" type="button" data-filter="all">${page.projects.allLabel}</button>`,
+      `<button class="filter-button${activeFilter === "all" ? " is-active" : ""}" type="button" data-filter="all">${page.projects.allLabel}</button>`,
       ...page.projects.filters.map(
-        (item) =>
-          `<button class="filter-button${state.filter === item ? " is-active" : ""}" type="button" data-filter="${item}">${item}</button>`
+        (filter) => `
+          <button class="filter-button${activeFilter === filter ? " is-active" : ""}" type="button" data-filter="${filter}">
+            ${filter}
+          </button>
+        `
       )
     ].join("");
 
-    const visibleProjects = page.projects.items.filter(
-      (project) => state.filter === "all" || project.filters.includes(state.filter)
-    );
+    dom.projectGrid.innerHTML = items
+      .map((item) => {
+        const repoAction = item.repoUrl
+          ? `<a class="link-inline" href="${item.repoUrl}"${getAnchorAttrs(item.repoUrl)}>${page.projects.repositoryLabel}</a>`
+          : "";
+        const liveAction = item.liveUrl
+          ? `<a class="link-inline" href="${item.liveUrl}"${getAnchorAttrs(item.liveUrl)}>${page.projects.liveLabel}</a>`
+          : `<span class="action-muted">${page.projects.codeOnlyLabel}</span>`;
 
-    dom.projectGrid.innerHTML = visibleProjects
-      .map(
-        (project) => `
+        return `
           <article class="project-card reveal">
             <div class="project-media">
-              <img src="${project.image}" alt="${project.imageAlt}" loading="lazy" decoding="async">
+              <img src="${item.image}" alt="${item.imageAlt}" width="960" height="600" loading="lazy" decoding="async">
             </div>
             <div class="project-body">
               <div class="project-topline">
-                <span class="project-type">${project.type}</span>
+                <span class="project-type">${item.type}</span>
               </div>
-              <h3>${project.title}</h3>
-              <p class="project-summary">${project.summary}</p>
+              <h3>${item.title}</h3>
+              <p class="project-summary">${item.summary}</p>
               <ul class="project-stack">
-                ${project.stack.map((item) => `<li>${item}</li>`).join("")}
+                ${item.stack.map((stackItem) => `<li>${stackItem}</li>`).join("")}
               </ul>
               <ul class="project-feature-list">
-                ${project.features.map((item) => `<li>${item}</li>`).join("")}
+                ${item.features.map((feature) => `<li>${feature}</li>`).join("")}
               </ul>
               <div class="project-actions">
-                <a class="link-inline" href="${project.repoUrl}" target="_blank" rel="noreferrer">${page.projects.repositoryLabel}</a>
-                ${
-                  project.liveUrl
-                    ? `<a class="button button-secondary" href="${project.liveUrl}" target="_blank" rel="noreferrer">${page.projects.liveLabel}</a>`
-                    : `<span class="action-muted">${page.projects.codeOnlyLabel}</span>`
-                }
+                ${repoAction}
+                ${liveAction}
               </div>
             </div>
           </article>
-        `
-      )
+        `;
+      })
       .join("");
   }
 
@@ -244,7 +274,7 @@
           <article class="panel info-card reveal">
             <h3>${item.title}</h3>
             <p class="meta-label">${item.meta}</p>
-            <p><strong>${item.subtitle}</strong></p>
+            <p class="meta-value">${item.subtitle}</p>
             <p>${item.description}</p>
           </article>
         `
@@ -270,70 +300,113 @@
       <div class="contact-links-block">
         <h3>${page.contact.cardsTitle}</h3>
         <div class="contact-methods">
-          ${page.contact.cards.map(renderContactCard).join("")}
+          ${page.contact.cards.map((item) => renderContactCard(item)).join("")}
         </div>
       </div>
     `;
+
     dom.contactNote.innerHTML = `
       <div class="contact-note-block">
         <h3>${page.contact.noteTitle}</h3>
-        ${page.contact.noteText.map((item) => `<p class="contact-description">${item}</p>`).join("")}
+        ${page.contact.noteText.map((item) => `<p class="card-copy">${item}</p>`).join("")}
       </div>
     `;
+
     dom.contactFormTitle.textContent = page.contact.formTitle;
     dom.contactFormIntro.textContent = page.contact.formIntro;
+    dom.contactFormFields.innerHTML = page.contact.fields.map((field) => renderFormField(field)).join("");
     dom.contactSubmit.textContent = page.contact.submitLabel;
-    dom.contactFormFields.innerHTML = page.contact.fields
-      .map((field) => renderFormField(field))
-      .join("");
     dom.formStatus.textContent = "";
   }
 
   function renderFooter(page) {
-    const navLinks = page.header.nav.map((item) => `<li><a href="#${item.id}">${item.label}</a></li>`).join("");
-    const resourceLinks = page.footer.resources
-      .map((item) => `<li><a href="${item.href}"${getAnchorAttrs(item.href)}${item.href.endsWith(".pdf") ? " download" : ""}>${item.label}</a></li>`)
-      .join("");
-
     dom.footerName.textContent = app.settings.fullName;
     dom.footerRole.textContent = page.header.brandRole;
     dom.footerSummary.textContent = page.footer.summary;
-    dom.footerNav.innerHTML = `<strong>${page.footer.quickLinksTitle}</strong><ul class="footer-link-list">${navLinks}</ul>`;
-    dom.footerLinks.innerHTML = `<strong>${page.footer.resourcesTitle}</strong><ul class="footer-social-list">${resourceLinks}</ul>`;
-    dom.footerCopy.innerHTML = `&copy; <span id="current-year">${new Date().getFullYear()}</span> ${app.settings.fullName}. ${page.footer.copy}`;
+    dom.footerNav.innerHTML = `
+      <strong>${page.footer.quickLinksTitle}</strong>
+      <ul class="footer-link-list">
+        ${page.header.nav.map((item) => `<li><a href="#${item.id}">${item.label}</a></li>`).join("")}
+      </ul>
+    `;
+    dom.footerLinks.innerHTML = `
+      <strong>${page.footer.resourcesTitle}</strong>
+      <ul class="footer-social-list">
+        ${page.footer.resources
+          .map((item) => `<li><a href="${item.href}"${getAnchorAttrs(item.href)}>${item.label}</a></li>`)
+          .join("")}
+      </ul>
+    `;
+    dom.footerCopy.innerHTML = `&copy; <span id="current-year"></span> ${app.settings.fullName}. ${page.footer.copy}`;
     dom.currentYear = document.getElementById("current-year");
+    updateYear();
   }
 
   function renderContactCard(item) {
-    const wrapper = item.href ? "a" : "div";
-    return `
-      <${wrapper} class="contact-card" ${item.href ? `href="${item.href}"${getAnchorAttrs(item.href)}` : ""}>
-        <span class="contact-icon" aria-hidden="true">${getIcon(item.kind)}</span>
-        <span>
-          <strong>${item.label}</strong>
-          <span class="meta-value">${item.value}</span>
-          <span class="contact-description">${item.description}</span>
-        </span>
-      </${wrapper}>
+    const icon = getIcon(item.kind);
+    const inner = `
+      <span class="contact-icon" aria-hidden="true">${icon}</span>
+      <span>
+        <strong>${item.label}</strong>
+        <span class="meta-value">${item.value}</span>
+        <span class="contact-description">${item.description}</span>
+      </span>
     `;
+
+    if (item.href) {
+      return `<a class="contact-card" href="${item.href}"${getAnchorAttrs(item.href)}>${inner}</a>`;
+    }
+
+    return `<article class="contact-card">${inner}</article>`;
   }
 
   function renderFormField(field) {
-    if (field.type === "textarea") {
-      return `
-        <div class="form-field">
-          <label for="contact-${field.name}">${field.label}</label>
-          <textarea id="contact-${field.name}" name="${field.name}" placeholder="${field.placeholder}" autocomplete="${field.autocomplete}" ${field.required ? "required" : ""}></textarea>
-        </div>
-      `;
-    }
+    const required = field.required ? "required" : "";
+    const type = field.type === "textarea"
+      ? `<textarea id="field-${field.name}" name="${field.name}" placeholder="${field.placeholder}" autocomplete="${field.autocomplete}" ${required}></textarea>`
+      : `<input id="field-${field.name}" name="${field.name}" type="${field.type}" placeholder="${field.placeholder}" autocomplete="${field.autocomplete}" ${required}>`;
 
     return `
       <div class="form-field">
-        <label for="contact-${field.name}">${field.label}</label>
-        <input id="contact-${field.name}" name="${field.name}" type="${field.type}" placeholder="${field.placeholder}" autocomplete="${field.autocomplete}" ${field.required ? "required" : ""}>
+        <label for="field-${field.name}">${field.label}</label>
+        ${type}
       </div>
     `;
+  }
+
+  function handleThemeClick(event) {
+    const button = event.target.closest("[data-theme]");
+    if (!button) {
+      return;
+    }
+
+    applyTheme(button.dataset.theme);
+  }
+
+  function handleThemeKeydown(event) {
+    const currentButton = event.target.closest("[data-theme]");
+    if (!currentButton) {
+      return;
+    }
+
+    const index = dom.themeButtons.indexOf(currentButton);
+    let nextIndex = index;
+
+    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+      nextIndex = (index + 1) % dom.themeButtons.length;
+    } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+      nextIndex = (index - 1 + dom.themeButtons.length) % dom.themeButtons.length;
+    } else if (event.key === "Home") {
+      nextIndex = 0;
+    } else if (event.key === "End") {
+      nextIndex = dom.themeButtons.length - 1;
+    } else {
+      return;
+    }
+
+    event.preventDefault();
+    dom.themeButtons[nextIndex].focus();
+    applyTheme(dom.themeButtons[nextIndex].dataset.theme);
   }
 
   function handleLanguageClick(event) {
@@ -341,18 +414,19 @@
     if (!button || button.dataset.lang === state.lang) {
       return;
     }
+
     state.lang = button.dataset.lang;
-    state.filter = "all";
     persistLanguage(state.lang);
-    render();
     closeMenu();
+    render();
   }
 
   function handleFilterClick(event) {
     const button = event.target.closest("[data-filter]");
-    if (!button) {
+    if (!button || button.dataset.filter === state.filter) {
       return;
     }
+
     state.filter = button.dataset.filter;
     renderProjects(getPage());
     setupRevealObserver();
@@ -360,54 +434,59 @@
 
   function handleContactSubmit(event) {
     event.preventDefault();
-    const page = getPage();
-    if (!dom.contactForm.reportValidity()) {
-      return;
-    }
 
+    const page = getPage();
     const formData = new FormData(dom.contactForm);
-    const name = String(formData.get("name")).trim();
-    const email = String(formData.get("email")).trim();
-    const subject = String(formData.get("subject")).trim();
-    const message = String(formData.get("message")).trim();
-    const body = [
+    const email = page.contact.cards.find((item) => item.kind === "email");
+    const recipient = email ? email.value : "macstenc@gmail.com";
+    const name = formData.get("name");
+    const senderEmail = formData.get("email");
+    const subject = formData.get("subject");
+    const message = formData.get("message");
+    const fullSubject = `${page.contact.subjectPrefix}: ${subject}`;
+    const bodyLines = [
       page.contact.bodyIntro,
       "",
-      `${page.contact.fields[0].label}: ${name}`,
-      `${page.contact.fields[1].label}: ${email}`,
-      `${page.contact.fields[2].label}: ${subject}`,
+      message,
       "",
-      message
-    ].join("\n");
+      state.lang === "pl" ? "Pozdrawiam," : "Best regards,",
+      `${name}`,
+      `${senderEmail}`
+    ];
 
-    window.location.href = `mailto:macstenc@gmail.com?subject=${encodeURIComponent(
-      `${page.contact.subjectPrefix}: ${subject}`
-    )}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(fullSubject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
     dom.formStatus.textContent = page.contact.statusMessage;
   }
 
   function handleNavClick(event) {
-    if (event.target.closest('a[href^="#"]')) {
-      closeMenu();
+    const link = event.target.closest("a[href^='#']");
+    if (!link) {
+      return;
     }
+
+    closeMenu();
   }
 
-  function handleKeydown(event) {
+  function handleGlobalKeydown(event) {
     if (event.key === "Escape") {
       closeMenu();
     }
   }
 
   function handleDocumentClick(event) {
-    if (!dom.siteNav.contains(event.target) && !dom.langSwitch.contains(event.target)) {
+    if (!dom.siteNav.classList.contains("is-open")) {
+      return;
+    }
+
+    if (!dom.siteNav.contains(event.target)) {
       closeMenu();
     }
   }
 
   function toggleMenu() {
-    dom.siteNav.classList.toggle("is-open");
-    const isOpen = dom.siteNav.classList.contains("is-open");
-    dom.navToggle.setAttribute("aria-expanded", String(isOpen));
+    const willOpen = !dom.siteNav.classList.contains("is-open");
+    dom.siteNav.classList.toggle("is-open", willOpen);
+    dom.navToggle.setAttribute("aria-expanded", String(willOpen));
     updateNavToggleLabel(getPage());
   }
 
@@ -423,46 +502,83 @@
     }
   }
 
+  function handleScroll() {
+    updateBackToTop(getPage());
+  }
+
   function updateNavToggleLabel(page) {
     const isOpen = dom.siteNav.classList.contains("is-open");
     dom.navToggle.setAttribute("aria-label", isOpen ? page.header.closeMenuLabel : page.header.menuLabel);
   }
 
+  function applyTheme(theme, options = {}) {
+    const { persist = true } = options;
+    const allowedThemes = Object.keys(app.settings.themes);
+    const nextTheme = allowedThemes.includes(theme) ? theme : app.settings.defaultTheme;
+    const themeConfig = app.settings.themes[nextTheme];
+
+    state.theme = nextTheme;
+    document.documentElement.dataset.theme = nextTheme;
+    document.documentElement.style.colorScheme = themeConfig.colorScheme;
+    setMeta("theme-color", themeConfig.themeColor, "name");
+
+    if (persist) {
+      persistTheme(nextTheme);
+    }
+
+    updateThemeButtons(getPage());
+  }
+
+  function updateThemeButtons(page) {
+    dom.themeButtons.forEach((button) => {
+      const isActive = button.dataset.theme === state.theme;
+      const themeName = page.header.themes[button.dataset.theme];
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+      button.setAttribute("aria-label", themeName);
+    });
+  }
+
   function setupProfileImage(page) {
+    dom.profileImage.src = app.settings.profileImage;
     dom.profileImage.alt = page.hero.profileAlt;
     dom.profileImage.onerror = function () {
-      if (!this.src.endsWith(app.settings.profileFallback)) {
-        this.src = app.settings.profileFallback;
-        this.alt = page.hero.profileFallbackAlt;
-      }
+      dom.profileImage.onerror = null;
+      dom.profileImage.src = app.settings.profileFallback;
+      dom.profileImage.alt = page.hero.profileFallbackAlt;
     };
-    dom.profileImage.src = app.settings.profileImage;
   }
 
   function applySeo(page) {
     const siteUrl = ensureTrailingSlash(app.settings.siteUrl);
-    const canonical = siteUrl;
-    const imageUrl = new URL(page.meta.ogImage, siteUrl).href;
+    const ogImageUrl = new URL(page.meta.ogImage, siteUrl).href;
+
     document.title = page.meta.title;
-    setMeta('meta[name="description"]', "content", page.meta.description);
-    setMeta('link[rel="canonical"]', "href", canonical);
-    setMeta('meta[property="og:title"]', "content", page.meta.title);
-    setMeta('meta[property="og:description"]', "content", page.meta.description);
-    setMeta('meta[property="og:url"]', "content", canonical);
-    setMeta('meta[property="og:image"]', "content", imageUrl);
-    setMeta('meta[property="og:locale"]', "content", page.meta.locale);
-    setMeta('meta[name="twitter:title"]', "content", page.meta.title);
-    setMeta('meta[name="twitter:description"]', "content", page.meta.description);
-    setMeta('meta[name="twitter:image"]', "content", imageUrl);
+    setMeta("description", page.meta.description, "name");
+    setMeta("og:title", page.meta.title, "property");
+    setMeta("og:description", page.meta.description, "property");
+    setMeta("og:url", siteUrl, "property");
+    setMeta("og:image", ogImageUrl, "property");
+    setMeta("og:locale", page.meta.locale, "property");
+    setMeta("twitter:title", page.meta.title, "name");
+    setMeta("twitter:description", page.meta.description, "name");
+    setMeta("twitter:image", ogImageUrl, "name");
+
+    const canonical = document.querySelector("link[rel='canonical']");
+    if (canonical) {
+      canonical.href = siteUrl;
+    }
   }
 
   function setupRevealObserver() {
+    const elements = Array.from(document.querySelectorAll(".reveal"));
+
     if (state.revealObserver) {
       state.revealObserver.disconnect();
+      state.revealObserver = null;
     }
 
-    const elements = document.querySelectorAll(".reveal");
-    if (reduceMotion || !("IntersectionObserver" in window)) {
+    if (reduceMotion) {
       elements.forEach((element) => element.classList.add("is-visible"));
       return;
     }
@@ -476,55 +592,52 @@
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
+      {
+        threshold: 0.18,
+        rootMargin: "0px 0px -10% 0px"
+      }
     );
 
     elements.forEach((element) => state.revealObserver.observe(element));
   }
 
   function setupSectionObserver() {
+    const sections = Array.from(document.querySelectorAll("main section[id]"));
+
     if (state.sectionObserver) {
       state.sectionObserver.disconnect();
-    }
-
-    const sections = document.querySelectorAll("main section[id]");
-    const links = dom.navList.querySelectorAll("a[data-section]");
-    if (!("IntersectionObserver" in window)) {
-      if (links[0]) {
-        links[0].classList.add("is-active");
-      }
-      return;
+      state.sectionObserver = null;
     }
 
     state.sectionObserver = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveNav(entry.target.id);
-          }
-        });
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((first, second) => second.intersectionRatio - first.intersectionRatio)[0];
+
+        if (visible) {
+          setActiveNav(visible.target.id);
+        }
       },
-      { rootMargin: "-45% 0px -45% 0px", threshold: 0.01 }
+      {
+        threshold: [0.2, 0.4, 0.65],
+        rootMargin: "-18% 0px -52% 0px"
+      }
     );
 
     sections.forEach((section) => state.sectionObserver.observe(section));
   }
 
   function setActiveNav(id) {
-    dom.navList.querySelectorAll("a[data-section]").forEach((link) => {
-      const isActive = link.dataset.section === id;
-      link.classList.toggle("is-active", isActive);
-      if (isActive) {
-        link.setAttribute("aria-current", "true");
-      } else {
-        link.removeAttribute("aria-current");
-      }
+    const links = Array.from(dom.navList.querySelectorAll("a[data-section]"));
+    links.forEach((link) => {
+      link.classList.toggle("is-active", link.dataset.section === id);
     });
   }
 
-  function updateBackToTop() {
-    const page = getPage();
-    dom.backToTop.hidden = window.scrollY < 640;
+  function updateBackToTop(page) {
+    const show = window.scrollY > 640;
+    dom.backToTop.hidden = !show;
     dom.backToTopLabel.textContent = page.ui.backToTop;
     dom.backToTop.setAttribute("aria-label", page.ui.backToTop);
   }
@@ -534,8 +647,10 @@
   }
 
   function updateLanguageButtons() {
-    dom.langSwitch.querySelectorAll("[data-lang]").forEach((button) => {
-      button.classList.toggle("is-active", button.dataset.lang === state.lang);
+    dom.langButtons.forEach((button) => {
+      const isActive = button.dataset.lang === state.lang;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
     });
   }
 
@@ -556,15 +671,24 @@
     }
   }
 
-  function setMeta(selector, attribute, value) {
+  function setMeta(name, value, attribute) {
+    const selector = attribute === "property" ? `meta[property='${name}']` : `meta[name='${name}']`;
     const element = document.querySelector(selector);
     if (element) {
-      element.setAttribute(attribute, value);
+      element.setAttribute("content", value);
     }
   }
 
   function getAnchorAttrs(href) {
-    return /^https?:\/\//.test(href) ? ' target="_blank" rel="noreferrer"' : "";
+    if (!href) {
+      return "";
+    }
+
+    if (href.startsWith("http")) {
+      return ' target="_blank" rel="noreferrer noopener"';
+    }
+
+    return "";
   }
 
   function ensureTrailingSlash(url) {
@@ -572,33 +696,70 @@
   }
 
   function getInitialLanguage() {
+    const allowed = Object.keys(app.content);
+
     try {
-      const stored = window.localStorage.getItem("portfolio-lang");
-      if (stored && app.content[stored]) {
-        return stored;
+      const storedLang = window.localStorage.getItem(app.settings.languageStorageKey);
+      if (allowed.includes(storedLang)) {
+        return storedLang;
       }
     } catch (error) {
-      // Ignore storage issues and fall back to browser language.
+      return app.settings.defaultLang;
     }
-    return navigator.language.toLowerCase().startsWith("pl") ? "pl" : app.settings.defaultLang;
+
+    return app.settings.defaultLang;
   }
 
   function persistLanguage(lang) {
     try {
-      window.localStorage.setItem("portfolio-lang", lang);
+      window.localStorage.setItem(app.settings.languageStorageKey, lang);
     } catch (error) {
-      // Ignore storage issues in restricted browsing contexts.
+      return;
+    }
+  }
+
+  function getInitialTheme() {
+    const allowed = Object.keys(app.settings.themes);
+    const htmlTheme = document.documentElement.dataset.theme;
+
+    if (allowed.includes(htmlTheme)) {
+      return htmlTheme;
+    }
+
+    try {
+      const storedTheme = window.localStorage.getItem(app.settings.themeStorageKey);
+      if (allowed.includes(storedTheme)) {
+        return storedTheme;
+      }
+    } catch (error) {
+      return app.settings.defaultTheme;
+    }
+
+    return app.settings.defaultTheme;
+  }
+
+  function persistTheme(theme) {
+    try {
+      window.localStorage.setItem(app.settings.themeStorageKey, theme);
+    } catch (error) {
+      return;
     }
   }
 
   function getIcon(kind) {
     const icons = {
-      email: '<svg viewBox="0 0 24 24" fill="none"><path d="M4 6.5h16v11H4z" stroke="currentColor" stroke-width="1.6"/><path d="m5 7 7 6 7-6" stroke="currentColor" stroke-width="1.6"/></svg>',
-      phone: '<svg viewBox="0 0 24 24" fill="none"><path d="M7.2 4h2.4l1.2 4-1.5 1.5a14.7 14.7 0 0 0 5.2 5.2L16 13l4 1.2v2.4a1.6 1.6 0 0 1-1.6 1.6A14.4 14.4 0 0 1 4 5.6 1.6 1.6 0 0 1 5.6 4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>',
-      github: '<svg viewBox="0 0 24 24" fill="none"><path d="M12 3.8a8.6 8.6 0 0 0-2.7 16.8c.4.1.5-.2.5-.4v-1.5c-2.2.5-2.7-.9-2.7-.9-.4-.9-.9-1.2-.9-1.2-.7-.5 0-.5 0-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.8 2.3.6.1-.5.3-.8.5-1-1.8-.2-3.6-.9-3.6-4a3.2 3.2 0 0 1 .8-2.2 2.9 2.9 0 0 1 .1-2.2s.7-.2 2.3.8a7.8 7.8 0 0 1 4.2 0c1.6-1 2.3-.8 2.3-.8.3.8.2 1.7.1 2.2a3.2 3.2 0 0 1 .8 2.2c0 3.1-1.9 3.8-3.6 4 .3.2.6.7.6 1.5v2.2c0 .2.2.5.5.4A8.6 8.6 0 0 0 12 3.8Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>',
-      linkedin: '<svg viewBox="0 0 24 24" fill="none"><path d="M7 9.5V19M7 6.2a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4ZM11.3 19v-5.3a2.7 2.7 0 1 1 5.4 0V19M11.3 10h5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-      location: '<svg viewBox="0 0 24 24" fill="none"><path d="M12 20s6-5 6-10a6 6 0 1 0-12 0c0 5 6 10 6 10Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.2" stroke="currentColor" stroke-width="1.6"/></svg>'
+      email:
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"></path><path d="m4 8 8 6 8-6"></path></svg>',
+      phone:
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 4h3l1.5 4-2 1.8a14 14 0 0 0 5.2 5.2l1.8-2L20 14.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 6.2 2 2 0 0 1 6.5 4z"></path></svg>',
+      github:
+        '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.7.5 12.1c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.3.8-.6v-2.1c-3.2.7-3.9-1.4-3.9-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.4 3.6 1.1.1-.8.4-1.4.8-1.7-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.5 1.3-3.4-.1-.3-.6-1.5.1-3.2 0 0 1.1-.4 3.5 1.3 1-.3 2.1-.4 3.1-.4 1.1 0 2.1.1 3.1.4 2.4-1.7 3.5-1.3 3.5-1.3.7 1.7.2 2.9.1 3.2.8.9 1.3 2.1 1.3 3.4 0 4.6-2.8 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5Z"></path></svg>',
+      linkedin:
+        '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a1.49 1.49 0 1 0 0 2.99 1.49 1.49 0 0 0 0-2.99ZM3.5 8h3v12h-3V8Zm5 0h2.88v1.64h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.6V20h-3v-6.35c0-1.52-.03-3.47-2.11-3.47-2.11 0-2.43 1.65-2.43 3.36V20h-3V8Z"></path></svg>',
+      location:
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s6-5.6 6-11a6 6 0 1 0-12 0c0 5.4 6 11 6 11Z"></path><circle cx="12" cy="10" r="2.2"></circle></svg>'
     };
+
     return icons[kind] || icons.location;
   }
 })();

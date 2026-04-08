@@ -1,6 +1,6 @@
 # Portfolio
 
-Statyczne, dwujęzyczne portfolio programistyczne przygotowane pod GitHub Pages. Projekt działa bez backendu i bez frameworków frontendowych. Całość opiera się na `HTML`, `CSS` i `vanilla JavaScript`, a treści do edycji są zebrane głównie w jednym pliku: `scripts/data.js`.
+Statyczne, dwujęzyczne portfolio programistyczne przygotowane pod GitHub Pages. Projekt działa bez backendu i bez frameworków frontendowych. Całość opiera się na `HTML`, `CSS` i `vanilla JavaScript`, a większość treści i ustawień edytujesz w jednym miejscu: `scripts/data.js`.
 
 ## Stack
 
@@ -56,6 +56,22 @@ Tam zmienisz:
 - teksty formularza
 - adres strony `siteUrl`
 
+## Motywy
+
+Portfolio ma trzy motywy:
+
+- `Light`
+- `Dark`
+- `Retro`
+
+Nazwy motywów i ich kolejność w UI są powiązane z `scripts/data.js`, a same tokeny kolorystyczne znajdziesz w `styles/main.css` w blokach:
+
+- `html[data-theme="light"]`
+- `html[data-theme="dark"]`
+- `html[data-theme="retro"]`
+
+Wybrany motyw zapisuje się w `localStorage`, więc po odświeżeniu wraca ostatnie ustawienie użytkownika.
+
 ## Zdjęcie profilowe
 
 Docelowe zdjęcie wrzuć tutaj:
@@ -74,8 +90,8 @@ Najlepiej użyć zdjęcia:
 
 - pionowego
 - dobrze wykadrowanego
-- neutralnego lub profesjonalnego tła
-- w rozsądnym rozmiarze, np. `1200px` wysokości lub mniej
+- z neutralnym albo profesjonalnym tłem
+- w rozsądnym rozmiarze, np. do `1200px` wysokości
 
 ## CV
 
@@ -95,7 +111,7 @@ Przed publikacją sprawdź te miejsca, jeśli zmienisz nazwę repozytorium albo 
 - `index.html` -> canonical, Open Graph i Twitter meta
 - `robots.txt`
 - `sitemap.xml`
-- `assets/img/og-cover.svg` jeśli chcesz podmienić social preview
+- `assets/img/og-cover.svg`, jeśli chcesz podmienić social preview
 
 Domyślnie projekt zakłada publikację pod:
 
@@ -146,12 +162,14 @@ Kroki:
 
 - Portfolio jest frontend-only.
 - Formularz kontaktowy używa `mailto`, więc nie udaje backendu.
-- Przełącznik języka `PL / EN` działa bez backendu, na bazie obiektu w `scripts/data.js`.
-- Jeśli chcesz zmienić zdjęcia projektów, najprościej podmień pliki SVG w `assets/img`.
+- Przełącznik języka `PL / EN` działa bez backendu na bazie obiektu w `scripts/data.js`.
+- Przełącznik motywu `Light / Dark / Retro` działa bez backendu i zapisuje wybór użytkownika lokalnie.
+- Jeśli chcesz zmienić grafiki projektów, najprościej podmień pliki SVG w `assets/img`.
 
 ## Checklist
 
 - dane osobowe i treści: `scripts/data.js`
+- motywy i tokeny kolorów: `styles/main.css`
 - zdjęcie profilowe: `assets/img/profile.jpg`
 - CV PDF: `assets/files/maciej-stencel-cv.pdf`
 - favicon: `assets/icons/favicon.svg`

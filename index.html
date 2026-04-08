@@ -1,30 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Maciej Stencel | Web Developer & Systems Specialist</title>
+    <title>Maciej Stencel | Frontend Developer & Web Engineer</title>
     <meta
       name="description"
-      content="Portfolio of Maciej Stencel, a web developer focused on polished frontend work, accessible interfaces, Django-based products, and production-ready web delivery."
+      content="Frontend developer focused on accessible interfaces, Django-backed web products, and delivery quality from implementation through deployment."
     >
     <meta name="theme-color" content="#08101d">
     <link rel="canonical" href="https://macstenc.github.io/Portfolio/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Maciej Stencel Portfolio">
-    <meta property="og:title" content="Maciej Stencel | Web Developer & Systems Specialist">
+    <meta property="og:title" content="Maciej Stencel | Frontend Developer & Web Engineer">
     <meta
       property="og:description"
-      content="Portfolio of Maciej Stencel, a web developer focused on polished frontend work, accessible interfaces, Django-based products, and production-ready web delivery."
+      content="Frontend developer focused on accessible interfaces, Django-backed web products, and delivery quality from implementation through deployment."
     >
     <meta property="og:url" content="https://macstenc.github.io/Portfolio/">
     <meta property="og:image" content="https://macstenc.github.io/Portfolio/assets/img/og-cover.svg">
     <meta property="og:locale" content="en_GB">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Maciej Stencel | Web Developer & Systems Specialist">
+    <meta name="twitter:title" content="Maciej Stencel | Frontend Developer & Web Engineer">
     <meta
       name="twitter:description"
-      content="Portfolio of Maciej Stencel, a web developer focused on polished frontend work, accessible interfaces, Django-based products, and production-ready web delivery."
+      content="Frontend developer focused on accessible interfaces, Django-backed web products, and delivery quality from implementation through deployment."
     >
     <meta name="twitter:image" content="https://macstenc.github.io/Portfolio/assets/img/og-cover.svg">
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
@@ -34,6 +34,25 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     >
+    <script>
+      (function () {
+        var storageKey = "portfolio-theme";
+        var allowed = ["light", "dark", "retro"];
+        var theme = "dark";
+
+        try {
+          var storedTheme = window.localStorage.getItem(storageKey);
+          if (allowed.indexOf(storedTheme) !== -1) {
+            theme = storedTheme;
+          }
+        } catch (error) {
+          theme = "dark";
+        }
+
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme === "light" ? "light" : "dark";
+      })();
+    </script>
     <link rel="stylesheet" href="styles/main.css">
     <script src="scripts/data.js" defer></script>
     <script src="scripts/main.js" defer></script>
@@ -53,7 +72,7 @@
           <span class="brand-mark" aria-hidden="true">MS</span>
           <span class="brand-copy">
             <strong id="brand-name">Maciej Stencel</strong>
-            <span id="brand-role">Web Developer</span>
+            <span id="brand-role">Frontend Developer</span>
           </span>
         </a>
 
@@ -74,9 +93,26 @@
             <ul class="nav-list" id="primary-menu"></ul>
           </nav>
 
-          <div class="lang-switch" role="group" aria-label="Language switcher" id="lang-switch">
-            <button class="lang-button is-active" type="button" data-lang="en">EN</button>
-            <button class="lang-button" type="button" data-lang="pl">PL</button>
+          <div class="preference-switches">
+            <div class="theme-switch" role="group" aria-label="Theme switcher" id="theme-switch">
+              <button class="theme-button" type="button" data-theme="light" aria-pressed="false">
+                <span class="theme-button-swatch" aria-hidden="true"></span>
+                <span class="theme-button-label">Light</span>
+              </button>
+              <button class="theme-button is-active" type="button" data-theme="dark" aria-pressed="true">
+                <span class="theme-button-swatch" aria-hidden="true"></span>
+                <span class="theme-button-label">Dark</span>
+              </button>
+              <button class="theme-button" type="button" data-theme="retro" aria-pressed="false">
+                <span class="theme-button-swatch" aria-hidden="true"></span>
+                <span class="theme-button-label">Retro</span>
+              </button>
+            </div>
+
+            <div class="lang-switch" role="group" aria-label="Language switcher" id="lang-switch">
+              <button class="lang-button is-active" type="button" data-lang="en">EN</button>
+              <button class="lang-button" type="button" data-lang="pl">PL</button>
+            </div>
           </div>
         </div>
       </div>
@@ -86,14 +122,14 @@
       <section class="section hero" id="hero" aria-labelledby="hero-name">
         <div class="container hero-grid">
           <div class="hero-copy reveal">
-            <p class="eyebrow" id="hero-eyebrow">Available for ambitious product and web teams</p>
+            <p class="eyebrow" id="hero-eyebrow">Frontend delivery grounded in product sense and technical discipline</p>
             <h1 id="hero-name">Maciej Stencel</h1>
-            <p class="hero-role" id="hero-role">Web Developer / Systems & Infrastructure Specialist</p>
+            <p class="hero-role" id="hero-role">Frontend Developer with Django and Delivery Experience</p>
             <p class="hero-summary" id="hero-summary">
-              I build accessible, polished web experiences and production-ready platforms with a strong eye for frontend quality, reliability, and detail.
+              I build interfaces that feel clear, deliberate, and reliable in day-to-day use, combining frontend quality, accessibility, and practical delivery discipline.
             </p>
 
-            <div class="status-pill" id="hero-status">Open to frontend and full-stack opportunities</div>
+            <div class="status-pill" id="hero-status">Open to frontend and web product opportunities</div>
             <ul class="hero-highlights" id="hero-highlights"></ul>
 
             <div class="hero-actions">
@@ -130,9 +166,9 @@
         <div class="container section-heading reveal">
           <p class="section-tag" id="about-tag">About</p>
           <div>
-            <h2 id="about-heading">Building polished products with practical engineering behind the UI</h2>
+            <h2 id="about-heading">A frontend-focused developer who cares about what happens after launch</h2>
             <p class="section-intro" id="about-intro">
-              Frontend quality matters most when it is supported by accessibility, performance, and production discipline.
+              The best UI work is not only visual. It needs structure, accessibility, technical discipline, and enough product sense to stay solid in production.
             </p>
           </div>
         </div>
@@ -154,9 +190,9 @@
         <div class="container section-heading reveal">
           <p class="section-tag" id="skills-tag">Skills</p>
           <div>
-            <h2 id="skills-heading">Technology choices that support design, delivery, and maintenance</h2>
+            <h2 id="skills-heading">Tools and habits that help me move work from concept to production</h2>
             <p class="section-intro" id="skills-intro">
-              I combine frontend craftsmanship with backend and infrastructure skills, so projects look good and hold up in production.
+              My strongest work sits where frontend quality, web delivery, and careful technical follow-through meet.
             </p>
           </div>
         </div>
@@ -168,9 +204,9 @@
         <div class="container section-heading reveal">
           <p class="section-tag" id="experience-tag">Experience</p>
           <div>
-            <h2 id="experience-heading">Commercial, freelance, and product-focused work</h2>
+            <h2 id="experience-heading">Hands-on work across accessibility, platforms, and product-style delivery</h2>
             <p class="section-intro" id="experience-intro">
-              Even where formal titles are limited, the work itself reflects real delivery, ownership, and production responsibility.
+              The titles matter less than the scope: shipping interfaces, maintaining systems, and improving live web environments.
             </p>
           </div>
         </div>
@@ -184,9 +220,9 @@
         <div class="container section-heading reveal">
           <p class="section-tag" id="projects-tag">Projects</p>
           <div>
-            <h2 id="projects-heading">Selected work that shows product thinking and execution</h2>
+            <h2 id="projects-heading">Selected work that shows how I build, refine, and verify results</h2>
             <p class="section-intro" id="projects-intro">
-              A mix of live delivery, practical product work, and systems that demonstrate how I build with users and maintainability in mind.
+              Each project reflects practical execution, product thinking, and care for what the final experience feels like.
             </p>
           </div>
         </div>
@@ -203,9 +239,9 @@
         <div class="container section-heading reveal">
           <p class="section-tag" id="education-tag">Education</p>
           <div>
-            <h2 id="education-heading">Academic background in computer science</h2>
+            <h2 id="education-heading">Computer science background supported by practical project work</h2>
             <p class="section-intro" id="education-intro">
-              Formal studies backed by practical product work, independent building, and real deployment experience.
+              Formal study gave me a strong base. Most of the growth since then has come from building, refining, and shipping.
             </p>
           </div>
         </div>
@@ -217,9 +253,9 @@
         <div class="container section-heading reveal">
           <p class="section-tag" id="development-tag">Certificates & Growth</p>
           <div>
-            <h2 id="development-heading">Continuous development through shipping, research, and implementation</h2>
+            <h2 id="development-heading">A workflow that values speed, but not at the expense of judgment</h2>
             <p class="section-intro" id="development-intro">
-              I learn best by building, documenting, improving, and solving real production problems.
+              I keep my toolkit current, but I treat quality, review, and accountability as non-negotiable.
             </p>
           </div>
         </div>
@@ -231,9 +267,9 @@
         <div class="container section-heading reveal">
           <p class="section-tag" id="contact-tag">Contact</p>
           <div>
-            <h2 id="contact-heading">Let’s talk about roles, products, or collaboration</h2>
+            <h2 id="contact-heading">Let’s talk about roles, products, or useful work</h2>
             <p class="section-intro" id="contact-intro">
-              The site stays frontend-only, so the form opens your email client with a ready-to-send message.
+              This site stays frontend-only. The form opens a prepared email draft instead of pretending to send data to a backend.
             </p>
           </div>
         </div>
@@ -268,11 +304,11 @@
             <span class="brand-mark" aria-hidden="true">MS</span>
             <span class="brand-copy">
               <strong id="footer-name">Maciej Stencel</strong>
-              <span id="footer-role">Web Developer</span>
+              <span id="footer-role">Frontend Developer</span>
             </span>
           </div>
           <p class="footer-summary" id="footer-summary">
-            Frontend-first portfolio with bilingual content, static deployment, and production-minded structure.
+            Frontend portfolio built around clarity, delivery quality, and practical responsibility for the final result.
           </p>
         </div>
 
