@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Profile photo placeholder</title>
+  <desc id="desc">Placeholder image instructing where to add the final profile photo.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#13243b"/>
+      <stop offset="50%" stop-color="#0b1627"/>
+      <stop offset="100%" stop-color="#070f1a"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#8ad0b3"/>
+      <stop offset="100%" stop-color="#e7b87c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <circle cx="620" cy="160" r="120" fill="#8ad0b3" opacity=".08"/>
+  <circle cx="180" cy="820" r="170" fill="#8ab5ff" opacity=".08"/>
+  <rect x="72" y="72" width="656" height="856" rx="42" fill="none" stroke="#2d405d"/>
+  <circle cx="400" cy="330" r="110" fill="#13243b" stroke="#385374" stroke-width="6"/>
+  <path d="M224 690c34-122 113-183 176-183s142 61 176 183" fill="#13243b" stroke="#385374" stroke-width="6" stroke-linecap="round"/>
+  <rect x="168" y="748" width="464" height="112" rx="26" fill="#0f1c2f" stroke="#2d405d"/>
+  <text x="400" y="793" fill="#f4f7fb" font-family="Arial, Helvetica, sans-serif" font-size="34" text-anchor="middle" letter-spacing="2">ADD /assets/img/profile.jpg</text>
+  <text x="400" y="835" fill="#9fb0c6" font-family="Arial, Helvetica, sans-serif" font-size="22" text-anchor="middle">Use a professional portrait, vertical crop, and clear background.</text>
+  <rect x="168" y="120" width="144" height="42" rx="21" fill="url(#card)" opacity=".85"/>
+  <text x="240" y="148" fill="#08101d" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="middle" letter-spacing="2">PHOTO SLOT</text>
+</svg>

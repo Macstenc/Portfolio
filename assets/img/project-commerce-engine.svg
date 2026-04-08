@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title">
+  <title id="title">Smart commerce recommender placeholder</title>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111f34"/>
+      <stop offset="100%" stop-color="#08101d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#8ab5ff"/>
+      <stop offset="100%" stop-color="#8ad0b3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect x="80" y="80" width="1440" height="840" rx="40" fill="none" stroke="#243752"/>
+  <rect x="140" y="150" width="520" height="680" rx="28" fill="#0d192a" stroke="#2b3e5c"/>
+  <rect x="720" y="150" width="740" height="140" rx="28" fill="#0d192a" stroke="#2b3e5c"/>
+  <rect x="720" y="340" width="350" height="230" rx="24" fill="#0d192a" stroke="#2b3e5c"/>
+  <rect x="1110" y="340" width="350" height="230" rx="24" fill="#0d192a" stroke="#2b3e5c"/>
+  <rect x="720" y="620" width="740" height="210" rx="28" fill="#0d192a" stroke="#2b3e5c"/>
+  <text x="190" y="265" fill="#f4f7fb" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700">Smart Commerce</text>
+  <text x="190" y="326" fill="#f4f7fb" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700">Recommender</text>
+  <text x="190" y="392" fill="#9fb0c6" font-family="Arial, Helvetica, sans-serif" font-size="26">Angular, Spring Boot, MongoDB, and containerized product logic.</text>
+  <rect x="190" y="460" width="220" height="52" rx="26" fill="url(#accent)" opacity=".85"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title">
+  <title id="title">Accessible university suite placeholder</title>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f1f36"/>
+      <stop offset="100%" stop-color="#07101a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <circle cx="1250" cy="200" r="180" fill="#8ad0b3" opacity=".08"/>
+  <rect x="90" y="90" width="1420" height="820" rx="42" fill="none" stroke="#243752"/>
+  <rect x="150" y="150" width="1300" height="120" rx="24" fill="#0d192a" stroke="#2b3e5c"/>
+  <rect x="150" y="330" width="400" height="460" rx="24" fill="#0d192a" stroke="#2b3e5c"/>
+  <rect x="610" y="330" width="840" height="200" rx="24" fill="#0d192a" stroke="#2b3e5c"/>
+  <rect x="610" y="590" width="840" height="200" rx="24" fill="#0d192a" stroke="#2b3e5c"/>
+  <text x="190" y="225" fill="#f4f7fb" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700">Accessible University Web Suite</text>
+  <text x="190" y="760" fill="#9fb0c6" font-family="Arial, Helvetica, sans-serif" font-size="26">Accessibility, multilingual support, platform maintenance, and public-sector delivery.</text>
+  <rect x="1080" y="392" width="280" height="54" rx="27" fill="#8ad0b3" opacity=".18"/>
+</svg>

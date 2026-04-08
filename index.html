@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Maciej Stencel | Web Developer & Systems Specialist</title>
+    <meta
+      name="description"
+      content="Portfolio of Maciej Stencel, a web developer focused on polished frontend work, accessible interfaces, Django-based products, and production-ready web delivery."
+    >
+    <meta name="theme-color" content="#08101d">
+    <link rel="canonical" href="https://macstenc.github.io/Portfolio/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Maciej Stencel Portfolio">
+    <meta property="og:title" content="Maciej Stencel | Web Developer & Systems Specialist">
+    <meta
+      property="og:description"
+      content="Portfolio of Maciej Stencel, a web developer focused on polished frontend work, accessible interfaces, Django-based products, and production-ready web delivery."
+    >
+    <meta property="og:url" content="https://macstenc.github.io/Portfolio/">
+    <meta property="og:image" content="https://macstenc.github.io/Portfolio/assets/img/og-cover.svg">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Maciej Stencel | Web Developer & Systems Specialist">
+    <meta
+      name="twitter:description"
+      content="Portfolio of Maciej Stencel, a web developer focused on polished frontend work, accessible interfaces, Django-based products, and production-ready web delivery."
+    >
+    <meta name="twitter:image" content="https://macstenc.github.io/Portfolio/assets/img/og-cover.svg">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/data.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="site-bg" aria-hidden="true">
+      <span class="orb orb-one"></span>
+      <span class="orb orb-two"></span>
+      <span class="grid-glow"></span>
+    </div>
+
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="#hero">
+          <span class="brand-mark" aria-hidden="true">MS</span>
+          <span class="brand-copy">
+            <strong id="brand-name">Maciej Stencel</strong>
+            <span id="brand-role">Web Developer</span>
+          </span>
+        </a>
+
+        <div class="header-tools">
+          <nav class="site-nav" aria-label="Primary" id="site-nav">
+            <button
+              class="nav-toggle"
+              type="button"
+              id="nav-toggle"
+              aria-expanded="false"
+              aria-controls="primary-menu"
+              aria-label="Open menu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <ul class="nav-list" id="primary-menu"></ul>
+          </nav>
+
+          <div class="lang-switch" role="group" aria-label="Language switcher" id="lang-switch">
+            <button class="lang-button is-active" type="button" data-lang="en">EN</button>
+            <button class="lang-button" type="button" data-lang="pl">PL</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="section hero" id="hero" aria-labelledby="hero-name">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow" id="hero-eyebrow">Available for ambitious product and web teams</p>
+            <h1 id="hero-name">Maciej Stencel</h1>
+            <p class="hero-role" id="hero-role">Web Developer / Systems & Infrastructure Specialist</p>
+            <p class="hero-summary" id="hero-summary">
+              I build accessible, polished web experiences and production-ready platforms with a strong eye for frontend quality, reliability, and detail.
+            </p>
+
+            <div class="status-pill" id="hero-status">Open to frontend and full-stack opportunities</div>
+            <ul class="hero-highlights" id="hero-highlights"></ul>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projects" id="hero-projects-cta">View projects</a>
+              <a class="button button-secondary" href="assets/files/maciej-stencel-cv.pdf" id="hero-cv-cta" download>Download CV</a>
+            </div>
+
+            <dl class="hero-stats" id="hero-stats"></dl>
+          </div>
+
+          <div class="hero-media reveal">
+            <figure class="profile-card">
+              <div class="profile-frame">
+                <img
+                  id="profile-image"
+                  src="assets/img/profile-placeholder.svg"
+                  alt="Profile photo placeholder for Maciej Stencel"
+                  width="720"
+                  height="860"
+                  decoding="async"
+                  loading="eager"
+                >
+              </div>
+              <figcaption class="profile-caption">
+                <p class="profile-caption-label" id="profile-caption-label">Professional snapshot</p>
+                <ul class="profile-meta" id="profile-meta"></ul>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about" aria-labelledby="about-heading">
+        <div class="container section-heading reveal">
+          <p class="section-tag" id="about-tag">About</p>
+          <div>
+            <h2 id="about-heading">Building polished products with practical engineering behind the UI</h2>
+            <p class="section-intro" id="about-intro">
+              Frontend quality matters most when it is supported by accessibility, performance, and production discipline.
+            </p>
+          </div>
+        </div>
+
+        <div class="container about-grid">
+          <article class="panel panel-large reveal">
+            <h3 id="about-story-title">Profile</h3>
+            <div class="rich-text" id="about-story"></div>
+          </article>
+
+          <aside class="panel panel-large reveal">
+            <h3 id="about-principles-title">How I work</h3>
+            <ul class="bullet-list" id="about-principles"></ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="skills" aria-labelledby="skills-heading">
+        <div class="container section-heading reveal">
+          <p class="section-tag" id="skills-tag">Skills</p>
+          <div>
+            <h2 id="skills-heading">Technology choices that support design, delivery, and maintenance</h2>
+            <p class="section-intro" id="skills-intro">
+              I combine frontend craftsmanship with backend and infrastructure skills, so projects look good and hold up in production.
+            </p>
+          </div>
+        </div>
+
+        <div class="container cards-grid cards-grid-skills" id="skills-groups"></div>
+      </section>
+
+      <section class="section" id="experience" aria-labelledby="experience-heading">
+        <div class="container section-heading reveal">
+          <p class="section-tag" id="experience-tag">Experience</p>
+          <div>
+            <h2 id="experience-heading">Commercial, freelance, and product-focused work</h2>
+            <p class="section-intro" id="experience-intro">
+              Even where formal titles are limited, the work itself reflects real delivery, ownership, and production responsibility.
+            </p>
+          </div>
+        </div>
+
+        <div class="container">
+          <ol class="timeline" id="experience-timeline"></ol>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-heading">
+        <div class="container section-heading reveal">
+          <p class="section-tag" id="projects-tag">Projects</p>
+          <div>
+            <h2 id="projects-heading">Selected work that shows product thinking and execution</h2>
+            <p class="section-intro" id="projects-intro">
+              A mix of live delivery, practical product work, and systems that demonstrate how I build with users and maintainability in mind.
+            </p>
+          </div>
+        </div>
+
+        <div class="container project-toolbar reveal">
+          <p class="filter-label" id="project-filter-label">Filter by technology</p>
+          <div class="filter-group" id="project-filters"></div>
+        </div>
+
+        <div class="container cards-grid cards-grid-projects" id="project-grid"></div>
+      </section>
+
+      <section class="section" id="education" aria-labelledby="education-heading">
+        <div class="container section-heading reveal">
+          <p class="section-tag" id="education-tag">Education</p>
+          <div>
+            <h2 id="education-heading">Academic background in computer science</h2>
+            <p class="section-intro" id="education-intro">
+              Formal studies backed by practical product work, independent building, and real deployment experience.
+            </p>
+          </div>
+        </div>
+
+        <div class="container cards-grid" id="education-grid"></div>
+      </section>
+
+      <section class="section" id="development" aria-labelledby="development-heading">
+        <div class="container section-heading reveal">
+          <p class="section-tag" id="development-tag">Certificates & Growth</p>
+          <div>
+            <h2 id="development-heading">Continuous development through shipping, research, and implementation</h2>
+            <p class="section-intro" id="development-intro">
+              I learn best by building, documenting, improving, and solving real production problems.
+            </p>
+          </div>
+        </div>
+
+        <div class="container cards-grid" id="development-grid"></div>
+      </section>
+
+      <section class="section" id="contact" aria-labelledby="contact-heading">
+        <div class="container section-heading reveal">
+          <p class="section-tag" id="contact-tag">Contact</p>
+          <div>
+            <h2 id="contact-heading">Let’s talk about roles, products, or collaboration</h2>
+            <p class="section-intro" id="contact-intro">
+              The site stays frontend-only, so the form opens your email client with a ready-to-send message.
+            </p>
+          </div>
+        </div>
+
+        <div class="container contact-grid">
+          <div class="contact-stack">
+            <section class="panel panel-large reveal" id="contact-links"></section>
+            <section class="panel panel-large reveal" id="contact-note"></section>
+          </div>
+
+          <form class="panel contact-form reveal" id="contact-form">
+            <div class="form-head">
+              <h3 id="contact-form-title">Start the conversation</h3>
+              <p id="contact-form-intro">
+                Share the role, project, or challenge and I will prepare the message in your mail app.
+              </p>
+            </div>
+
+            <div class="form-grid" id="contact-form-fields"></div>
+
+            <button class="button button-primary" type="submit" id="contact-submit">Open email draft</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="brand brand-footer">
+            <span class="brand-mark" aria-hidden="true">MS</span>
+            <span class="brand-copy">
+              <strong id="footer-name">Maciej Stencel</strong>
+              <span id="footer-role">Web Developer</span>
+            </span>
+          </div>
+          <p class="footer-summary" id="footer-summary">
+            Frontend-first portfolio with bilingual content, static deployment, and production-minded structure.
+          </p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer" id="footer-nav"></nav>
+        <div class="footer-links" id="footer-links"></div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p id="footer-copy">© <span id="current-year"></span> Maciej Stencel. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <button class="back-to-top" type="button" id="back-to-top" aria-label="Back to top" hidden>
+      <span class="back-to-top-icon" aria-hidden="true">↑</span>
+      <span id="back-to-top-label">Top</span>
+    </button>
+  </body>
+</html>
