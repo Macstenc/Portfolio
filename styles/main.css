@@ -876,6 +876,7 @@ html[data-theme="eclipse"] .theme-switch::before {
   align-items: center;
   gap: 0.6rem;
   width: fit-content;
+  max-width: 100%;
   padding: 0.82rem 1.05rem;
   border: 1px solid var(--status-border);
   border-radius: var(--radius-pill);
@@ -883,6 +884,7 @@ html[data-theme="eclipse"] .theme-switch::before {
   color: var(--text-soft);
   font-size: 0.94rem;
   font-weight: 600;
+  flex-wrap: wrap;
 }
 
 .status-pill::before {
@@ -1396,6 +1398,7 @@ html[data-theme="eclipse"] .theme-switch::before {
 .contact-copy-group {
   display: grid;
   gap: 1rem;
+  width: 100%;
 }
 
 .contact-grid > .panel {
@@ -1406,6 +1409,7 @@ html[data-theme="eclipse"] .theme-switch::before {
   grid-template-columns: minmax(0, 1fr);
   gap: 0.95rem;
   width: 100%;
+  justify-items: stretch;
 }
 
 .contact-note-header {
@@ -1434,6 +1438,7 @@ html[data-theme="eclipse"] .theme-switch::before {
   gap: 1rem;
   align-items: flex-start;
   min-height: 100%;
+  width: 100%;
   padding: 1.15rem 1.1rem 1.15rem 1.15rem;
   border-radius: 1.35rem;
   background: var(--surface-elevated);
@@ -1665,6 +1670,36 @@ html[data-theme="eclipse"] .theme-switch::before {
 
   .hero-copy {
     max-width: 100%;
+  }
+
+  .hero-media {
+    justify-self: stretch;
+    width: min(100%, 34rem);
+    margin-top: 0;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1440px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .hero-highlights {
+    display: grid;
+    justify-items: start;
+  }
+
+  .hero-highlights li {
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .hero-media {
