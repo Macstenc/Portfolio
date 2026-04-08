@@ -1,6 +1,7 @@
 (function () {
   const app = window.PORTFOLIO_DATA;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const desktopNavBreakpoint = 1100;
   const state = {
     lang: getInitialLanguage(),
     theme: getInitialTheme(),
@@ -75,6 +76,7 @@
     dom.themeSwitch.addEventListener("click", handleThemeClick);
     dom.themeSwitch.addEventListener("keydown", handleThemeKeydown);
     dom.langSwitch.addEventListener("click", handleLanguageClick);
+    dom.langSwitch.addEventListener("keydown", handleLanguageKeydown);
     dom.projectFilters.addEventListener("click", handleFilterClick);
     dom.siteNav.addEventListener("click", handleNavClick);
     dom.backToTop.addEventListener("click", scrollToTop);
@@ -300,11 +302,18 @@
 
     dom.contactNote.innerHTML = `
       <div class="contact-note-block">
-        <h3>${page.contact.noteTitle}</h3>
-        ${page.contact.noteText.map((item) => `<p class="card-copy">${item}</p>`).join("")}
-        <div class="contact-copy-group">
-          <h3>${page.contact.availabilityTitle}</h3>
+        <div class="contact-note-header">
+          <h3>${page.contact.noteTitle}</h3>
+          <p class="card-copy">${page.contact.noteText[0]}</p>
+        </div>
+        <div class="contact-note-grid">
+          <div class="contact-copy-group">
+            ${page.contact.noteText.slice(1).map((item) => `<p class="card-copy">${item}</p>`).join("")}
+          </div>
+          <div class="contact-copy-group">
+            <h4 class="contact-subtitle">${page.contact.availabilityTitle}</h4>
           ${page.contact.availabilityText.map((item) => `<p class="card-copy">${item}</p>`).join("")}
+          </div>
         </div>
       </div>
     `;
@@ -398,6 +407,38 @@
     render();
   }
 
+  function handleLanguageKeydown(event) {
+    const currentButton = event.target.closest("[data-lang]");
+    if (!currentButton) {
+      return;
+    }
+
+    const index = dom.langButtons.indexOf(currentButton);
+    let nextIndex = index;
+
+    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+      nextIndex = (index + 1) % dom.langButtons.length;
+    } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+      nextIndex = (index - 1 + dom.langButtons.length) % dom.langButtons.length;
+    } else if (event.key === "Home") {
+      nextIndex = 0;
+    } else if (event.key === "End") {
+      nextIndex = dom.langButtons.length - 1;
+    } else {
+      return;
+    }
+
+    event.preventDefault();
+    dom.langButtons[nextIndex].focus();
+
+    if (dom.langButtons[nextIndex].dataset.lang !== state.lang) {
+      state.lang = dom.langButtons[nextIndex].dataset.lang;
+      persistLanguage(state.lang);
+      closeMenu();
+      render();
+    }
+  }
+
   function handleFilterClick(event) {
     const button = event.target.closest("[data-filter]");
     if (!button || button.dataset.filter === state.filter) {
@@ -448,7 +489,7 @@
   }
 
   function handleResize() {
-    if (window.innerWidth > 920) {
+    if (window.innerWidth > desktopNavBreakpoint) {
       closeMenu();
     }
   }

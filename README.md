@@ -62,13 +62,13 @@ Portfolio ma trzy motywy:
 
 - `Light`
 - `Dark`
-- `Ember`
+- `Eclipse`
 
 Nazwy motywów i ich kolejność w UI są powiązane z `scripts/data.js`, a same tokeny kolorystyczne znajdziesz w `styles/main.css` w blokach:
 
 - `html[data-theme="light"]`
 - `html[data-theme="dark"]`
-- `html[data-theme="retro"]`
+- `html[data-theme="eclipse"]`
 
 Wybrany motyw zapisuje się w `localStorage`, więc po odświeżeniu wraca ostatnie ustawienie użytkownika.
 
@@ -163,7 +163,7 @@ Kroki:
 - Portfolio jest frontend-only.
 - Sekcja kontaktu zawiera bezpośrednie dane kontaktowe bez formularza i bez backendu.
 - Przełącznik języka `PL / EN` działa bez backendu na bazie obiektu w `scripts/data.js`.
-- Przełącznik motywu `Light / Dark / Ember` działa bez backendu i zapisuje wybór użytkownika lokalnie.
+- Przełącznik motywu `Light / Dark / Eclipse` działa bez backendu i zapisuje wybór użytkownika lokalnie.
 - Jeśli chcesz zmienić grafiki projektów, najprościej podmień pliki SVG w `assets/img`.
 
 ## Checklist

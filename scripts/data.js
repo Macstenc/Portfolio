@@ -1,4 +1,4 @@
-// Update this file first when you want to personalize the portfolio.
+﻿// Update this file first when you want to personalize the portfolio.
 window.PORTFOLIO_DATA = {
   settings: {
     fullName: "Maciej Stencel",
@@ -13,29 +13,29 @@ window.PORTFOLIO_DATA = {
     themes: {
       light: {
         colorScheme: "light",
-        themeColor: "#eef3f8"
+        themeColor: "#eff4f8"
       },
       dark: {
         colorScheme: "dark",
         themeColor: "#08101d"
       },
-      retro: {
+      eclipse: {
         colorScheme: "dark",
-        themeColor: "#18150f"
+        themeColor: "#120e0a"
       }
     }
   },
   content: {
     en: {
       meta: {
-        title: "Maciej Stencel | Frontend Developer & Web Engineer",
+        title: "Maciej Stencel | Full-Stack Developer",
         description:
-          "Frontend developer focused on accessible interfaces, Django-backed web products, and delivery quality from implementation through deployment.",
+          "Full-stack developer building accessible interfaces, Django-backed products, and production-ready web applications with strong delivery discipline.",
         locale: "en_GB",
         ogImage: "assets/img/og-cover.svg"
       },
       header: {
-        brandRole: "Frontend Developer",
+        brandRole: "Full-Stack Developer",
         menuLabel: "Open menu",
         closeMenuLabel: "Close menu",
         langLabel: "Language switcher",
@@ -43,7 +43,7 @@ window.PORTFOLIO_DATA = {
         themes: {
           light: "Light",
           dark: "Dark",
-          retro: "Ember"
+          eclipse: "Eclipse"
         },
         nav: [
           { id: "about", label: "About" },
@@ -55,30 +55,30 @@ window.PORTFOLIO_DATA = {
         ]
       },
       hero: {
-        eyebrow: "Frontend delivery grounded in product sense and technical discipline",
-        role: "Frontend Developer with Django and Delivery Experience",
+        eyebrow: "Full-stack web delivery with product sense, accessibility, and technical follow-through",
+        role: "Full-Stack Developer",
         summary:
-          "I build interfaces that feel clear, deliberate, and reliable in day-to-day use. My strongest work combines frontend quality, accessibility, Django-backed products, and the kind of follow-through that still matters after launch.",
-        status: "Open to frontend and web product opportunities",
+          "I build web products end to end: clear frontend experiences, reliable backend logic, and deployment-ready setups that stay maintainable after launch.",
+        status: "Open to full-stack, web platform, and product-focused opportunities",
         highlights: [
-          "Accessible UI and calm product flows",
-          "Django, Linux, Docker, and deployment support",
+          "Accessible UI and thoughtful product flows",
+          "Django, APIs, payments, deployment, and production support",
           "AI-assisted workflow with manual review and verification"
         ],
         primaryCta: "View projects",
         secondaryCta: "Download CV",
         stats: [
           {
-            value: "Frontend focus",
-            label: "Readable hierarchy, thoughtful interactions, and interfaces built to stay clear under real content."
+            value: "Full-stack delivery",
+            label: "Frontend, backend, integrations, and deployment treated as one connected responsibility."
           },
           {
-            value: "Delivery mindset",
-            label: "Implementation, debugging, deployment, and refinement treated as one continuous responsibility."
+            value: "Product discipline",
+            label: "Clear user journeys, practical decisions, and steady refinement shaped by real use."
           },
           {
-            value: "AI, used carefully",
-            label: "Uses tools like Codex, Cursor, and Claude to move faster, then reviews, corrects, and verifies the result."
+            value: "Quality control",
+            label: "Modern AI tools speed up research and refactoring, but the final result is still reviewed and verified manually."
           }
         ],
         profileLabel: "Professional snapshot",
@@ -86,74 +86,74 @@ window.PORTFOLIO_DATA = {
         profileFallbackAlt: "Profile placeholder for Maciej Stencel",
         profileMeta: [
           { label: "Base", value: "Lublin, Poland" },
-          { label: "Best fit", value: "Frontend roles, web platforms, Django-backed products" },
-          { label: "Work style", value: "Steady delivery, strong review habits, practical ownership" }
+          { label: "Best fit", value: "Full-stack roles, web platforms, Django-backed products" },
+          { label: "Work style", value: "Calm delivery, strong review habits, practical ownership" }
         ]
       },
       sections: {
         about: {
           tag: "About",
-          heading: "A frontend-focused developer who cares about what happens after launch",
+          heading: "A full-stack developer who cares how products behave after launch",
           intro:
-            "The best UI work is not only visual. It needs clear structure, accessibility, technical discipline, and enough product sense to stay solid in production."
+            "Strong web work is more than shipping screens. It needs structure, accessibility, backend clarity, and enough technical discipline to stay reliable in production."
         },
         skills: {
           tag: "Skills",
-          heading: "Tools and habits that help me move work from concept to production",
+          heading: "Tools and practices that help me ship product work end to end",
           intro:
-            "My strongest work sits where frontend quality, web delivery, and careful technical follow-through meet."
+            "My strongest work sits where interface quality, backend thinking, and dependable delivery meet."
         },
         experience: {
           tag: "Experience",
-          heading: "Hands-on work across accessibility, platforms, and product-style delivery",
+          heading: "Hands-on work across accessibility, product delivery, and live web environments",
           intro:
-            "The titles matter less than the scope: shipping interfaces, maintaining systems, and improving live web environments."
+            "What matters most is scope: building interfaces, handling application logic, supporting platforms, and improving what already runs in production."
         },
         projects: {
           tag: "Projects",
           heading: "Selected work that shows how I build, refine, and verify results",
           intro:
-            "Each project reflects practical execution, product thinking, and care for what the final experience feels like."
+            "These projects reflect practical execution, product thinking, and responsibility for the final experience, not just the first demo."
         },
         education: {
           tag: "Education",
-          heading: "Computer science background supported by practical project work",
+          heading: "Computer science background strengthened by practical project work",
           intro:
-            "Formal study gave me a strong base. Most of the growth since then has come from building, refining, and shipping."
+            "Formal study gave me a strong base. The biggest progress came later through building, revisiting, and improving real projects."
         },
         development: {
           tag: "Development",
           heading: "A workflow that values speed, but not at the expense of judgment",
           intro:
-            "I keep my toolkit current, but I treat quality, review, and accountability as non-negotiable."
+            "I like modern tools and efficient processes, but quality, review, and accountability still come first."
         },
         contact: {
           tag: "Contact",
-          heading: "Let's talk about roles, products, or useful work",
+          heading: "Let's talk about a role, a product, or a practical collaboration",
           intro:
-            "The contact section stays simple and direct: email, phone, GitHub, LinkedIn, and location in one place."
+            "The contact section stays direct and useful: email, phone, GitHub, LinkedIn, and location in one place."
         }
       },
       about: {
-        storyTitle: "How I work",
+        storyTitle: "Profile",
         story: [
-          "I work closest to the frontend, but I think beyond the screen. I care about hierarchy, pacing, accessibility, and whether an interface still feels solid once it meets real content and real users.",
-          "My experience covers public-facing and internal websites, accessibility improvements, multilingual content, CMS maintenance, Django-based applications, and Linux-based deployment support with Nginx, Docker, SSL, and production debugging.",
-          "I use tools such as Codex, Cursor, and Claude to speed up research, prototyping, refactoring, and review preparation. I treat them as support, not a substitute for engineering judgment. Anything meaningful still needs verification, refinement, and responsibility before it ships."
+          "I work as a full-stack developer with a strong eye for interface clarity. I care about hierarchy, pacing, semantics, and whether a product still feels reliable once it meets real data, real content, and production constraints.",
+          "My background covers public-facing and internal web platforms, accessibility work, multilingual content, Django-based applications, CMS maintenance, and Linux-based deployment support with Nginx, Docker, SSL, and production debugging.",
+          "I use tools such as Codex, Cursor, and Claude where they genuinely help: research, prototyping, refactoring, and code analysis. They accelerate the process, but they do not replace review. Anything important still needs manual verification, adjustment, and responsibility before it ships."
         ],
         principlesTitle: "What you can expect",
         principles: [
-          "Clear interfaces with attention to semantics, spacing, and user flow.",
-          "Practical decisions guided by maintainability, not just visual effect.",
-          "Comfort moving between frontend implementation, backend details, and deployment basics.",
+          "Clear interfaces with attention to semantics, spacing, and decision-making under real content.",
+          "Comfort moving between frontend implementation, backend details, and deployment basics when the project needs it.",
+          "Practical engineering choices guided by maintainability and usability, not just visual effect.",
           "Responsible use of AI tooling: fast where it helps, critical where it matters."
         ]
       },
       skills: {
         groups: [
           {
-            title: "Frontend",
-            copy: "Building interfaces that are clear, responsive, accessible, and pleasant to use in real product contexts.",
+            title: "Frontend Systems",
+            copy: "Interfaces that feel readable, calm, responsive, and accessible in real product conditions.",
             items: [
               "HTML5",
               "CSS3",
@@ -166,8 +166,8 @@ window.PORTFOLIO_DATA = {
             ]
           },
           {
-            title: "Backend & APIs",
-            copy: "Application logic and integrations that support product flows instead of getting in the way of them.",
+            title: "Backend & Integrations",
+            copy: "Application logic, APIs, and connected flows that support the product instead of slowing it down.",
             items: [
               "Python",
               "Django",
@@ -181,7 +181,7 @@ window.PORTFOLIO_DATA = {
           },
           {
             title: "Delivery & Infrastructure",
-            copy: "Enough systems knowledge to ship, troubleshoot, and support small-to-mid web stacks with more confidence.",
+            copy: "Enough systems knowledge to deploy, troubleshoot, and support small-to-mid web stacks with confidence.",
             items: [
               "Git",
               "GitHub",
@@ -227,7 +227,7 @@ window.PORTFOLIO_DATA = {
           {
             period: "2024 - Present",
             type: "Independent work",
-            role: "Web product builder and technical freelancer",
+            role: "Full-stack web product builder",
             company: "Self-directed commercial-style projects",
             summary:
               "Built practical web products end to end, combining frontend implementation, backend logic, payments, and deployment.",
@@ -261,16 +261,16 @@ window.PORTFOLIO_DATA = {
         filters: ["Django", "Python", "JavaScript", "Angular", "Java", "Docker", "Accessibility", "Stripe"],
         items: [
           {
-            type: "Live platform",
+            type: "Live product",
             title: "ShowTheCash",
             summary:
-              "A payment-focused web platform with a cleaner customer journey, Stripe integration, and deployment set up for stable day-to-day use.",
+              "A payment-focused web product with a cleaner customer journey, Stripe integration, and deployment set up for stable day-to-day use.",
             stack: ["Django", "JavaScript", "Stripe", "Docker", "Nginx", "VPS"],
             filters: ["Django", "Python", "JavaScript", "Docker", "Stripe"],
             features: [
               "Checkout flow connected to webhook-based payment verification",
               "Containerized deployment behind Nginx with SSL and VPS hosting",
-              "A calm frontend focused on conversion clarity rather than visual noise"
+              "Frontend tuned for clarity, trust, and a calmer conversion path"
             ],
             repoUrl: "https://github.com/Macstenc/showthecash-platform",
             liveUrl: "https://showthecash.com/",
@@ -278,7 +278,7 @@ window.PORTFOLIO_DATA = {
             imageAlt: "ShowTheCash project preview"
           },
           {
-            type: "Platform work",
+            type: "Platform delivery",
             title: "Accessible University Web Suite",
             summary:
               "Accessibility and maintenance work across public and internal sites, with improvements to multilingual content handling and delivery quality.",
@@ -298,7 +298,7 @@ window.PORTFOLIO_DATA = {
             type: "Full-stack concept",
             title: "Smart Commerce Recommender",
             summary:
-              "A commerce-oriented application concept built to exercise recommendation logic, product flows, and full-stack integration rather than just UI mockups.",
+              "A commerce-oriented application concept built to exercise recommendation logic, product flows, and full-stack integration rather than just static UI work.",
             stack: ["Angular", "Java", "Spring Boot", "MongoDB", "Docker"],
             filters: ["Angular", "Java", "Docker"],
             features: [
@@ -315,13 +315,13 @@ window.PORTFOLIO_DATA = {
             type: "Utility tooling",
             title: "Link Shortener & Content Toolkit",
             summary:
-              "A small product-style toolset built around short links, structured content handling, and admin-friendly workflows.",
+              "A compact product-style toolset built around short links, structured content handling, and admin-friendly workflows.",
             stack: ["Python", "Django", "JavaScript", "PostgreSQL"],
             filters: ["Django", "Python", "JavaScript"],
             features: [
               "Custom short-link generation with straightforward management workflows",
               "Structured content extraction and export patterns inspired by crawler work",
-              "Clear, admin-like UI for utility tasks and maintenance flows"
+              "Clear, utility-focused UI for everyday admin and maintenance tasks"
             ],
             repoUrl: "https://github.com/Macstenc/content-toolkit-url-shortener",
             liveUrl: "",
@@ -344,8 +344,8 @@ window.PORTFOLIO_DATA = {
             subtitle: "The John Paul II Catholic University of Lublin",
             meta: "2023 - 2025",
             description:
-              "Expanded that base with more applied work and a stronger connection between theory, architecture, and implementation."
-          }
+              "Expanded that base with more applied work and a stronger link between theory, architecture, and implementation."
+            }
         ]
       },
       development: {
@@ -356,9 +356,9 @@ window.PORTFOLIO_DATA = {
               "I pay close attention to semantics, hierarchy, contrast, and the kind of interaction polish that keeps an interface readable under real use."
           },
           {
-            title: "Delivery and deployment practice",
+            title: "Backend thinking and product logic",
             description:
-              "Linux, Docker, Nginx, SSL, and day-to-day production support taught me to think beyond the editor and ship with more care."
+              "I like understanding how frontend decisions connect to application state, APIs, business logic, and maintainable structure on the backend."
           },
           {
             title: "AI-assisted development workflow",
@@ -366,14 +366,14 @@ window.PORTFOLIO_DATA = {
               "I use tools such as Codex, Cursor, and Claude to accelerate research, prototyping, refactoring, and debugging. Final code still goes through manual review, adjustment, and verification."
           },
           {
-            title: "Self-driven product work",
+            title: "Delivery and deployment practice",
             description:
-              "Most of my growth has come from building projects end to end, then revisiting them to improve structure, UX, performance, and technical decisions."
+              "Linux, Docker, Nginx, SSL, and day-to-day production support taught me to think beyond the editor and ship with more care."
           }
         ]
       },
       contact: {
-        cardsTitle: "Ways to reach me",
+        cardsTitle: "How to reach me",
         cards: [
           {
             kind: "email",
@@ -413,24 +413,24 @@ window.PORTFOLIO_DATA = {
         ],
         noteTitle: "Preferred contact",
         noteText: [
-          "The fastest route is direct email or LinkedIn. For code and practical work samples, GitHub is the best reference point.",
-          "I am open to frontend and web product roles, as well as selected freelance or project-based collaborations."
+          "The fastest route is direct email or LinkedIn. If you want to review practical work and code samples, GitHub is the best reference point.",
+          "I am open to full-stack roles, product teams, web platform work, and selected project-based collaborations."
         ],
         availabilityTitle: "Availability",
         availabilityText: [
           "Based in Lublin, Poland. Open to remote, hybrid, and selected on-site opportunities.",
-          "The strongest fit is frontend delivery, web platforms, accessibility-aware UI, and Django-backed products."
+          "The strongest fit is full-stack web delivery, Django-backed products, accessibility-aware interfaces, and practical product development."
         ]
       },
       footer: {
         summary:
-          "Frontend portfolio built around clarity, delivery quality, and practical responsibility for the final result.",
+          "Full-stack portfolio built around clarity, delivery discipline, and responsibility for the final result.",
         quickLinksTitle: "Quick links",
         resourcesTitle: "Links",
         resources: [
           { label: "GitHub", href: "https://github.com/Macstenc" },
           { label: "LinkedIn", href: "https://www.linkedin.com/in/maciej-stencel-587a88401/" },
-          { label: "Website", href: "https://showthecash.com/about" },
+          { label: "ShowTheCash", href: "https://showthecash.com/about" },
           { label: "Download CV", href: "assets/files/maciej-stencel-cv.pdf" }
         ],
         copy: "All rights reserved."
@@ -441,14 +441,14 @@ window.PORTFOLIO_DATA = {
     },
     pl: {
       meta: {
-        title: "Maciej Stencel | Frontend Developer i Web Engineer",
+        title: "Maciej Stencel | Full-Stack Developer",
         description:
-          "Frontend developer skupiony na dostępnych interfejsach, produktach webowych opartych o Django i jakości dowożenia od implementacji po wdrożenie.",
+          "Full-Stack Developer tworzący dopracowane interfejsy, aplikacje webowe oparte o Django i rozwiązania gotowe do wdrożenia, z naciskiem na jakość delivery.",
         locale: "pl_PL",
         ogImage: "assets/img/og-cover.svg"
       },
       header: {
-        brandRole: "Frontend Developer",
+        brandRole: "Full-Stack Developer",
         menuLabel: "Otwórz menu",
         closeMenuLabel: "Zamknij menu",
         langLabel: "Przełącznik języka",
@@ -456,7 +456,7 @@ window.PORTFOLIO_DATA = {
         themes: {
           light: "Jasny",
           dark: "Ciemny",
-          retro: "Żar"
+          eclipse: "Eclipse"
         },
         nav: [
           { id: "about", label: "O mnie" },
@@ -468,30 +468,30 @@ window.PORTFOLIO_DATA = {
         ]
       },
       hero: {
-        eyebrow: "Frontend oparty na jakości, produkcie i odpowiedzialnym dowożeniu",
-        role: "Frontend Developer z doświadczeniem w Django i wdrożeniach",
+        eyebrow: "Full-stack web delivery z naciskiem na produkt, dostępność i techniczne dopięcie",
+        role: "Full-Stack Developer",
         summary:
-          "Tworzę interfejsy, które są czytelne, spokojne i dopracowane w codziennym użyciu. Najmocniej działam tam, gdzie frontendowa jakość łączy się z dostępnością, produktowym myśleniem i techniczną odpowiedzialnością po wdrożeniu.",
-        status: "Otwartość na role frontendowe i pracę przy produktach webowych",
+          "Buduję produkty webowe end to end: czytelny frontend, sensowną logikę backendową i wdrożenia, które da się spokojnie utrzymywać także po starcie.",
+        status: "Otwartość na role full-stack, platformy webowe i pracę produktową",
         highlights: [
-          "Dostępne UI i uporządkowane flow użytkownika",
-          "Django, Linux, Docker i wsparcie wdrożeń",
+          "Dopracowany interfejs i spokojny user flow",
+          "Django, API, płatności, wdrożenia i wsparcie produkcji",
           "AI jako wsparcie pracy, nie zastępstwo za weryfikację"
         ],
         primaryCta: "Zobacz projekty",
         secondaryCta: "Pobierz CV",
         stats: [
           {
-            value: "Jakość frontendu",
-            label: "Czytelna hierarchia, przemyślane interakcje i interfejsy, które dobrze pracują z realną treścią."
+            value: "Full-stack delivery",
+            label: "Frontend, backend, integracje i wdrożenie traktuję jako jedną odpowiedzialność za efekt końcowy."
           },
           {
-            value: "Odpowiedzialne dowożenie",
-            label: "Implementacja, poprawki, wdrożenie i dalsze dopracowanie traktowane jako jedna odpowiedzialność."
+            value: "Myślenie produktowe",
+            label: "Liczy się dla mnie czytelna ścieżka użytkownika, sensowne decyzje i spokojne dopracowanie po wdrożeniu."
           },
           {
-            value: "AI z kontrolą",
-            label: "Korzystam z Codex, Cursor i Claude, żeby pracować szybciej, ale finalny efekt zawsze sprawdzam samodzielnie."
+            value: "Kontrola jakości",
+            label: "Nowoczesne narzędzia AI pomagają pracować szybciej, ale finalny rezultat zawsze przechodzi przeze mnie ręcznie."
           }
         ],
         profileLabel: "Szybki profil",
@@ -499,74 +499,74 @@ window.PORTFOLIO_DATA = {
         profileFallbackAlt: "Miejsce na zdjęcie profilowe Macieja Stencla",
         profileMeta: [
           { label: "Baza", value: "Lublin, Polska" },
-          { label: "Najlepsze dopasowanie", value: "Frontend, platformy webowe, produkty oparte o Django" },
+          { label: "Najlepsze dopasowanie", value: "Role full-stack, platformy webowe, produkty oparte o Django" },
           { label: "Styl pracy", value: "Spokojne dowożenie, mocny review, praktyczna odpowiedzialność" }
         ]
       },
       sections: {
         about: {
           tag: "O mnie",
-          heading: "Frontend, który ma sens także po wdrożeniu",
+          heading: "Full-stack, który ma sens także po wdrożeniu",
           intro:
-            "Najlepsza praca frontendowa nie kończy się na wyglądzie. Liczą się też struktura, dostępność, wydajność i to, czy rozwiązanie da się spokojnie utrzymać."
+            "Dobra praca webowa to nie tylko ekran. Liczy się struktura, dostępność, logika aplikacji i techniczne dopięcie, dzięki któremu produkt działa dobrze także w produkcji."
         },
         skills: {
           tag: "Umiejętności",
-          heading: "Narzędzia i praktyki, które pomagają mi dowozić porządną pracę",
+          heading: "Narzędzia i praktyki, które pomagają mi dowozić pracę end to end",
           intro:
-            "Najmocniej działam na styku jakości interfejsu, webowego delivery i technicznej odpowiedzialności za efekt końcowy."
+            "Najmocniej działam tam, gdzie jakość interfejsu spotyka się z backendowym myśleniem i odpowiedzialnym delivery."
         },
         experience: {
           tag: "Doświadczenie",
-          heading: "Praktyka w obszarze dostępności, platform webowych i projektów produktowych",
+          heading: "Praktyka w obszarze dostępności, pracy produktowej i żywych środowisk webowych",
           intro:
-            "Liczy się dla mnie nie tylko nazwa stanowiska, ale zakres pracy: interfejsy, utrzymanie, poprawki, wdrożenia i jakość na produkcji."
+            "Najważniejszy jest dla mnie zakres pracy: interfejsy, logika aplikacji, utrzymanie platform i poprawianie tego, co działa już na produkcji."
         },
         projects: {
           tag: "Projekty",
-          heading: "Wybrane realizacje pokazujące, jak projektuję, buduję i sprawdzam efekty",
+          heading: "Wybrane realizacje pokazujące, jak buduję, dopracowuję i weryfikuję efekt",
           intro:
-            "To nie są przypadkowe makiety. Każdy projekt pokazuje konkretny sposób pracy, odpowiedzialność techniczną i dbałość o detal."
+            "To nie są jednorazowe makiety. Każdy projekt pokazuje konkretny sposób pracy, odpowiedzialność techniczną i dbałość o doświadczenie użytkownika."
         },
         education: {
           tag: "Edukacja",
-          heading: "Zaplecze informatyczne wsparte praktyką projektową",
+          heading: "Zaplecze informatyczne wzmocnione praktyką projektową",
           intro:
-            "Studia dały mi dobrą bazę techniczną, ale największy rozwój przyniosło budowanie, poprawianie i dowożenie własnych projektów."
+            "Studia dały mi solidną bazę. Największy rozwój przyniosło jednak budowanie, poprawianie i ponowne dopracowywanie własnych projektów."
         },
         development: {
           tag: "Rozwój",
           heading: "Workflow, który przyspiesza pracę, ale nie oddaje kontroli nad jakością",
           intro:
-            "Cenię narzędzia i nawyki, które pomagają pracować szybciej, ale bez rezygnacji z odpowiedzialności za wynik."
+            "Lubię nowoczesne narzędzia i sprawne procesy, ale review, odpowiedzialność i jakość końcowa nadal są dla mnie kluczowe."
         },
         contact: {
           tag: "Kontakt",
           heading: "Porozmawiajmy o roli, produkcie albo konkretnej współpracy",
           intro:
-            "Sekcja kontaktu jest prosta i bezpośrednia: email, telefon, GitHub, LinkedIn i lokalizacja w jednym miejscu."
+            "Sekcja kontaktu jest prosta i praktyczna: email, telefon, GitHub, LinkedIn i lokalizacja w jednym miejscu."
         }
       },
       about: {
-        storyTitle: "Jak pracuję",
+        storyTitle: "Profil",
         story: [
-          "Najbliżej mi do frontendu, ale patrzę szerzej niż tylko na warstwę wizualną. Zależy mi na tym, jak interfejs prowadzi użytkownika, jak pracuje z realną treścią i czy po wdrożeniu nadal jest czytelny, szybki i łatwy do utrzymania.",
-          "Pracowałem przy serwisach publicznych i wewnętrznych, wdrożeniach dostępności, stronach wielojęzycznych, CMS-ach oraz aplikacjach webowych opartych o Django. Mam też praktykę przy Linuxie, Nginxie, Dockerze, SSL i produkcyjnym debugowaniu.",
-          "Korzystam z narzędzi takich jak Codex, Cursor czy Claude, gdy pomagają szybciej zrobić research, prototyp, refaktoryzację albo analizę kodu. Traktuję je jednak jako wsparcie. Finalne rozwiązanie zawsze wymaga mojej oceny, poprawek i odpowiedzialności po mojej stronie."
+          "Pracuję jako full-stack developer z mocnym wyczuciem jakości interfejsu. Zależy mi na hierarchii, rytmie, semantyce i na tym, czy produkt nadal jest czytelny i niezawodny, kiedy trafia na realne dane, treści i ograniczenia produkcyjne.",
+          "Mam doświadczenie przy publicznych i wewnętrznych platformach webowych, projektach dostępności, stronach wielojęzycznych, aplikacjach opartych o Django, utrzymaniu CMS-ów oraz wsparciu wdrożeń na Linuxie z Nginx, Dockerem, SSL i produkcyjnym debugowaniem.",
+          "Korzystam z narzędzi takich jak Codex, Cursor czy Claude wtedy, gdy realnie pomagają: w researchu, prototypowaniu, refaktoryzacji czy analizie kodu. Przyspieszają pracę, ale nie zastępują oceny. Każde ważniejsze rozwiązanie i tak wymaga ręcznego sprawdzenia, dopracowania i odpowiedzialności po mojej stronie."
         ],
         principlesTitle: "Czego można się po mnie spodziewać",
         principles: [
-          "Czytelnych interfejsów z dbałością o semantykę, spacing i flow użytkownika.",
-          "Praktycznych decyzji opartych na utrzymywalności, a nie wyłącznie na efekcie wizualnym.",
-          "Swobody w poruszaniu się między frontendem, szczegółami backendu i podstawami wdrożeń.",
+          "Czytelnych interfejsów z dbałością o semantykę, spacing i decyzje podejmowane pod realną treść.",
+          "Swobody w poruszaniu się między frontendem, szczegółami backendu i podstawami wdrożeń, gdy projekt tego wymaga.",
+          "Praktycznych decyzji technicznych opartych na utrzymywalności i użyteczności, a nie tylko na efekcie wizualnym.",
           "Świadomego użycia AI: szybko tam, gdzie pomaga, krytycznie tam, gdzie liczy się jakość."
         ]
       },
       skills: {
         groups: [
           {
-            title: "Frontend",
-            copy: "Tworzenie interfejsów, które są czytelne, responsywne, dostępne i po prostu dobrze się z nich korzysta w realnym produkcie.",
+            title: "Frontend Systems",
+            copy: "Interfejsy, które są czytelne, responsywne, dostępne i po prostu dobrze działają w realnym produkcie.",
             items: [
               "HTML5",
               "CSS3",
@@ -579,8 +579,8 @@ window.PORTFOLIO_DATA = {
             ]
           },
           {
-            title: "Backend i API",
-            copy: "Logika aplikacji i integracje, które wspierają produktowy flow zamiast go komplikować.",
+            title: "Backend i integracje",
+            copy: "Logika aplikacji, API i spięte flow, które wspierają produkt zamiast go komplikować.",
             items: [
               "Python",
               "Django",
@@ -594,7 +594,7 @@ window.PORTFOLIO_DATA = {
           },
           {
             title: "Delivery i infrastruktura",
-            copy: "Wystarczająco mocne zaplecze systemowe, żeby wdrażać, diagnozować problemy i wspierać mniejsze oraz średnie stacki webowe.",
+            copy: "Wystarczająco mocne zaplecze systemowe, żeby wdrażać, diagnozować problemy i wspierać webowe stacki z większą pewnością.",
             items: [
               "Git",
               "GitHub",
@@ -632,7 +632,7 @@ window.PORTFOLIO_DATA = {
             summary:
               "Praca łącząca dostępność, utrzymanie platform webowych i wsparcie środowisk produkcyjnych dla usług publicznych oraz wewnętrznych.",
             bullets: [
-              "Rozwijałem i utrzymywałem serwisy oparte o Django oraz narzędzia wewnętrzne z uwzględnieniem wymagań dostępności i potrzeb instytucji.",
+              "Rozwijałem i utrzymywałem serwisy oparte o Django oraz narzędzia wewnętrzne z uwzględnieniem wymagań dostępności, użyteczności i potrzeb instytucji.",
               "Wspierałem środowiska Linux i Nginx, konfigurację SSL/TLS oraz spokojny przepływ od developmentu do produkcji.",
               "Zajmowałem się wielojęzycznością, utrzymaniem CMS-ów, wsparciem wdrożeń, dokumentacją i codzienną niezawodnością systemów."
             ]
@@ -640,7 +640,7 @@ window.PORTFOLIO_DATA = {
           {
             period: "2024 - obecnie",
             type: "Praca niezależna",
-            role: "Twórca produktów webowych i freelancer techniczny",
+            role: "Twórca full-stackowych produktów webowych",
             company: "Samodzielne projekty w standardzie komercyjnym",
             summary:
               "Buduję praktyczne produkty webowe end to end, łącząc frontend, logikę backendową, płatności i wdrożenie.",
@@ -654,7 +654,7 @@ window.PORTFOLIO_DATA = {
             period: "2023 - obecnie",
             type: "Praktyka projektowa",
             role: "Realizacja projektów frontend i full-stack",
-            company: "Portfolio, studia i praca nad własnym warsztatem",
+            company: "Portfolio, studia i rozwój własnego warsztatu",
             summary:
               "Własne projekty traktuję jak poligon do budowania realnych nawyków delivery, a nie jednorazowe demo.",
             bullets: [
@@ -674,16 +674,16 @@ window.PORTFOLIO_DATA = {
         filters: ["Django", "Python", "JavaScript", "Angular", "Java", "Docker", "Accessibility", "Stripe"],
         items: [
           {
-            type: "Platforma live",
+            type: "Produkt live",
             title: "ShowTheCash",
             summary:
-              "Platforma webowa związana z płatnościami, z dopracowaną ścieżką użytkownika, integracją Stripe i wdrożeniem przygotowanym do stabilnego działania na co dzień.",
+              "Produkt webowy związany z płatnościami, z dopracowaną ścieżką użytkownika, integracją Stripe i wdrożeniem przygotowanym do stabilnej pracy na co dzień.",
             stack: ["Django", "JavaScript", "Stripe", "Docker", "Nginx", "VPS"],
             filters: ["Django", "Python", "JavaScript", "Docker", "Stripe"],
             features: [
               "Flow checkoutu spięty z webhookową weryfikacją płatności",
               "Konteneryzowane wdrożenie za Nginxem z SSL i hostingiem VPS",
-              "Spokojny frontend nastawiony na czytelność procesu, a nie wizualny hałas"
+              "Frontend ustawiony na czytelność, zaufanie i spokojniejszą ścieżkę konwersji"
             ],
             repoUrl: "https://github.com/Macstenc/showthecash-platform",
             liveUrl: "https://showthecash.com/",
@@ -734,7 +734,7 @@ window.PORTFOLIO_DATA = {
             features: [
               "Generowanie short linków z prostym przepływem zarządzania",
               "Przetwarzanie i eksport treści inspirowane pracą nad crawlerami",
-              "Czytelne, administracyjne UI dla zadań użytkowych i utrzymaniowych"
+              "Czytelne, użytkowe UI dla zadań administracyjnych i utrzymaniowych"
             ],
             repoUrl: "https://github.com/Macstenc/content-toolkit-url-shortener",
             liveUrl: "",
@@ -766,12 +766,12 @@ window.PORTFOLIO_DATA = {
           {
             title: "Dostępność i jakość interfejsu",
             description:
-              "Zwracam uwagę na semantykę, hierarchię, kontrast i taki poziom dopracowania interakcji, który zostaje czytelny także przy realnym użyciu."
+              "Zwracam uwagę na semantykę, hierarchię, kontrast i taki poziom dopracowania interakcji, który pozostaje czytelny także przy realnym użyciu."
           },
           {
-            title: "Praktyka delivery i wdrożeń",
+            title: "Myślenie backendowe i logika produktu",
             description:
-              "Linux, Docker, Nginx, SSL i codzienne wsparcie produkcji nauczyły mnie patrzeć szerzej niż tylko na sam kod w edytorze."
+              "Lubię rozumieć, jak decyzje frontendowe łączą się ze stanem aplikacji, API, logiką biznesową i utrzymywalną strukturą po stronie backendu."
           },
           {
             title: "AI-assisted development workflow",
@@ -779,9 +779,9 @@ window.PORTFOLIO_DATA = {
               "Korzystam z narzędzi takich jak Codex, Cursor i Claude, żeby przyspieszyć research, prototypowanie, refaktoryzację i debugging. Finalny kod zawsze przechodzi jednak ręczne review, poprawki i weryfikację."
           },
           {
-            title: "Samodzielna praca produktowa",
+            title: "Praktyka delivery i wdrożeń",
             description:
-              "Najwięcej rozwoju daje mi budowanie projektów end to end i wracanie do nich po to, żeby poprawić strukturę, UX, wydajność oraz decyzje techniczne."
+              "Linux, Docker, Nginx, SSL i codzienne wsparcie produkcji nauczyły mnie patrzeć szerzej niż tylko na sam kod w edytorze."
           }
         ]
       },
@@ -826,24 +826,24 @@ window.PORTFOLIO_DATA = {
         ],
         noteTitle: "Preferowany kontakt",
         noteText: [
-          "Najszybsza droga kontaktu to bezpośredni email albo LinkedIn. Jeśli chcesz zobaczyć kod i praktyczne realizacje, najlepszym punktem odniesienia pozostaje GitHub.",
-          "Jestem otwarty na role frontendowe i pracę przy produktach webowych, a także na wybrane współprace projektowe i freelancerskie."
+          "Najszybsza droga kontaktu to bezpośredni email albo LinkedIn. Jeśli chcesz zobaczyć praktyczną pracę i próbki kodu, najlepszym punktem odniesienia pozostaje GitHub.",
+          "Jestem otwarty na role full-stack, pracę w zespołach produktowych, platformy webowe oraz wybrane współprace projektowe."
         ],
         availabilityTitle: "Dostępność",
         availabilityText: [
           "Na co dzień działam z Lublina. Jestem otwarty na remote, hybrydę i wybrane opcje on-site.",
-          "Najlepsze dopasowanie to frontend delivery, platformy webowe, interfejsy z myśleniem o dostępności oraz produkty oparte o Django."
+          "Najlepsze dopasowanie to full-stack web delivery, produkty oparte o Django, interfejsy z myśleniem o dostępności i praktyczny rozwój produktów webowych."
         ]
       },
       footer: {
         summary:
-          "Portfolio frontendowe nastawione na czytelność, jakość dowożenia i techniczną odpowiedzialność za efekt końcowy.",
+          "Portfolio full-stack nastawione na czytelność, jakość delivery i odpowiedzialność za efekt końcowy.",
         quickLinksTitle: "Szybkie linki",
         resourcesTitle: "Linki",
         resources: [
           { label: "GitHub", href: "https://github.com/Macstenc" },
           { label: "LinkedIn", href: "https://www.linkedin.com/in/maciej-stencel-587a88401/" },
-          { label: "Strona", href: "https://showthecash.com/about" },
+          { label: "ShowTheCash", href: "https://showthecash.com/about" },
           { label: "Pobierz CV", href: "assets/files/maciej-stencel-cv.pdf" }
         ],
         copy: "Wszelkie prawa zastrzeżone."
