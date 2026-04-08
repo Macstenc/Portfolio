@@ -43,7 +43,7 @@ window.PORTFOLIO_DATA = {
         themes: {
           light: "Light",
           dark: "Dark",
-          retro: "Retro"
+          retro: "Ember"
         },
         nav: [
           { id: "about", label: "About" },
@@ -129,9 +129,9 @@ window.PORTFOLIO_DATA = {
         },
         contact: {
           tag: "Contact",
-          heading: "Let’s talk about roles, products, or useful work",
+          heading: "Let's talk about roles, products, or useful work",
           intro:
-            "This site stays frontend-only. The form opens a prepared email draft instead of pretending to send data to a backend."
+            "The contact section stays simple and direct: email, phone, GitHub, LinkedIn, and location in one place."
         }
       },
       about: {
@@ -379,7 +379,7 @@ window.PORTFOLIO_DATA = {
             kind: "email",
             label: "Email",
             value: "macstenc@gmail.com",
-            href: "mailto:macstenc@gmail.com",
+            href: "",
             description: "The best option for job opportunities, project conversations, and direct contact."
           },
           {
@@ -399,8 +399,8 @@ window.PORTFOLIO_DATA = {
           {
             kind: "linkedin",
             label: "LinkedIn",
-            value: "linkedin.com/in/maciej-stencel",
-            href: "https://www.linkedin.com/in/maciej-stencel/",
+            value: "linkedin.com/in/maciej-stencel-587a88401",
+            href: "https://www.linkedin.com/in/maciej-stencel-587a88401/",
             description: "Professional profile, networking, and recruitment contact."
           },
           {
@@ -411,24 +411,16 @@ window.PORTFOLIO_DATA = {
             description: "Open to remote, hybrid, and selected on-site opportunities."
           }
         ],
-        noteTitle: "Frontend-only contact flow",
+        noteTitle: "Preferred contact",
         noteText: [
-          "This form does not pretend to submit data to a backend. It simply opens a clean email draft in your default mail app.",
-          "If you prefer, you can also contact me directly through email, GitHub, LinkedIn, or my live product website."
+          "The fastest route is direct email or LinkedIn. For code and practical work samples, GitHub is the best reference point.",
+          "I am open to frontend and web product roles, as well as selected freelance or project-based collaborations."
         ],
-        formTitle: "Start the conversation",
-        formIntro: "Share the role, project, or challenge and I will prepare the message in your mail app.",
-        fields: [
-          { name: "name", label: "Your name", type: "text", placeholder: "Jane Doe", required: true, autocomplete: "name" },
-          { name: "email", label: "Your email", type: "email", placeholder: "jane@company.com", required: true, autocomplete: "email" },
-          { name: "subject", label: "Subject", type: "text", placeholder: "Frontend role at Example Studio", required: true, autocomplete: "organization-title" },
-          { name: "message", label: "Message", type: "textarea", placeholder: "Tell me about the role, project, or collaboration opportunity.", required: true, autocomplete: "off" }
-        ],
-        submitLabel: "Open email draft",
-        statusMessage:
-          "Your mail client should open with a prefilled draft. If nothing happens, email me directly at macstenc@gmail.com.",
-        subjectPrefix: "Portfolio contact",
-        bodyIntro: "Hello Maciej,"
+        availabilityTitle: "Availability",
+        availabilityText: [
+          "Based in Lublin, Poland. Open to remote, hybrid, and selected on-site opportunities.",
+          "The strongest fit is frontend delivery, web platforms, accessibility-aware UI, and Django-backed products."
+        ]
       },
       footer: {
         summary:
@@ -437,7 +429,7 @@ window.PORTFOLIO_DATA = {
         resourcesTitle: "Links",
         resources: [
           { label: "GitHub", href: "https://github.com/Macstenc" },
-          { label: "LinkedIn", href: "https://www.linkedin.com/in/maciej-stencel/" },
+          { label: "LinkedIn", href: "https://www.linkedin.com/in/maciej-stencel-587a88401/" },
           { label: "Website", href: "https://showthecash.com/about" },
           { label: "Download CV", href: "assets/files/maciej-stencel-cv.pdf" }
         ],
@@ -464,7 +456,7 @@ window.PORTFOLIO_DATA = {
         themes: {
           light: "Jasny",
           dark: "Ciemny",
-          retro: "Retro"
+          retro: "Żar"
         },
         nav: [
           { id: "about", label: "O mnie" },
@@ -552,7 +544,7 @@ window.PORTFOLIO_DATA = {
           tag: "Kontakt",
           heading: "Porozmawiajmy o roli, produkcie albo konkretnej współpracy",
           intro:
-            "To portfolio jest w pełni frontendowe. Formularz nie udaje backendu, tylko otwiera przygotowany draft wiadomości."
+            "Sekcja kontaktu jest prosta i bezpośrednia: email, telefon, GitHub, LinkedIn i lokalizacja w jednym miejscu."
         }
       },
       about: {
@@ -800,7 +792,7 @@ window.PORTFOLIO_DATA = {
             kind: "email",
             label: "Email",
             value: "macstenc@gmail.com",
-            href: "mailto:macstenc@gmail.com",
+            href: "",
             description: "Najlepsza opcja przy rekrutacji, projektach i bezpośrednim kontakcie."
           },
           {
@@ -820,8 +812,8 @@ window.PORTFOLIO_DATA = {
           {
             kind: "linkedin",
             label: "LinkedIn",
-            value: "linkedin.com/in/maciej-stencel",
-            href: "https://www.linkedin.com/in/maciej-stencel/",
+            value: "linkedin.com/in/maciej-stencel-587a88401",
+            href: "https://www.linkedin.com/in/maciej-stencel-587a88401/",
             description: "Profil zawodowy, networking i kontakt rekrutacyjny."
           },
           {
@@ -832,24 +824,16 @@ window.PORTFOLIO_DATA = {
             description: "Otwartość na remote, hybrydę i wybrane opcje on-site."
           }
         ],
-        noteTitle: "Kontakt bez backendu",
+        noteTitle: "Preferowany kontakt",
         noteText: [
-          "Ten formularz nie udaje wysyłki do backendu. Po prostu otwiera czytelny draft wiadomości w Twojej domyślnej aplikacji pocztowej.",
-          "Jeśli wolisz, możesz też napisać do mnie bezpośrednio przez email, GitHub, LinkedIn albo stronę projektu live."
+          "Najszybsza droga kontaktu to bezpośredni email albo LinkedIn. Jeśli chcesz zobaczyć kod i praktyczne realizacje, najlepszym punktem odniesienia pozostaje GitHub.",
+          "Jestem otwarty na role frontendowe i pracę przy produktach webowych, a także na wybrane współprace projektowe i freelancerskie."
         ],
-        formTitle: "Zacznij rozmowę",
-        formIntro: "Opisz rolę, projekt lub problem, a strona przygotuje gotową wiadomość w Twojej aplikacji pocztowej.",
-        fields: [
-          { name: "name", label: "Twoje imię", type: "text", placeholder: "Jan Kowalski", required: true, autocomplete: "name" },
-          { name: "email", label: "Twój email", type: "email", placeholder: "jan@firma.pl", required: true, autocomplete: "email" },
-          { name: "subject", label: "Temat", type: "text", placeholder: "Rola frontend developera w Example Studio", required: true, autocomplete: "organization-title" },
-          { name: "message", label: "Wiadomość", type: "textarea", placeholder: "Napisz kilka zdań o roli, projekcie albo możliwości współpracy.", required: true, autocomplete: "off" }
-        ],
-        submitLabel: "Otwórz draft emaila",
-        statusMessage:
-          "Powinna otworzyć się Twoja aplikacja pocztowa z uzupełnioną wiadomością. Jeśli nic się nie wydarzy, napisz bezpośrednio na macstenc@gmail.com.",
-        subjectPrefix: "Kontakt z portfolio",
-        bodyIntro: "Cześć Maciej,"
+        availabilityTitle: "Dostępność",
+        availabilityText: [
+          "Na co dzień działam z Lublina. Jestem otwarty na remote, hybrydę i wybrane opcje on-site.",
+          "Najlepsze dopasowanie to frontend delivery, platformy webowe, interfejsy z myśleniem o dostępności oraz produkty oparte o Django."
+        ]
       },
       footer: {
         summary:
@@ -858,7 +842,7 @@ window.PORTFOLIO_DATA = {
         resourcesTitle: "Linki",
         resources: [
           { label: "GitHub", href: "https://github.com/Macstenc" },
-          { label: "LinkedIn", href: "https://www.linkedin.com/in/maciej-stencel/" },
+          { label: "LinkedIn", href: "https://www.linkedin.com/in/maciej-stencel-587a88401/" },
           { label: "Strona", href: "https://showthecash.com/about" },
           { label: "Pobierz CV", href: "assets/files/maciej-stencel-cv.pdf" }
         ],

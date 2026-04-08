@@ -59,12 +59,6 @@
     dom.developmentGrid = document.getElementById("development-grid");
     dom.contactLinks = document.getElementById("contact-links");
     dom.contactNote = document.getElementById("contact-note");
-    dom.contactForm = document.getElementById("contact-form");
-    dom.contactFormTitle = document.getElementById("contact-form-title");
-    dom.contactFormIntro = document.getElementById("contact-form-intro");
-    dom.contactFormFields = document.getElementById("contact-form-fields");
-    dom.contactSubmit = document.getElementById("contact-submit");
-    dom.formStatus = document.getElementById("form-status");
     dom.footerName = document.getElementById("footer-name");
     dom.footerRole = document.getElementById("footer-role");
     dom.footerSummary = document.getElementById("footer-summary");
@@ -82,7 +76,6 @@
     dom.themeSwitch.addEventListener("keydown", handleThemeKeydown);
     dom.langSwitch.addEventListener("click", handleLanguageClick);
     dom.projectFilters.addEventListener("click", handleFilterClick);
-    dom.contactForm.addEventListener("submit", handleContactSubmit);
     dom.siteNav.addEventListener("click", handleNavClick);
     dom.backToTop.addEventListener("click", scrollToTop);
     document.addEventListener("keydown", handleGlobalKeydown);
@@ -309,14 +302,12 @@
       <div class="contact-note-block">
         <h3>${page.contact.noteTitle}</h3>
         ${page.contact.noteText.map((item) => `<p class="card-copy">${item}</p>`).join("")}
+        <div class="contact-copy-group">
+          <h3>${page.contact.availabilityTitle}</h3>
+          ${page.contact.availabilityText.map((item) => `<p class="card-copy">${item}</p>`).join("")}
+        </div>
       </div>
     `;
-
-    dom.contactFormTitle.textContent = page.contact.formTitle;
-    dom.contactFormIntro.textContent = page.contact.formIntro;
-    dom.contactFormFields.innerHTML = page.contact.fields.map((field) => renderFormField(field)).join("");
-    dom.contactSubmit.textContent = page.contact.submitLabel;
-    dom.formStatus.textContent = "";
   }
 
   function renderFooter(page) {
@@ -358,20 +349,6 @@
     }
 
     return `<article class="contact-card">${inner}</article>`;
-  }
-
-  function renderFormField(field) {
-    const required = field.required ? "required" : "";
-    const type = field.type === "textarea"
-      ? `<textarea id="field-${field.name}" name="${field.name}" placeholder="${field.placeholder}" autocomplete="${field.autocomplete}" ${required}></textarea>`
-      : `<input id="field-${field.name}" name="${field.name}" type="${field.type}" placeholder="${field.placeholder}" autocomplete="${field.autocomplete}" ${required}>`;
-
-    return `
-      <div class="form-field">
-        <label for="field-${field.name}">${field.label}</label>
-        ${type}
-      </div>
-    `;
   }
 
   function handleThemeClick(event) {
@@ -430,32 +407,6 @@
     state.filter = button.dataset.filter;
     renderProjects(getPage());
     setupRevealObserver();
-  }
-
-  function handleContactSubmit(event) {
-    event.preventDefault();
-
-    const page = getPage();
-    const formData = new FormData(dom.contactForm);
-    const email = page.contact.cards.find((item) => item.kind === "email");
-    const recipient = email ? email.value : "macstenc@gmail.com";
-    const name = formData.get("name");
-    const senderEmail = formData.get("email");
-    const subject = formData.get("subject");
-    const message = formData.get("message");
-    const fullSubject = `${page.contact.subjectPrefix}: ${subject}`;
-    const bodyLines = [
-      page.contact.bodyIntro,
-      "",
-      message,
-      "",
-      state.lang === "pl" ? "Pozdrawiam," : "Best regards,",
-      `${name}`,
-      `${senderEmail}`
-    ];
-
-    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(fullSubject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
-    dom.formStatus.textContent = page.contact.statusMessage;
   }
 
   function handleNavClick(event) {
