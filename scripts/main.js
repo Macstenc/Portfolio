@@ -1,7 +1,7 @@
 (function () {
   const app = window.PORTFOLIO_DATA;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const desktopNavBreakpoint = 1100;
+  const desktopNavBreakpoint = 1320;
   const state = {
     lang: getInitialLanguage(),
     theme: getInitialTheme(),
