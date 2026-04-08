@@ -1,7 +1,7 @@
 (function () {
   const app = window.PORTFOLIO_DATA;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const desktopNavBreakpoint = 1320;
+  const desktopNavBreakpoint = 1480;
   const state = {
     lang: getInitialLanguage(),
     theme: getInitialTheme(),
@@ -26,6 +26,9 @@
   }
 
   function cacheDom() {
+    dom.siteHeader = document.querySelector(".site-header");
+    dom.headerInner = document.querySelector(".header-inner");
+    dom.headerTools = document.querySelector(".header-tools");
     dom.siteNav = document.getElementById("site-nav");
     dom.navToggle = document.getElementById("nav-toggle");
     dom.navList = document.getElementById("primary-menu");
@@ -104,6 +107,7 @@
     renderFooter(page);
     updateLanguageButtons();
     updateThemeButtons(page);
+    syncHeaderLayout();
     updateNavToggleLabel(page);
     updateBackToTop(page);
     setupProfileImage(page);
@@ -489,9 +493,7 @@
   }
 
   function handleResize() {
-    if (window.innerWidth > desktopNavBreakpoint) {
-      closeMenu();
-    }
+    syncHeaderLayout();
   }
 
   function handleScroll() {
@@ -501,6 +503,30 @@
   function updateNavToggleLabel(page) {
     const isOpen = dom.siteNav.classList.contains("is-open");
     dom.navToggle.setAttribute("aria-label", isOpen ? page.header.closeMenuLabel : page.header.menuLabel);
+  }
+
+  function syncHeaderLayout() {
+    if (!dom.siteHeader || !dom.headerInner) {
+      return;
+    }
+
+    dom.siteHeader.classList.remove("is-compact");
+
+    const forceCompact = window.innerWidth <= desktopNavBreakpoint;
+    const hasOverflow = dom.headerInner.scrollWidth > dom.headerInner.clientWidth + 8;
+    const shouldCompact = forceCompact || hasOverflow;
+
+    dom.siteHeader.classList.toggle("is-compact", shouldCompact);
+
+    if (!shouldCompact) {
+      closeMenu();
+      return;
+    }
+
+    if (!dom.siteNav.classList.contains("is-open")) {
+      dom.navToggle.setAttribute("aria-expanded", "false");
+      updateNavToggleLabel(getPage());
+    }
   }
 
   function applyTheme(theme, options = {}) {
@@ -532,13 +558,22 @@
   }
 
   function setupProfileImage(page) {
-    dom.profileImage.src = app.settings.profileImage;
-    dom.profileImage.alt = page.hero.profileAlt;
-    dom.profileImage.onerror = function () {
-      dom.profileImage.onerror = null;
+    dom.profileImage.src = app.settings.profileFallback;
+    dom.profileImage.alt = page.hero.profileFallbackAlt;
+
+    const previewImage = new Image();
+
+    previewImage.onload = function () {
+      dom.profileImage.src = app.settings.profileImage;
+      dom.profileImage.alt = page.hero.profileAlt;
+    };
+
+    previewImage.onerror = function () {
       dom.profileImage.src = app.settings.profileFallback;
       dom.profileImage.alt = page.hero.profileFallbackAlt;
     };
+
+    previewImage.src = app.settings.profileImage;
   }
 
   function applySeo(page) {

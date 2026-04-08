@@ -166,6 +166,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: clip;
   font-family: "Manrope", "Segoe UI", sans-serif;
   color: var(--text);
   background:
@@ -311,7 +312,7 @@ figure {
 }
 
 .section-heading > div {
-  max-width: min(100%, 58rem);
+  max-width: min(100%, 66rem);
 }
 
 .section-tag,
@@ -347,8 +348,8 @@ figure {
 }
 
 .section-heading h2 {
-  max-width: 22ch;
-  font-size: clamp(2.3rem, 4.7vw, 4rem);
+  max-width: 26ch;
+  font-size: clamp(2.35rem, 4.4vw, 4.1rem);
   line-height: 1.04;
   text-wrap: balance;
 }
@@ -365,7 +366,7 @@ figure {
 }
 
 .section-intro {
-  max-width: 50rem;
+  max-width: 58rem;
   font-size: clamp(1rem, 1.35vw, 1.08rem);
   line-height: 1.8;
   text-wrap: pretty;
@@ -530,6 +531,15 @@ figure {
   min-width: 0;
 }
 
+.site-header.is-compact .header-tools {
+  grid-template-columns: auto auto;
+}
+
+.site-header.is-compact .site-nav {
+  justify-content: flex-end;
+  flex: 0 0 auto;
+}
+
 .nav-list {
   display: flex;
   align-items: center;
@@ -589,6 +599,10 @@ figure {
   cursor: pointer;
 }
 
+.site-header.is-compact .nav-toggle {
+  display: inline-flex;
+}
+
 .nav-toggle span {
   width: 1.1rem;
   height: 2px;
@@ -607,6 +621,32 @@ figure {
 
 .site-nav.is-open .nav-toggle span:nth-child(3) {
   transform: translateY(-0.38rem) rotate(-45deg);
+}
+
+.site-header.is-compact .nav-list {
+  position: absolute;
+  top: calc(100% + 0.8rem);
+  right: 0;
+  display: none;
+  width: min(22rem, calc(100vw - 1.6rem));
+  padding: 0.85rem;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.25rem;
+  border: 1px solid var(--border);
+  border-radius: 1.35rem;
+  background: var(--surface-panel);
+  box-shadow: var(--shadow-medium);
+  z-index: 25;
+}
+
+.site-header.is-compact .site-nav.is-open .nav-list {
+  display: flex;
+}
+
+.site-header.is-compact .nav-list a {
+  width: 100%;
+  justify-content: flex-start;
 }
 
 .preference-switches {
@@ -784,7 +824,7 @@ html[data-theme="eclipse"] .theme-switch::before {
 
 .hero-grid {
   display: grid;
-  align-items: center;
+  align-items: start;
   gap: clamp(2rem, 4vw, 4rem);
   grid-template-columns: minmax(0, 1.12fr) minmax(22rem, 0.88fr);
 }
@@ -991,6 +1031,7 @@ html[data-theme="eclipse"] .theme-switch::before {
 .hero-media {
   justify-self: end;
   width: min(100%, 31.5rem);
+  margin-top: 1rem;
 }
 
 .hero-media.reveal.is-visible {
@@ -1360,8 +1401,9 @@ html[data-theme="eclipse"] .theme-switch::before {
 }
 
 .contact-methods {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 0.95rem;
+  max-width: 58rem;
 }
 
 .contact-note-header {
@@ -1372,8 +1414,9 @@ html[data-theme="eclipse"] .theme-switch::before {
 
 .contact-note-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.1rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  max-width: 54rem;
 }
 
 .contact-subtitle {
@@ -1638,40 +1681,6 @@ html[data-theme="eclipse"] .theme-switch::before {
   .hero-stats {
     grid-template-columns: 1fr;
   }
-
-  .nav-toggle {
-    display: inline-flex;
-  }
-
-  .site-nav {
-    justify-content: flex-end;
-    flex: 0 0 auto;
-  }
-
-  .nav-list {
-    position: absolute;
-    top: calc(100% + 0.8rem);
-    right: 0;
-    display: none;
-    width: min(22rem, calc(100vw - 1.6rem));
-    padding: 0.85rem;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.25rem;
-    border: 1px solid var(--border);
-    border-radius: 1.35rem;
-    background: var(--surface-panel);
-    box-shadow: var(--shadow-medium);
-  }
-
-  .site-nav.is-open .nav-list {
-    display: flex;
-  }
-
-  .nav-list a {
-    width: 100%;
-    justify-content: flex-start;
-  }
 }
 
 @media (max-width: 820px) {
@@ -1710,6 +1719,10 @@ html[data-theme="eclipse"] .theme-switch::before {
     max-width: 10ch;
   }
 
+  .hero-media {
+    margin-top: 0;
+  }
+
   .project-actions,
   .hero-actions {
     flex-direction: column;
@@ -1736,7 +1749,7 @@ html[data-theme="eclipse"] .theme-switch::before {
 
 @media (max-width: 620px) {
   .section-heading h2 {
-    max-width: 14ch;
+    max-width: 16ch;
   }
 
   .theme-switch {
