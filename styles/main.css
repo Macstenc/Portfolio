@@ -321,39 +321,7 @@ figure {
   padding: var(--section-space) 0;
 }
 
-.section--featured {
-  padding: calc(var(--section-space) * 1.2) 0;
-}
-
-.section--featured::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--surface-panel) 40%, transparent),
-    color-mix(in srgb, var(--surface-panel) 18%, transparent)
-  );
-  opacity: 0.55;
-  pointer-events: none;
-}
-
-.section--featured > .container {
-  position: relative;
-  z-index: 1;
-}
-
-.section--editorial .section-heading {
-  margin-bottom: clamp(2.2rem, 3.4vw, 3rem);
-}
-
-.section--compact .section-heading {
-  margin-bottom: clamp(1.2rem, 2.2vw, 1.8rem);
-}
-
-.section--compact .cards-grid {
-  gap: clamp(0.9rem, 1.6vw, 1.2rem);
-}
+/* Section variants removed to restore consistent rhythm */
 
 .hero {
   position: relative;
