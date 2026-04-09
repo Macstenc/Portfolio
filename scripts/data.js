@@ -158,6 +158,7 @@ window.PORTFOLIO_DATA = {
               "HTML5",
               "CSS3",
               "JavaScript",
+              "Angular",
               "TypeScript",
               "Responsive layout",
               "Accessible UI",
@@ -295,6 +296,23 @@ window.PORTFOLIO_DATA = {
             imageAlt: "Welcome Center project preview"
           },
           {
+            type: "Live platform",
+            title: "CWN Support Center",
+            summary:
+              "A public-facing support center website built around clear navigation, accessible content structure, and a calmer information flow for students and candidates.",
+            stack: ["JavaScript", "Accessibility", "CMS", "Responsive UI"],
+            filters: ["JavaScript", "Accessibility"],
+            features: [
+              "Public-facing information architecture for support services and everyday user journeys",
+              "Accessible content presentation with clear sectioning and practical calls to action",
+              "Homepage and navigation refined to feel clearer, calmer, and easier to browse"
+            ],
+            repoUrl: "",
+            liveUrl: "https://cwn.uws.edu.pl/",
+            image: "assets/img/project-cwn.svg",
+            imageAlt: "CWN support center website preview"
+          },
+          {
             type: "Full-stack concept",
             title: "Intelligent Ecommerce Platform",
             summary:
@@ -344,7 +362,7 @@ window.PORTFOLIO_DATA = {
             repoUrl: "https://github.com/Macstenc/DiscordBot",
             liveUrl: "",
             image: "assets/img/project-discord-bot.svg",
-            imageAlt: "DiscordBot project preview with Discord branding"
+            imageAlt: "DiscordBot project preview"
           }
         ]
       },
@@ -589,6 +607,7 @@ window.PORTFOLIO_DATA = {
               "HTML5",
               "CSS3",
               "JavaScript",
+              "Angular",
               "TypeScript",
               "Responsive layout",
               "Accessible UI",
@@ -726,6 +745,23 @@ window.PORTFOLIO_DATA = {
             imageAlt: "Podgląd projektu Welcome Center"
           },
           {
+            type: "Platforma live",
+            title: "CWN Support Center",
+            summary:
+              "Publiczna strona centrum wsparcia zbudowana wokół czytelnej nawigacji, dostępnej struktury treści i spokojniejszego przepływu informacji dla studentów oraz kandydatów.",
+            stack: ["JavaScript", "Accessibility", "CMS", "Responsive UI"],
+            filters: ["JavaScript", "Accessibility"],
+            features: [
+              "Publiczna architektura informacji dla usług wsparcia i codziennych ścieżek użytkownika",
+              "Dostępna prezentacja treści z czytelnym podziałem sekcji i praktycznymi CTA",
+              "Strona główna i nawigacja dopracowane tak, by były spokojniejsze i łatwiejsze w użyciu"
+            ],
+            repoUrl: "",
+            liveUrl: "https://cwn.uws.edu.pl/",
+            image: "assets/img/project-cwn.svg",
+            imageAlt: "Podgląd strony centrum wsparcia CWN"
+          },
+          {
             type: "Koncepcja full-stack",
             title: "Intelligent Ecommerce Platform",
             summary:
@@ -775,7 +811,7 @@ window.PORTFOLIO_DATA = {
             repoUrl: "https://github.com/Macstenc/DiscordBot",
             liveUrl: "",
             image: "assets/img/project-discord-bot.svg",
-            imageAlt: "Podgląd projektu DiscordBot z brandingiem Discorda"
+            imageAlt: "Podgląd projektu DiscordBot"
           }
         ]
       },
