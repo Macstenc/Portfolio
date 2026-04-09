@@ -7,7 +7,7 @@ window.PORTFOLIO_DATA = {
     themeStorageKey: "portfolio-theme",
     defaultTheme: "dark",
     siteUrl: "https://macstenc.github.io/Portfolio/",
-    profileImage: "assets/img/profile.jpg",
+    profileImage: "assets/img/profile.png",
     profileFallback: "assets/img/profile-placeholder.svg",
     cvFile: "assets/files/maciej-stencel-cv.pdf",
     themes: {
@@ -258,7 +258,7 @@ window.PORTFOLIO_DATA = {
         repositoryLabel: "Repository",
         liveLabel: "Live demo",
         codeOnlyLabel: "Code only",
-        filters: ["Django", "Python", "JavaScript", "Angular", "Java", "Docker", "Accessibility", "Stripe"],
+        filters: ["Django", "Python", "JavaScript", "Angular", "Java", "Docker", "Accessibility", "Stripe", "Node.js"],
         items: [
           {
             type: "Live product",
@@ -272,33 +272,33 @@ window.PORTFOLIO_DATA = {
               "Containerized deployment behind Nginx with SSL and VPS hosting",
               "Frontend tuned for clarity, trust, and a calmer conversion path"
             ],
-            repoUrl: "https://github.com/Macstenc/showthecash-platform",
+            repoUrl: "",
             liveUrl: "https://showthecash.com/",
-            image: "assets/img/project-showthecash.svg",
+            image: "assets/img/project-showthecash.JPG",
             imageAlt: "ShowTheCash project preview"
           },
           {
-            type: "Platform delivery",
-            title: "Accessible University Web Suite",
+            type: "Live platform",
+            title: "Welcome Center",
             summary:
-              "Accessibility and maintenance work across public and internal sites, with improvements to multilingual content handling and delivery quality.",
+              "A university-facing web platform focused on accessibility, multilingual content, and steady delivery improvements in a live environment.",
             stack: ["Django", "JavaScript", "Accessibility", "Docker", "CMS"],
             filters: ["Django", "Python", "JavaScript", "Docker", "Accessibility"],
             features: [
-              "Accessibility-minded implementation and support in a public-sector style environment",
-              "Multilingual content handling and iterative improvements across existing platforms",
-              "Maintenance work spanning CMS systems, Linux hosting, and deployment support"
+              "Accessibility-minded implementation in a public-facing academic environment",
+              "Multilingual content handling and iterative improvements on a live platform",
+              "Ongoing delivery support across CMS tooling, Linux hosting, and deployments"
             ],
-            repoUrl: "https://github.com/Macstenc/accessible-web-suite",
+            repoUrl: "",
             liveUrl: "https://welcome.uws.edu.pl/pl/",
-            image: "assets/img/project-accessible-suite.svg",
-            imageAlt: "Accessible university project preview"
+            image: "assets/img/project-accessible-suite.JPG",
+            imageAlt: "Welcome Center project preview"
           },
           {
             type: "Full-stack concept",
-            title: "Smart Commerce Recommender",
+            title: "Intelligent Ecommerce Platform",
             summary:
-              "A commerce-oriented application concept built to exercise recommendation logic, product flows, and full-stack integration rather than just static UI work.",
+              "A full-stack commerce project built around recommendation logic, product flow decisions, and integration between frontend, backend, and data handling.",
             stack: ["Angular", "Java", "Spring Boot", "MongoDB", "Docker"],
             filters: ["Angular", "Java", "Docker"],
             features: [
@@ -306,27 +306,45 @@ window.PORTFOLIO_DATA = {
               "REST API, authentication, order handling, and container-based local setup",
               "Interface work treated as product design practice, not a throwaway exercise"
             ],
-            repoUrl: "https://github.com/Macstenc/smart-commerce-engine",
+            repoUrl: "https://github.com/Macstenc/intelligent-ecommerce-platform",
             liveUrl: "",
             image: "assets/img/project-commerce-engine.svg",
-            imageAlt: "Smart commerce recommender project preview"
+            imageAlt: "Intelligent ecommerce platform project preview"
           },
           {
             type: "Utility tooling",
             title: "Link Shortener & Content Toolkit",
             summary:
-              "A compact product-style toolset built around short links, structured content handling, and admin-friendly workflows.",
+              "An internal university utility focused on short links, content workflows, and admin-friendly handling of recurring operational tasks.",
             stack: ["Python", "Django", "JavaScript", "PostgreSQL"],
             filters: ["Django", "Python", "JavaScript"],
             features: [
               "Custom short-link generation with straightforward management workflows",
-              "Structured content extraction and export patterns inspired by crawler work",
-              "Clear, utility-focused UI for everyday admin and maintenance tasks"
+              "Structured content handling and export patterns for internal operational use",
+              "Built as an internal university project rather than a public-facing product"
             ],
-            repoUrl: "https://github.com/Macstenc/content-toolkit-url-shortener",
+            repoUrl: "",
             liveUrl: "",
             image: "assets/img/project-link-toolkit.svg",
-            imageAlt: "Link shortener and toolkit project preview"
+            imageAlt: "Link shortener and internal content toolkit preview",
+            hideActions: true
+          },
+          {
+            type: "Community automation",
+            title: "DiscordBot",
+            summary:
+              "A multifunctional Discord bot for music, community automation, AI-assisted mixtapes, queue management, and server activity features.",
+            stack: ["Node.js", "JavaScript", "Discord.js", "YouTube", "Spotify", "Steam"],
+            filters: ["Node.js", "JavaScript"],
+            features: [
+              "Music playback from YouTube and Spotify with queue, loop, shuffle, and AutoDJ",
+              "AI-assisted mixtape generation, voice-channel group randomizer, and server dashboard tools",
+              "Free games and Steam deals feed combined with practical moderation-style automation"
+            ],
+            repoUrl: "https://github.com/Macstenc/DiscordBot",
+            liveUrl: "",
+            image: "assets/img/project-discord-bot.svg",
+            imageAlt: "DiscordBot project preview with Discord branding"
           }
         ]
       },
@@ -518,7 +536,7 @@ window.PORTFOLIO_DATA = {
         },
         experience: {
           tag: "Doświadczenie",
-          heading: "Praktyka w obszarze dostępności, pracy produktowej i żywych środowisk webowych",
+          heading: "Doświadczenie w dostępności, produktach webowych i pracy na żywych systemach",
           intro:
             "Najważniejszy jest dla mnie zakres pracy: interfejsy, logika aplikacji, utrzymanie platform i poprawianie tego, co działa już na produkcji."
         },
@@ -671,7 +689,7 @@ window.PORTFOLIO_DATA = {
         repositoryLabel: "Repozytorium",
         liveLabel: "Live demo",
         codeOnlyLabel: "Tylko kod",
-        filters: ["Django", "Python", "JavaScript", "Angular", "Java", "Docker", "Accessibility", "Stripe"],
+        filters: ["Django", "Python", "JavaScript", "Angular", "Java", "Docker", "Accessibility", "Stripe", "Node.js"],
         items: [
           {
             type: "Produkt live",
@@ -685,33 +703,33 @@ window.PORTFOLIO_DATA = {
               "Konteneryzowane wdrożenie za Nginxem z SSL i hostingiem VPS",
               "Frontend ustawiony na czytelność, zaufanie i spokojniejszą ścieżkę konwersji"
             ],
-            repoUrl: "https://github.com/Macstenc/showthecash-platform",
+            repoUrl: "",
             liveUrl: "https://showthecash.com/",
-            image: "assets/img/project-showthecash.svg",
+            image: "assets/img/project-showthecash.JPG",
             imageAlt: "Podgląd projektu ShowTheCash"
           },
           {
-            type: "Praca platformowa",
-            title: "Accessible University Web Suite",
+            type: "Platforma live",
+            title: "Welcome Center",
             summary:
-              "Prace nad dostępnością i utrzymaniem serwisów publicznych oraz wewnętrznych, z naciskiem na wielojęzyczność i jakość kolejnych iteracji.",
+              "Uczelniana platforma webowa rozwijana z naciskiem na dostępność, wielojęzyczność i spokojne poprawianie jakości w żywym środowisku.",
             stack: ["Django", "JavaScript", "Accessibility", "Docker", "CMS"],
             filters: ["Django", "Python", "JavaScript", "Docker", "Accessibility"],
             features: [
-              "Implementacja i wsparcie z myśleniem o dostępności w środowisku zbliżonym do sektora publicznego",
-              "Obsługa wielojęzyczności i stopniowe poprawianie istniejących platform",
-              "Utrzymanie obejmujące CMS-y, hosting Linux i wsparcie wdrożeń"
+              "Implementacja z myśleniem o dostępności w publicznie dostępnej platformie uczelnianej",
+              "Obsługa wielojęzyczności i iteracyjne poprawianie działającego serwisu",
+              "Wsparcie obejmujące CMS, hosting Linux i codzienne delivery"
             ],
-            repoUrl: "https://github.com/Macstenc/accessible-web-suite",
+            repoUrl: "",
             liveUrl: "https://welcome.uws.edu.pl/pl/",
-            image: "assets/img/project-accessible-suite.svg",
-            imageAlt: "Podgląd projektu dostępnej platformy uczelnianej"
+            image: "assets/img/project-accessible-suite.JPG",
+            imageAlt: "Podgląd projektu Welcome Center"
           },
           {
             type: "Koncepcja full-stack",
-            title: "Smart Commerce Recommender",
+            title: "Intelligent Ecommerce Platform",
             summary:
-              "Koncepcja aplikacji e-commerce rozwijana po to, żeby przećwiczyć flow produktowe, rekomendacje i integrację full-stack, a nie tylko sam wygląd UI.",
+              "Projekt e-commerce rozwijany po to, żeby połączyć rekomendacje, logikę produktową i integrację full-stack, a nie tylko sam wygląd interfejsu.",
             stack: ["Angular", "Java", "Spring Boot", "MongoDB", "Docker"],
             filters: ["Angular", "Java", "Docker"],
             features: [
@@ -719,27 +737,45 @@ window.PORTFOLIO_DATA = {
               "REST API, autoryzacja, obsługa zamówień i konteneryzowane środowisko lokalne",
               "Interfejs traktowany jako ćwiczenie z projektowania produktu, nie jednorazowa makieta"
             ],
-            repoUrl: "https://github.com/Macstenc/smart-commerce-engine",
+            repoUrl: "https://github.com/Macstenc/intelligent-ecommerce-platform",
             liveUrl: "",
             image: "assets/img/project-commerce-engine.svg",
-            imageAlt: "Podgląd projektu Smart Commerce Recommender"
+            imageAlt: "Podgląd projektu Intelligent Ecommerce Platform"
           },
           {
             type: "Utility tooling",
             title: "Link Shortener & Content Toolkit",
             summary:
-              "Niewielki zestaw narzędzi w stylu produktowym, zbudowany wokół short linków, pracy na treści i uporządkowanych workflowów administracyjnych.",
+              "Wewnętrzny projekt uczelniany zbudowany wokół short linków, pracy na treści i uporządkowanych workflowów administracyjnych.",
             stack: ["Python", "Django", "JavaScript", "PostgreSQL"],
             filters: ["Django", "Python", "JavaScript"],
             features: [
               "Generowanie short linków z prostym przepływem zarządzania",
-              "Przetwarzanie i eksport treści inspirowane pracą nad crawlerami",
+              "Przetwarzanie i eksport treści pod wewnętrzne potrzeby uczelni",
               "Czytelne, użytkowe UI dla zadań administracyjnych i utrzymaniowych"
             ],
-            repoUrl: "https://github.com/Macstenc/content-toolkit-url-shortener",
+            repoUrl: "",
             liveUrl: "",
             image: "assets/img/project-link-toolkit.svg",
-            imageAlt: "Podgląd projektu shortenera i toolkitu treści"
+            imageAlt: "Podgląd projektu shortenera i wewnętrznego toolkitu treści",
+            hideActions: true
+          },
+          {
+            type: "Automatyzacja community",
+            title: "DiscordBot",
+            summary:
+              "Wielofunkcyjny bot Discord do muzyki, automatyzacji community, AI-mixtape'ów, zarządzania kolejką i dodatkowych funkcji serwerowych.",
+            stack: ["Node.js", "JavaScript", "Discord.js", "YouTube", "Spotify", "Steam"],
+            filters: ["Node.js", "JavaScript"],
+            features: [
+              "Muzyka z YouTube i Spotify z kolejką, loopem, shuffle i AutoDJ-em",
+              "AI-mixtape'y, losowanie grup na voice i narzędzia dashboardowe dla serwera",
+              "Feed darmowych gier i promocji Steam połączony z praktyczną automatyzacją"
+            ],
+            repoUrl: "https://github.com/Macstenc/DiscordBot",
+            liveUrl: "",
+            image: "assets/img/project-discord-bot.svg",
+            imageAlt: "Podgląd projektu DiscordBot z brandingiem Discorda"
           }
         ]
       },

@@ -1,0 +1,45 @@
+<svg width="960" height="600" viewBox="0 0 960 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="60" x2="840" y2="540" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="1" stop-color="#0B1220"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="220" y1="110" x2="740" y2="490" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5865F2"/>
+      <stop offset="1" stop-color="#3342D6"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#7C86FF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#5865F2" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="600" rx="36" fill="url(#bg)"/>
+  <circle cx="160" cy="116" r="84" fill="url(#glow)" opacity="0.28"/>
+  <circle cx="818" cy="470" r="112" fill="url(#glow)" opacity="0.22"/>
+
+  <rect x="98" y="84" width="764" height="432" rx="34" fill="#0F172A" stroke="#1F2A44"/>
+  <rect x="126" y="116" width="708" height="368" rx="28" fill="url(#panel)"/>
+
+  <g opacity="0.18">
+    <rect x="166" y="162" width="274" height="20" rx="10" fill="white"/>
+    <rect x="166" y="196" width="202" height="20" rx="10" fill="white"/>
+    <rect x="166" y="230" width="246" height="20" rx="10" fill="white"/>
+  </g>
+
+  <circle cx="480" cy="280" r="104" fill="#0F172A" opacity="0.22"/>
+  <path d="M554 216C530 202 504 194 480 194C456 194 430 202 406 216L388 386C410 402 444 412 480 412C516 412 550 402 572 386L554 216Z" fill="#F8FAFC"/>
+  <path d="M442 252C424 252 410 268 410 288C410 308 424 324 442 324C460 324 474 308 474 288C474 268 460 252 442 252Z" fill="#3342D6"/>
+  <path d="M518 252C500 252 486 268 486 288C486 308 500 324 518 324C536 324 550 308 550 288C550 268 536 252 518 252Z" fill="#3342D6"/>
+  <path d="M430 350C445 365 463 372 480 372C497 372 515 365 530 350" stroke="#3342D6" stroke-width="16" stroke-linecap="round"/>
+  <path d="M416 210L392 168" stroke="#F8FAFC" stroke-width="18" stroke-linecap="round"/>
+  <path d="M544 210L568 168" stroke="#F8FAFC" stroke-width="18" stroke-linecap="round"/>
+
+  <rect x="166" y="412" width="628" height="44" rx="22" fill="#0F172A" opacity="0.24"/>
+  <text x="184" y="440" fill="#F8FAFC" font-family="Sora, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="0.14em">
+    DISCORDBOT
+  </text>
+  <text x="184" y="466" fill="#D6DCFF" font-family="Manrope, Arial, sans-serif" font-size="16">
+    music, AutoDJ, mixtapes, voice groups, game feeds, and community automation
+  </text>
+</svg>

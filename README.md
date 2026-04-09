@@ -77,7 +77,7 @@ Wybrany motyw zapisuje się w `localStorage`, więc po odświeżeniu wraca ostat
 Docelowe zdjęcie wrzuć tutaj:
 
 ```text
-assets/img/profile.jpg
+assets/img/profile.png
 ```
 
 Jeśli plik nie istnieje, strona automatycznie pokaże:
@@ -170,7 +170,7 @@ Kroki:
 
 - dane osobowe i treści: `scripts/data.js`
 - motywy i tokeny kolorów: `styles/main.css`
-- zdjęcie profilowe: `assets/img/profile.jpg`
+- zdjęcie profilowe: `assets/img/profile.png`
 - CV PDF: `assets/files/maciej-stencel-cv.pdf`
 - favicon: `assets/icons/favicon.svg`
 - lokalne uruchomienie: `python -m http.server 5500`

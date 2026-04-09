@@ -246,7 +246,10 @@
           : "";
         const liveAction = item.liveUrl
           ? `<a class="link-inline" href="${item.liveUrl}"${getAnchorAttrs(item.liveUrl)}>${page.projects.liveLabel}</a>`
-          : `<span class="action-muted">${page.projects.codeOnlyLabel}</span>`;
+          : !item.repoUrl
+            ? `<span class="action-muted">${page.projects.codeOnlyLabel}</span>`
+            : "";
+        const showActions = !item.hideActions && Boolean(repoAction || liveAction);
 
         return `
           <article class="project-card reveal">
@@ -265,10 +268,12 @@
               <ul class="project-feature-list">
                 ${item.features.map((feature) => `<li>${feature}</li>`).join("")}
               </ul>
-              <div class="project-actions">
-                ${repoAction}
-                ${liveAction}
-              </div>
+              ${showActions
+                ? `<div class="project-actions">
+                    ${repoAction}
+                    ${liveAction}
+                  </div>`
+                : ""}
             </div>
           </article>
         `;
