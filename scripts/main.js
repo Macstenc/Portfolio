@@ -195,6 +195,7 @@
         `
       )
       .join("");
+    applyBalancedGrid(dom.skillsGroups);
   }
 
   function renderExperience(page) {
@@ -273,6 +274,7 @@
         `;
       })
       .join("");
+    applyBalancedGrid(dom.projectGrid);
   }
 
   function renderEducation(page) {
@@ -288,6 +290,7 @@
         `
       )
       .join("");
+    applyBalancedGrid(dom.educationGrid);
   }
 
   function renderDevelopment(page) {
@@ -301,6 +304,26 @@
         `
       )
       .join("");
+    applyBalancedGrid(dom.developmentGrid);
+  }
+
+  function applyBalancedGrid(container) {
+    if (!container) {
+      return;
+    }
+
+    container.classList.remove("balance-2", "balance-3");
+
+    const count = container.children.length;
+
+    if (count === 2 || count === 4) {
+      container.classList.add("balance-2");
+      return;
+    }
+
+    if (count === 3 || count === 6) {
+      container.classList.add("balance-3");
+    }
   }
 
   function renderContact(page) {
