@@ -1,7 +1,7 @@
 (function () {
   const app = window.PORTFOLIO_DATA;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const desktopNavBreakpoint = 1200;
+  const desktopNavBreakpoint = 1420;
   const state = {
     lang: getInitialLanguage(),
     theme: getInitialTheme(),
@@ -23,9 +23,14 @@
     updateBackToTop(getPage());
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleResize);
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(handleResize).catch(() => {});
+    }
   }
 
   function cacheDom() {
+    dom.brand = document.querySelector(".brand");
     dom.siteHeader = document.querySelector(".site-header");
     dom.headerInner = document.querySelector(".header-inner");
     dom.headerTools = document.querySelector(".header-tools");
@@ -515,9 +520,13 @@
     }
 
     dom.siteHeader.classList.remove("is-compact");
+    syncPreferencePlacement(false);
 
     const forceCompact = window.innerWidth <= desktopNavBreakpoint;
-    const hasOverflow = dom.headerInner.scrollWidth > dom.headerInner.clientWidth + 8;
+    const headerWidth = dom.headerInner.clientWidth;
+    const brandWidth = dom.brand ? dom.brand.scrollWidth : 0;
+    const toolsWidth = dom.headerTools ? dom.headerTools.scrollWidth : 0;
+    const hasOverflow = brandWidth + toolsWidth > headerWidth - 16;
     const shouldCompact = forceCompact || hasOverflow;
 
     dom.siteHeader.classList.toggle("is-compact", shouldCompact);
