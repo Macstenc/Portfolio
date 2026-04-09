@@ -588,7 +588,7 @@ window.PORTFOLIO_DATA = {
         sections: {
           about: {
             tag: "O mnie",
-            heading: "Full-stack, który ma sens także po wdrożeniu",
+            heading: "Full-stack z naciskiem na jakość po wdrożeniu",
             intro:
               "Dobra praca webowa to nie tylko ekran. Liczy się struktura, dostępność, logika aplikacji i techniczne dopięcie, dzięki któremu produkt działa dobrze także w produkcji."
           },
@@ -606,13 +606,13 @@ window.PORTFOLIO_DATA = {
           },
           experience: {
             tag: "Doświadczenie",
-            heading: "Doświadczenie w dostępności, produktach webowych i pracy na żywych systemach",
+            heading: "Doświadczenie w dostępności, produktach webowych i pracy na środowiskach produkcyjnych",
             intro:
               "Najważniejszy jest dla mnie zakres pracy: interfejsy, logika aplikacji, utrzymanie platform i poprawianie tego, co działa już na produkcji."
         },
         projects: {
           tag: "Projekty",
-          heading: "Wybrane realizacje pokazujące, jak buduję, dopracowuję i weryfikuję efekt",
+          heading: "Wybrane realizacje pokazujące sposób pracy i odpowiedzialność za efekt",
           intro:
             "To nie są jednorazowe makiety. Każdy projekt pokazuje konkretny sposób pracy, odpowiedzialność techniczną i dbałość o doświadczenie użytkownika."
         },
@@ -638,13 +638,13 @@ window.PORTFOLIO_DATA = {
       about: {
         storyTitle: "Profil",
         story: [
-          "Pracuję jako full-stack developer z mocnym wyczuciem jakości interfejsu. Zależy mi na hierarchii, rytmie, semantyce i na tym, czy produkt nadal jest czytelny i niezawodny, kiedy trafia na realne dane, treści i ograniczenia produkcyjne.",
+          "Pracuję jako Full-Stack Developer z mocnym wyczuciem jakości interfejsu. Zależy mi na hierarchii, rytmie, semantyce i na tym, czy produkt pozostaje czytelny i niezawodny, gdy trafia na realne dane, treści i ograniczenia produkcyjne.",
           "Mam doświadczenie przy publicznych i wewnętrznych platformach webowych, projektach dostępności, stronach wielojęzycznych, aplikacjach opartych o Django, utrzymaniu CMS-ów oraz wsparciu wdrożeń na Linuxie z Nginx, Dockerem, SSL i produkcyjnym debugowaniem.",
-          "Korzystam z narzędzi takich jak Codex, Cursor czy Claude wtedy, gdy realnie pomagają: w researchu, prototypowaniu, refaktoryzacji czy analizie kodu. Przyspieszają pracę, ale nie zastępują oceny. Każde ważniejsze rozwiązanie i tak wymaga ręcznego sprawdzenia, dopracowania i odpowiedzialności po mojej stronie."
+          "Korzystam z narzędzi takich jak Codex, Cursor czy Claude wtedy, gdy realnie pomagają: w analizie, prototypowaniu, refaktoryzacji czy przeglądzie kodu. Przyspieszają pracę, ale nie zastępują oceny. Każde ważniejsze rozwiązanie i tak wymaga ręcznego sprawdzenia, dopracowania i odpowiedzialności po mojej stronie."
         ],
         principlesTitle: "Czego można się po mnie spodziewać",
         principles: [
-          "Czytelnych interfejsów z dbałością o semantykę, spacing i decyzje podejmowane pod realną treść.",
+          "Czytelnych interfejsów z dbałością o semantykę, odstępy i decyzje podejmowane pod realną treść.",
           "Swobody w poruszaniu się między frontendem, szczegółami backendu i podstawami wdrożeń, gdy projekt tego wymaga.",
           "Praktycznych decyzji technicznych opartych na utrzymywalności i użyteczności, a nie tylko na efekcie wizualnym.",
           "Świadomego użycia AI: szybko tam, gdzie pomaga, krytycznie tam, gdzie liczy się jakość."

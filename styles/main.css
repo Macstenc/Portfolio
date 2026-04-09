@@ -419,6 +419,7 @@ figure {
   font-size: clamp(1rem, 1.35vw, 1.08rem);
   line-height: 1.82;
   text-wrap: pretty;
+  margin-top: clamp(0.5rem, 1vw, 0.85rem);
 }
 
 .panel,
