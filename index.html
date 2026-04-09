@@ -90,28 +90,33 @@
               <span></span>
               <span></span>
             </button>
-            <ul class="nav-list" id="primary-menu"></ul>
+            <div class="nav-panel" id="nav-panel">
+              <ul class="nav-list" id="primary-menu"></ul>
+              <div class="nav-preferences-slot" id="nav-preferences-slot"></div>
+            </div>
           </nav>
 
-          <div class="preference-switches">
-            <div class="theme-switch" role="group" aria-label="Theme switcher" id="theme-switch">
-              <button class="theme-button" type="button" data-theme="light" aria-pressed="false">
-                <span class="theme-button-swatch" aria-hidden="true"></span>
-                <span class="theme-button-label">Light</span>
-              </button>
-              <button class="theme-button is-active" type="button" data-theme="dark" aria-pressed="true">
-                <span class="theme-button-swatch" aria-hidden="true"></span>
-                <span class="theme-button-label">Dark</span>
-              </button>
-              <button class="theme-button" type="button" data-theme="eclipse" aria-pressed="false">
-                <span class="theme-button-swatch" aria-hidden="true"></span>
-                <span class="theme-button-label">Eclipse</span>
-              </button>
-            </div>
+          <div class="header-preferences-slot" id="header-preferences-slot">
+            <div class="preference-switches" id="preference-switches">
+              <div class="theme-switch" role="group" aria-label="Theme switcher" id="theme-switch">
+                <button class="theme-button" type="button" data-theme="light" aria-pressed="false">
+                  <span class="theme-button-swatch" aria-hidden="true"></span>
+                  <span class="theme-button-label">Light</span>
+                </button>
+                <button class="theme-button is-active" type="button" data-theme="dark" aria-pressed="true">
+                  <span class="theme-button-swatch" aria-hidden="true"></span>
+                  <span class="theme-button-label">Dark</span>
+                </button>
+                <button class="theme-button" type="button" data-theme="eclipse" aria-pressed="false">
+                  <span class="theme-button-swatch" aria-hidden="true"></span>
+                  <span class="theme-button-label">Eclipse</span>
+                </button>
+              </div>
 
-            <div class="lang-switch" role="group" aria-label="Language switcher" id="lang-switch">
-              <button class="lang-button is-active" type="button" data-lang="en">EN</button>
-              <button class="lang-button" type="button" data-lang="pl">PL</button>
+              <div class="lang-switch" role="group" aria-label="Language switcher" id="lang-switch">
+                <button class="lang-button is-active" type="button" data-lang="en">EN</button>
+                <button class="lang-button" type="button" data-lang="pl">PL</button>
+              </div>
             </div>
           </div>
         </div>

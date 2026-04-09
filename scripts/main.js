@@ -1,7 +1,7 @@
 (function () {
   const app = window.PORTFOLIO_DATA;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const desktopNavBreakpoint = 1480;
+  const desktopNavBreakpoint = 1200;
   const state = {
     lang: getInitialLanguage(),
     theme: getInitialTheme(),
@@ -29,9 +29,13 @@
     dom.siteHeader = document.querySelector(".site-header");
     dom.headerInner = document.querySelector(".header-inner");
     dom.headerTools = document.querySelector(".header-tools");
+    dom.headerPreferencesSlot = document.getElementById("header-preferences-slot");
+    dom.preferenceSwitches = document.getElementById("preference-switches");
     dom.siteNav = document.getElementById("site-nav");
     dom.navToggle = document.getElementById("nav-toggle");
+    dom.navPanel = document.getElementById("nav-panel");
     dom.navList = document.getElementById("primary-menu");
+    dom.navPreferencesSlot = document.getElementById("nav-preferences-slot");
     dom.themeSwitch = document.getElementById("theme-switch");
     dom.themeButtons = Array.from(dom.themeSwitch.querySelectorAll("[data-theme]"));
     dom.langSwitch = document.getElementById("lang-switch");
@@ -517,6 +521,7 @@
     const shouldCompact = forceCompact || hasOverflow;
 
     dom.siteHeader.classList.toggle("is-compact", shouldCompact);
+    syncPreferencePlacement(shouldCompact);
 
     if (!shouldCompact) {
       closeMenu();
@@ -526,6 +531,18 @@
     if (!dom.siteNav.classList.contains("is-open")) {
       dom.navToggle.setAttribute("aria-expanded", "false");
       updateNavToggleLabel(getPage());
+    }
+  }
+
+  function syncPreferencePlacement(isCompact) {
+    if (!dom.preferenceSwitches || !dom.headerPreferencesSlot || !dom.navPreferencesSlot) {
+      return;
+    }
+
+    const target = isCompact ? dom.navPreferencesSlot : dom.headerPreferencesSlot;
+
+    if (dom.preferenceSwitches.parentElement !== target) {
+      target.appendChild(dom.preferenceSwitches);
     }
   }
 
