@@ -64,9 +64,11 @@
     dom.aboutPrinciplesTitle = document.getElementById("about-principles-title");
     dom.aboutPrinciples = document.getElementById("about-principles");
     dom.skillsGroups = document.getElementById("skills-groups");
+    dom.workflowGrid = document.getElementById("workflow-grid");
     dom.experienceTimeline = document.getElementById("experience-timeline");
     dom.projectFilterLabel = document.getElementById("project-filter-label");
     dom.projectFilters = document.getElementById("project-filters");
+    dom.projectFeatured = document.getElementById("projects-featured");
     dom.projectGrid = document.getElementById("project-grid");
     dom.educationGrid = document.getElementById("education-grid");
     dom.developmentGrid = document.getElementById("development-grid");
@@ -108,6 +110,7 @@
     renderSectionHeadings(page.sections);
     renderAbout(page);
     renderSkills(page);
+    renderWorkflow(page);
     renderExperience(page);
     renderProjects(page);
     renderEducation(page);
@@ -198,6 +201,30 @@
     applyBalancedGrid(dom.skillsGroups);
   }
 
+  function renderWorkflow(page) {
+    if (!dom.workflowGrid || !page.workflow) {
+      return;
+    }
+
+    dom.workflowGrid.innerHTML = page.workflow.items
+      .map(
+        (item, index) => `
+          <article class="panel workflow-card reveal">
+            <div class="workflow-head">
+              <span class="workflow-step">${String(index + 1).padStart(2, "0")}</span>
+              <h3>${item.title}</h3>
+            </div>
+            <p class="card-copy">${item.copy}</p>
+            <ul class="workflow-list">
+              ${item.points.map((point) => `<li>${point}</li>`).join("")}
+            </ul>
+          </article>
+        `
+      )
+      .join("");
+    applyBalancedGrid(dom.workflowGrid);
+  }
+
   function renderExperience(page) {
     dom.experienceTimeline.innerHTML = page.experience.items
       .map(
@@ -226,6 +253,8 @@
     const items = activeFilter === "all"
       ? page.projects.items
       : page.projects.items.filter((item) => item.filters.includes(activeFilter));
+    const featuredItems = items.filter((item) => item.featured);
+    const regularItems = items.filter((item) => !item.featured);
 
     dom.projectFilterLabel.textContent = page.projects.filterLabel;
     dom.projectFilters.innerHTML = [
@@ -239,45 +268,13 @@
       )
     ].join("");
 
-    dom.projectGrid.innerHTML = items
-      .map((item) => {
-        const repoAction = item.repoUrl
-          ? `<a class="link-inline" href="${item.repoUrl}"${getAnchorAttrs(item.repoUrl)}>${page.projects.repositoryLabel}</a>`
-          : "";
-        const liveAction = item.liveUrl
-          ? `<a class="link-inline" href="${item.liveUrl}"${getAnchorAttrs(item.liveUrl)}>${page.projects.liveLabel}</a>`
-          : !item.repoUrl
-            ? `<span class="action-muted">${page.projects.codeOnlyLabel}</span>`
-            : "";
-        const showActions = !item.hideActions && Boolean(repoAction || liveAction);
+    dom.projectFeatured.innerHTML = featuredItems
+      .map((item) => renderProjectCard(item, page, true))
+      .join("");
+    dom.projectFeatured.toggleAttribute("hidden", featuredItems.length === 0);
 
-        return `
-          <article class="project-card reveal">
-            <div class="project-media">
-              <img src="${item.image}" alt="${item.imageAlt}" width="960" height="600" loading="lazy" decoding="async">
-            </div>
-            <div class="project-body">
-              <div class="project-topline">
-                <span class="project-type">${item.type}</span>
-              </div>
-              <h3>${item.title}</h3>
-              <p class="project-summary">${item.summary}</p>
-              <ul class="project-stack">
-                ${item.stack.map((stackItem) => `<li>${stackItem}</li>`).join("")}
-              </ul>
-              <ul class="project-feature-list">
-                ${item.features.map((feature) => `<li>${feature}</li>`).join("")}
-              </ul>
-              ${showActions
-                ? `<div class="project-actions">
-                    ${repoAction}
-                    ${liveAction}
-                  </div>`
-                : ""}
-            </div>
-          </article>
-        `;
-      })
+    dom.projectGrid.innerHTML = regularItems
+      .map((item) => renderProjectCard(item, page, false))
       .join("");
     applyBalancedGrid(dom.projectGrid);
   }
@@ -310,6 +307,47 @@
       )
       .join("");
     applyBalancedGrid(dom.developmentGrid);
+  }
+
+  function renderProjectCard(item, page, isFeatured) {
+    const repoAction = item.repoUrl
+      ? `<a class="link-inline" href="${item.repoUrl}"${getAnchorAttrs(item.repoUrl)}>${page.projects.repositoryLabel}</a>`
+      : "";
+    const liveAction = item.liveUrl
+      ? `<a class="link-inline" href="${item.liveUrl}"${getAnchorAttrs(item.liveUrl)}>${page.projects.liveLabel}</a>`
+      : !item.repoUrl
+        ? `<span class="action-muted">${page.projects.codeOnlyLabel}</span>`
+        : "";
+    const showActions = !item.hideActions && Boolean(repoAction || liveAction);
+    const highlight = item.highlight ? `<p class="project-highlight">${item.highlight}</p>` : "";
+
+    return `
+      <article class="project-card${isFeatured ? " is-featured" : ""} reveal">
+        <div class="project-media">
+          <img src="${item.image}" alt="${item.imageAlt}" width="960" height="600" loading="lazy" decoding="async">
+        </div>
+        <div class="project-body">
+          <div class="project-topline">
+            <span class="project-type">${item.type}</span>
+          </div>
+          <h3>${item.title}</h3>
+          <p class="project-summary">${item.summary}</p>
+          ${highlight}
+          <ul class="project-stack">
+            ${item.stack.map((stackItem) => `<li>${stackItem}</li>`).join("")}
+          </ul>
+          <ul class="project-feature-list">
+            ${item.features.map((feature) => `<li>${feature}</li>`).join("")}
+          </ul>
+          ${showActions
+            ? `<div class="project-actions">
+                ${repoAction}
+                ${liveAction}
+              </div>`
+            : ""}
+        </div>
+      </article>
+    `;
   }
 
   function applyBalancedGrid(container) {

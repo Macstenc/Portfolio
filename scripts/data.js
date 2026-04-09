@@ -48,6 +48,7 @@ window.PORTFOLIO_DATA = {
         nav: [
           { id: "about", label: "About" },
           { id: "skills", label: "Skills" },
+          { id: "workflow", label: "Workflow" },
           { id: "experience", label: "Experience" },
           { id: "projects", label: "Projects" },
           { id: "education", label: "Education" },
@@ -55,11 +56,11 @@ window.PORTFOLIO_DATA = {
         ]
       },
       hero: {
-        eyebrow: "Full-stack web delivery with product sense, accessibility, and technical follow-through",
+        eyebrow: "Product-minded full-stack delivery with accessibility, performance, and long-term care",
         role: "Full-Stack Developer",
         summary:
-          "I build web products end to end: clear frontend experiences, reliable backend logic, and deployment-ready setups that stay maintainable after launch.",
-        status: "Open to full-stack, web platform, and product-focused opportunities",
+          "I build web products end to end with calm interfaces, dependable backend logic, and deployment-ready setups that keep working after launch.",
+        status: "Open to full-stack roles, web platform work, and product-focused teams",
         highlights: [
           "Accessible UI and thoughtful product flows",
           "Django, APIs, payments, deployment, and production support",
@@ -90,24 +91,30 @@ window.PORTFOLIO_DATA = {
           { label: "Work style", value: "Calm delivery, strong review habits, practical ownership" }
         ]
       },
-      sections: {
-        about: {
-          tag: "About",
-          heading: "A full-stack developer who cares how products behave after launch",
-          intro:
-            "Strong web work is more than shipping screens. It needs structure, accessibility, backend clarity, and enough technical discipline to stay reliable in production."
-        },
-        skills: {
-          tag: "Skills",
-          heading: "Tools and practices that help me ship product work end to end",
-          intro:
-            "My strongest work sits where interface quality, backend thinking, and dependable delivery meet."
-        },
-        experience: {
-          tag: "Experience",
-          heading: "Hands-on work across accessibility, product delivery, and live web environments",
-          intro:
-            "What matters most is scope: building interfaces, handling application logic, supporting platforms, and improving what already runs in production."
+        sections: {
+          about: {
+            tag: "About",
+            heading: "A full-stack developer who cares how products behave after launch",
+            intro:
+              "Strong web work is more than shipping screens. It needs structure, accessibility, backend clarity, and enough technical discipline to stay reliable in production."
+          },
+          skills: {
+            tag: "Skills",
+            heading: "Tools and practices that help me ship product work end to end",
+            intro:
+              "My strongest work sits where interface quality, backend thinking, and dependable delivery meet."
+          },
+          workflow: {
+            tag: "Workflow",
+            heading: "How I move from idea to release-ready delivery",
+            intro:
+              "A product-minded flow that starts with clarity, builds with restraint, and finishes with verification and care for the long term."
+          },
+          experience: {
+            tag: "Experience",
+            heading: "Hands-on work across accessibility, product delivery, and live web environments",
+            intro:
+              "What matters most is scope: building interfaces, handling application logic, supporting platforms, and improving what already runs in production."
         },
         projects: {
           tag: "Projects",
@@ -210,6 +217,40 @@ window.PORTFOLIO_DATA = {
           }
         ]
       },
+      workflow: {
+        items: [
+          {
+            title: "Discovery and scope",
+            copy:
+              "I clarify goals, constraints, and what success looks like before writing code so the build is focused and realistic.",
+            points: [
+              "Define users, stakeholders, and measurable outcomes",
+              "Map constraints, dependencies, and edge cases early",
+              "Agree on scope and a quality bar before implementation"
+            ]
+          },
+          {
+            title: "Build with guardrails",
+            copy:
+              "Implementation is paced with structure: clean UI, stable APIs, and delivery choices that stay maintainable after release.",
+            points: [
+              "Accessible UI and design-system-style components",
+              "Backend logic aligned with data and product flow",
+              "Deployment-ready configuration and documentation"
+            ]
+          },
+          {
+            title: "Verify and ship",
+            copy:
+              "I finish with real-world validation, review, and refinement so the product feels reliable, not just polished.",
+            points: [
+              "Manual QA and critical path testing",
+              "Performance and accessibility checks",
+              "Follow-up iterations based on feedback"
+            ]
+          }
+        ]
+      },
       experience: {
         items: [
           {
@@ -273,6 +314,8 @@ window.PORTFOLIO_DATA = {
               "Containerized deployment behind Nginx with SSL and VPS hosting",
               "Frontend tuned for clarity, trust, and a calmer conversion path"
             ],
+            highlight: "Outcome: Payment flow verified with production-ready Stripe webhooks and deployment",
+            featured: true,
             repoUrl: "",
             liveUrl: "https://showthecash.com/",
             image: "assets/img/project-showthecash.JPG",
@@ -307,6 +350,8 @@ window.PORTFOLIO_DATA = {
               "Accessible content presentation with clear sectioning and practical calls to action",
               "Homepage and navigation refined to feel clearer, calmer, and easier to browse"
             ],
+            highlight: "Outcome: A calmer, accessible information flow for a public university audience",
+            featured: true,
             repoUrl: "",
             liveUrl: "https://cwn.uws.edu.pl/",
             image: "assets/img/project-cwn.jpg",
@@ -497,6 +542,7 @@ window.PORTFOLIO_DATA = {
         nav: [
           { id: "about", label: "O mnie" },
           { id: "skills", label: "Umiejętności" },
+          { id: "workflow", label: "Workflow" },
           { id: "experience", label: "Doświadczenie" },
           { id: "projects", label: "Projekty" },
           { id: "education", label: "Edukacja" },
@@ -504,11 +550,11 @@ window.PORTFOLIO_DATA = {
         ]
       },
       hero: {
-        eyebrow: "Full-stack web delivery z naciskiem na produkt, dostępność i techniczne dopięcie",
+        eyebrow: "Full-stack delivery z myśleniem produktowym, dostępnością i długofalową jakością",
         role: "Full-Stack Developer",
         summary:
-          "Buduję produkty webowe end to end: czytelny frontend, sensowną logikę backendową i wdrożenia, które da się spokojnie utrzymywać także po starcie.",
-        status: "Otwartość na role full-stack, platformy webowe i pracę produktową",
+          "Buduję produkty webowe end to end z czytelnym interfejsem, stabilną logiką backendową i wdrożeniem gotowym na realne użycie.",
+        status: "Otwartość na role full-stack, platformy webowe i zespoły produktowe",
         highlights: [
           "Dopracowany interfejs i spokojny user flow",
           "Django, API, płatności, wdrożenia i wsparcie produkcji",
@@ -539,24 +585,30 @@ window.PORTFOLIO_DATA = {
           { label: "Styl pracy", value: "Spokojne dowożenie, mocny review, praktyczna odpowiedzialność" }
         ]
       },
-      sections: {
-        about: {
-          tag: "O mnie",
-          heading: "Full-stack, który ma sens także po wdrożeniu",
-          intro:
-            "Dobra praca webowa to nie tylko ekran. Liczy się struktura, dostępność, logika aplikacji i techniczne dopięcie, dzięki któremu produkt działa dobrze także w produkcji."
-        },
-        skills: {
-          tag: "Umiejętności",
-          heading: "Narzędzia i praktyki, które pomagają mi dowozić pracę end to end",
-          intro:
-            "Najmocniej działam tam, gdzie jakość interfejsu spotyka się z backendowym myśleniem i odpowiedzialnym delivery."
-        },
-        experience: {
-          tag: "Doświadczenie",
-          heading: "Doświadczenie w dostępności, produktach webowych i pracy na żywych systemach",
-          intro:
-            "Najważniejszy jest dla mnie zakres pracy: interfejsy, logika aplikacji, utrzymanie platform i poprawianie tego, co działa już na produkcji."
+        sections: {
+          about: {
+            tag: "O mnie",
+            heading: "Full-stack, który ma sens także po wdrożeniu",
+            intro:
+              "Dobra praca webowa to nie tylko ekran. Liczy się struktura, dostępność, logika aplikacji i techniczne dopięcie, dzięki któremu produkt działa dobrze także w produkcji."
+          },
+          skills: {
+            tag: "Umiejętności",
+            heading: "Narzędzia i praktyki, które pomagają mi dowozić pracę end to end",
+            intro:
+              "Najmocniej działam tam, gdzie jakość interfejsu spotyka się z backendowym myśleniem i odpowiedzialnym delivery."
+          },
+          workflow: {
+            tag: "Workflow",
+            heading: "Jak dowożę od pomysłu do stabilnego wdrożenia",
+            intro:
+              "Proces, w którym najpierw doprecyzowuję cele, potem buduję z myślą o utrzymaniu i kończę realną weryfikacją."
+          },
+          experience: {
+            tag: "Doświadczenie",
+            heading: "Doświadczenie w dostępności, produktach webowych i pracy na żywych systemach",
+            intro:
+              "Najważniejszy jest dla mnie zakres pracy: interfejsy, logika aplikacji, utrzymanie platform i poprawianie tego, co działa już na produkcji."
         },
         projects: {
           tag: "Projekty",
@@ -659,6 +711,40 @@ window.PORTFOLIO_DATA = {
           }
         ]
       },
+      workflow: {
+        items: [
+          {
+            title: "Discovery i scope",
+            copy:
+              "Najpierw doprecyzowuję cele i ograniczenia, żeby rozwiązanie było realistyczne i dopasowane do użycia.",
+            points: [
+              "Określenie użytkowników, interesariuszy i mierzalnego efektu",
+              "Wczesne rozpisanie ryzyk, zależności i ograniczeń",
+              "Ustalenie zakresu i jakości, zanim zacznie się build"
+            ]
+          },
+          {
+            title: "Budowa z kontrolą jakości",
+            copy:
+              "Tworzę rozwiązanie z myślą o utrzymaniu: czytelny interfejs, stabilna logika i przewidywalne wdrożenie.",
+            points: [
+              "Dostępny UI i komponenty z uporządkowaną strukturą",
+              "Logika backendu spójna z danymi i przepływem produktu",
+              "Konfiguracje i dokumentacja gotowe do wdrożenia"
+            ]
+          },
+          {
+            title: "Weryfikacja i dowiezienie",
+            copy:
+              "Na końcu sprawdzam działanie w realnych scenariuszach i dopracowuję to, co decyduje o jakości.",
+            points: [
+              "Manualne testy i przejście ścieżek krytycznych",
+              "Sprawdzenie wydajności i dostępności",
+              "Iteracje po feedbacku, a nie tylko po demo"
+            ]
+          }
+        ]
+      },
       experience: {
         items: [
           {
@@ -722,6 +808,8 @@ window.PORTFOLIO_DATA = {
               "Konteneryzowane wdrożenie za Nginxem z SSL i hostingiem VPS",
               "Frontend ustawiony na czytelność, zaufanie i spokojniejszą ścieżkę konwersji"
             ],
+            highlight: "Efekt: Stabilny checkout z webhookową weryfikacją i gotowością produkcyjną",
+            featured: true,
             repoUrl: "",
             liveUrl: "https://showthecash.com/",
             image: "assets/img/project-showthecash.JPG",
@@ -756,6 +844,8 @@ window.PORTFOLIO_DATA = {
               "Dostępna prezentacja treści z czytelnym podziałem sekcji i praktycznymi CTA",
               "Strona główna i nawigacja dopracowane tak, by były spokojniejsze i łatwiejsze w użyciu"
             ],
+            highlight: "Efekt: Czytelniejszy i spokojniejszy przepływ informacji dla odbiorców publicznych",
+            featured: true,
             repoUrl: "",
             liveUrl: "https://cwn.uws.edu.pl/",
             image: "assets/img/project-cwn.jpg",
