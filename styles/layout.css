@@ -29,25 +29,11 @@
 }
 
 .hero::before {
-  content: "";
-  position: absolute;
-  inset: -6rem -10rem auto;
-  height: 72%;
-  background:
-    radial-gradient(circle at 20% 10%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 60%),
-    radial-gradient(circle at 70% 20%, color-mix(in srgb, var(--accent-cool) 18%, transparent), transparent 62%);
-  opacity: 0.6;
-  pointer-events: none;
+  content: none;
 }
 
 .hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, color-mix(in srgb, var(--page-bg-end) 55%, transparent) 90%);
-  opacity: 0.7;
-  pointer-events: none;
+  content: none;
 }
 
 .section-heading {
