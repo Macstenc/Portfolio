@@ -344,7 +344,11 @@ figure {
 .section-heading {
   display: grid;
   gap: 1.15rem;
-  margin-bottom: 0;
+  margin-bottom: clamp(2rem, 3.2vw, 2.8rem);
+}
+
+.section-heading + .container {
+  margin-top: clamp(0.4rem, 0.9vw, 0.7rem);
 }
 
 .section-heading > div {
