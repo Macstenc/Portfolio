@@ -1,0 +1,264 @@
+Class selector line counts across split CSS files
+file	selector	lines
+base.css	.skip-link {	12
+base.css	.skip-link:focus {	3
+base.css	.site-bg {	7
+base.css	.grid-glow {	4
+base.css	.orb {	7
+base.css	.orb-one {	5
+base.css	.orb-two {	5
+base.css	.grid-glow {	9
+components.css	.site-header {	8
+components.css	.header-inner {	8
+components.css	.brand {	6
+components.css	.brand-mark {	15
+components.css	.brand-copy {	5
+components.css	.brand-copy strong {	7
+components.css	.brand-copy span {	7
+components.css	.header-tools {	8
+components.css	.site-nav {	7
+components.css	.site-header.is-compact .header-tools {	3
+components.css	.site-header.is-compact .site-nav {	4
+components.css	.site-header.is-compact .preference-switches {	6
+components.css	.site-header.is-compact .lang-switch {	4
+components.css	.nav-list {	14
+components.css	.nav-panel {	5
+components.css	.nav-preferences-slot {	4
+components.css	.nav-preferences-slot:empty {	3
+components.css	.header-preferences-slot {	3
+components.css	.site-header.is-compact .header-preferences-slot {	3
+components.css	.site-header.is-compact .nav-preferences-slot {	3
+components.css	.nav-list a {	17
+components.css	.nav-list a.is-active {	4
+components.css	.nav-list a.is-active {	3
+components.css	.nav-toggle {	14
+components.css	.site-header.is-compact .nav-toggle {	3
+components.css	.nav-toggle span {	7
+components.css	.site-nav.is-open .nav-toggle span:nth-child(1) {	3
+components.css	.site-nav.is-open .nav-toggle span:nth-child(2) {	3
+components.css	.site-nav.is-open .nav-toggle span:nth-child(3) {	3
+components.css	.site-header.is-compact .nav-panel {	16
+components.css	.site-header.is-compact .nav-preferences-slot {	4
+components.css	.site-header.is-compact .site-nav.is-open .nav-panel {	3
+components.css	.site-header.is-compact .nav-list {	10
+components.css	.site-header.is-compact .nav-list a {	4
+components.css	.preference-switches {	8
+components.css	.lang-switch {	14
+components.css	.theme-switch {	8
+components.css	.theme-switch::before {	21
+components.css	.lang-button {	21
+components.css	.theme-button {	5
+components.css	.lang-button {	7
+components.css	.lang-button.is-active {	4
+components.css	.theme-button.is-active {	3
+components.css	.theme-button-swatch {	11
+components.css	.theme-button[data-theme="light"] .theme-button-swatch {	3
+components.css	.theme-button[data-theme="dark"] .theme-button-swatch {	3
+components.css	.theme-button[data-theme="eclipse"] .theme-button-swatch {	3
+components.css	.theme-button-label {	4
+components.css	.theme-button.is-active .theme-button-swatch {	7
+components.css	.lang-switch {	3
+components.css	.lang-switch::before {	21
+components.css	.lang-switch[data-lang="pl"]::before {	3
+components.css	.lang-button {	3
+components.css	.lang-button.is-active {	4
+components.css	.hero {	3
+components.css	.hero-grid {	8
+components.css	.hero-copy {	5
+components.css	.hero-copy.reveal.is-visible {	3
+components.css	.hero h1 {	6
+components.css	.hero-role {	8
+components.css	.hero-summary {	7
+components.css	.rich-text p {	3
+components.css	.status-pill {	22
+components.css	.status-pill::before {	3
+components.css	.bullet-list {	3
+components.css	.project-stack {	6
+components.css	.filter-button {	13
+components.css	.project-actions {	5
+components.css	.button {	17
+components.css	.button-primary {	5
+components.css	.button-primary:focus-visible {	3
+components.css	.button-secondary {	5
+components.css	.lang-button:focus-visible {	3
+components.css	.contact-card:focus-visible {	4
+components.css	.hero-stats {	5
+components.css	.hero-stats > div {	6
+components.css	.hero-stats dd {	5
+components.css	.hero-stats dt {	6
+components.css	.hero-media {	5
+components.css	.hero-media.reveal.is-visible {	3
+components.css	.profile-card {	12
+components.css	.profile-card::before {	8
+components.css	.profile-frame {	7
+components.css	.profile-frame img {	6
+components.css	.profile-caption {	5
+components.css	.profile-caption-label {	7
+components.css	.profile-meta {	4
+components.css	.profile-meta li {	8
+components.css	.meta-label {	6
+components.css	.meta-value {	5
+components.css	.about-grid {	5
+components.css	.rich-text {	6
+components.css	.bullet-list {	5
+components.css	.project-feature-list li {	6
+components.css	.project-feature-list li::before {	10
+components.css	.growth-card {	3
+components.css	.skill-card {	4
+components.css	.growth-card h3 {	4
+components.css	.growth-card p {	4
+layout.css	.container {	4
+layout.css	.site-header .container {	3
+layout.css	.contact-methods > * {	3
+layout.css	.section {	4
+layout.css	.hero {	5
+layout.css	.hero::before {	11
+layout.css	.hero::after {	9
+layout.css	.section-heading {	5
+layout.css	.section-heading + .container {	3
+layout.css	.section-heading > div {	3
+layout.css	.eyebrow {	11
+layout.css	.section-tag {	3
+layout.css	.eyebrow {	5
+layout.css	.eyebrow::before {	7
+layout.css	.project-card h3 {	4
+layout.css	.section-heading h2 {	6
+layout.css	.card-copy {	3
+layout.css	.section-intro {	7
+layout.css	.contact-card {	10
+layout.css	.contact-grid > .panel {	9
+layout.css	.panel {	5
+layout.css	.contact-card::before {	9
+layout.css	.contact-card::after {	8
+layout.css	.panel-large {	3
+layout.css	.cards-grid {	5
+layout.css	.cards-grid-skills {	3
+layout.css	.cards-grid.balance-2 {	3
+layout.css	.cards-grid.balance-3 {	3
+layout.css	.workflow-grid {	5
+layout.css	.workflow-card {	5
+layout.css	.workflow-head {	4
+layout.css	.workflow-step {	14
+layout.css	.workflow-card h3 {	4
+layout.css	.workflow-list {	5
+layout.css	.workflow-list li {	6
+layout.css	.workflow-list li::before {	10
+responsive.css	.site-header .container {	3
+responsive.css	.brand-copy strong {	3
+responsive.css	.brand-copy span {	4
+responsive.css	.nav-list a {	4
+responsive.css	.theme-button-label {	3
+responsive.css	.lang-button {	3
+responsive.css	.about-grid {	3
+responsive.css	.hero-copy {	3
+responsive.css	.hero-media {	5
+responsive.css	.hero-stats {	3
+responsive.css	.footer-grid {	3
+responsive.css	.projects-featured {	3
+responsive.css	.project-card.is-featured {	3
+responsive.css	.cards-grid.balance-3 {	3
+responsive.css	.header-inner {	3
+responsive.css	.hero h1 {	4
+responsive.css	.hero-highlights {	4
+responsive.css	.hero-highlights li {	4
+responsive.css	.project-actions {	3
+responsive.css	.action-muted {	3
+responsive.css	.timeline-item {	3
+responsive.css	.timeline::before {	3
+responsive.css	.timeline-item::before {	3
+responsive.css	.header-inner {	5
+responsive.css	.brand-mark {	4
+responsive.css	.brand-copy strong {	3
+responsive.css	.brand-copy span {	3
+responsive.css	.footer-grid {	3
+responsive.css	.hero-stats {	3
+responsive.css	.hero {	3
+responsive.css	.eyebrow {	7
+responsive.css	.hero h1 {	5
+responsive.css	.hero-role {	3
+responsive.css	.hero-summary {	4
+responsive.css	.status-pill {	6
+responsive.css	.contact-card {	5
+responsive.css	.contact-icon {	4
+responsive.css	.contact-card > span:last-child {	6
+responsive.css	.section-intro {	3
+responsive.css	.section-heading h2 {	6
+responsive.css	.section-intro {	4
+responsive.css	.cards-grid.balance-3 {	3
+responsive.css	.footer-bottom {	6
+responsive.css	.nav-panel {	3
+responsive.css	.section-heading {	3
+responsive.css	.eyebrow {	4
+responsive.css	.eyebrow::before {	3
+responsive.css	.section-heading h2 {	5
+responsive.css	.header-inner {	3
+responsive.css	.nav-toggle {	4
+responsive.css	.lang-button {	3
+responsive.css	.back-to-top {	5
+responsive.css	.reveal {	4
+sections.css	.timeline {	6
+sections.css	.timeline::before {	9
+sections.css	.timeline-item {	4
+sections.css	.timeline-item::before {	12
+sections.css	.timeline-card {	5
+sections.css	.project-topline {	8
+sections.css	.project-type {	7
+sections.css	.timeline-type {	9
+sections.css	.project-card h3 {	4
+sections.css	.timeline-company {	5
+sections.css	.timeline-summary {	4
+sections.css	.footer-social-list {	5
+sections.css	.project-toolbar {	5
+sections.css	.filter-label {	5
+sections.css	.filter-group {	5
+sections.css	.filter-button {	8
+sections.css	.filter-button.is-active {	5
+sections.css	.project-card {	8
+sections.css	.projects-featured {	6
+sections.css	.project-card.is-featured {	4
+sections.css	.project-card.is-featured .project-media {	3
+sections.css	.project-card.is-featured .project-body {	3
+sections.css	.project-media {	5
+sections.css	.project-media img {	6
+sections.css	.project-card:focus-within .project-media img {	3
+sections.css	.project-body {	7
+sections.css	.project-summary {	3
+sections.css	.project-highlight {	9
+sections.css	.action-muted {	9
+sections.css	.link-inline {	9
+sections.css	.link-inline:focus-visible {	5
+sections.css	.action-muted {	4
+sections.css	.contact-grid {	5
+sections.css	.contact-copy-group {	5
+sections.css	.contact-grid > .panel {	3
+sections.css	.contact-methods {	6
+sections.css	.contact-note-header {	5
+sections.css	.contact-note-grid {	6
+sections.css	.contact-subtitle {	6
+sections.css	.contact-card {	15
+sections.css	.contact-card > span:last-child {	3
+sections.css	.contact-card > span:last-child {	3
+sections.css	.contact-card:focus-visible {	4
+sections.css	.contact-icon {	9
+sections.css	.contact-icon svg {	4
+sections.css	.footer-links strong {	5
+sections.css	.contact-card .contact-description {	3
+sections.css	.contact-card .meta-value {	3
+sections.css	.footer-links p {	4
+sections.css	.site-footer {	5
+sections.css	.footer-grid {	7
+sections.css	.brand-footer {	3
+sections.css	.footer-links {	4
+sections.css	.footer-links strong {	6
+sections.css	.footer-social-list a {	4
+sections.css	.footer-social-list a:focus-visible {	4
+sections.css	.footer-bottom {	9
+sections.css	.footer-bottom p {	4
+sections.css	.back-to-top {	16
+sections.css	.back-to-top[hidden] {	3
+sections.css	.back-to-top-icon {	8
+sections.css	.reveal {	9
+sections.css	.reveal.is-visible {	5
+sections.css	.timeline > .reveal:nth-child(2) {	3
+sections.css	.timeline > .reveal:nth-child(3) {	3
+sections.css	.timeline > .reveal:nth-child(4) {	3
