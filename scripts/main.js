@@ -1,7 +1,7 @@
 (function () {
   const app = window.PORTFOLIO_DATA;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const compactNavBreakpoint = 1120;
+  const compactNavBreakpoint = 1024;
   const state = {
     lang: getInitialLanguage(),
     theme: getInitialTheme(),
@@ -521,16 +521,8 @@
 
     dom.siteHeader.classList.remove("is-compact");
     syncPreferencePlacement(false);
-
-    const headerWidth = dom.headerInner.clientWidth;
-    const brandWidth = dom.brand ? dom.brand.scrollWidth : 0;
-    const toolsWidth = dom.headerTools ? dom.headerTools.scrollWidth : 0;
-    const headerIsTight = brandWidth + toolsWidth > headerWidth - 24;
-    const navIsTight = dom.navList && dom.siteNav
-      ? dom.navList.scrollWidth > dom.siteNav.clientWidth - 8
-      : false;
     const forceCompact = window.innerWidth <= compactNavBreakpoint;
-    const shouldCompact = forceCompact || headerIsTight || navIsTight;
+    const shouldCompact = forceCompact;
 
     dom.siteHeader.classList.toggle("is-compact", shouldCompact);
     syncPreferencePlacement(shouldCompact);
