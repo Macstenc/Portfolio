@@ -293,6 +293,14 @@ figure {
   margin-inline: auto;
 }
 
+.container-narrow {
+  width: min(760px, calc(100vw - (var(--gutter) * 2)));
+}
+
+.container-wide {
+  width: min(1320px, calc(100vw - (var(--gutter) * 2)));
+}
+
 .site-header .container {
   width: min(var(--header-container-max), calc(100vw - (var(--gutter) * 2)));
 }
@@ -311,6 +319,40 @@ figure {
 .section {
   position: relative;
   padding: var(--section-space) 0;
+}
+
+.section--featured {
+  padding: calc(var(--section-space) * 1.2) 0;
+}
+
+.section--featured::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface-panel) 40%, transparent),
+    color-mix(in srgb, var(--surface-panel) 18%, transparent)
+  );
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.section--featured > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.section--editorial .section-heading {
+  margin-bottom: clamp(2.2rem, 3.4vw, 3rem);
+}
+
+.section--compact .section-heading {
+  margin-bottom: clamp(1.2rem, 2.2vw, 1.8rem);
+}
+
+.section--compact .cards-grid {
+  gap: clamp(0.9rem, 1.6vw, 1.2rem);
 }
 
 .hero {
@@ -1957,6 +1999,11 @@ html[data-theme="eclipse"] .theme-switch::before {
 @media (max-width: 1024px) {
   :root {
     --section-space: clamp(1.1rem, 2.8vw, 1.75rem);
+  }
+
+  .container-narrow,
+  .container-wide {
+    width: var(--container);
   }
 
   .cards-grid.balance-3 {
