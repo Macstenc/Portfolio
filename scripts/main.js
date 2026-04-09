@@ -766,6 +766,10 @@
       button.classList.toggle("is-active", isActive);
       button.setAttribute("aria-pressed", String(isActive));
     });
+
+    if (dom.langSwitch) {
+      dom.langSwitch.dataset.lang = state.lang;
+    }
   }
 
   function updateYear() {
