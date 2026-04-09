@@ -1,45 +1,37 @@
-<svg width="960" height="600" viewBox="0 0 960 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title">
+  <title id="title">Discord bot project preview</title>
   <defs>
-    <linearGradient id="bg" x1="120" y1="60" x2="840" y2="540" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#111827"/>
-      <stop offset="1" stop-color="#0B1220"/>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#101a31"/>
+      <stop offset="100%" stop-color="#0a1120"/>
     </linearGradient>
-    <linearGradient id="panel" x1="220" y1="110" x2="740" y2="490" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#5865F2"/>
-      <stop offset="1" stop-color="#3342D6"/>
-    </linearGradient>
-    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#7C86FF" stop-opacity="0.9"/>
-      <stop offset="1" stop-color="#5865F2" stop-opacity="0"/>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#5865f2"/>
+      <stop offset="100%" stop-color="#8ab5ff"/>
     </linearGradient>
   </defs>
-
-  <rect width="960" height="600" rx="36" fill="url(#bg)"/>
-  <circle cx="160" cy="116" r="84" fill="url(#glow)" opacity="0.28"/>
-  <circle cx="818" cy="470" r="112" fill="url(#glow)" opacity="0.22"/>
-
-  <rect x="98" y="84" width="764" height="432" rx="34" fill="#0F172A" stroke="#1F2A44"/>
-  <rect x="126" y="116" width="708" height="368" rx="28" fill="url(#panel)"/>
-
-  <g opacity="0.18">
-    <rect x="166" y="162" width="274" height="20" rx="10" fill="white"/>
-    <rect x="166" y="196" width="202" height="20" rx="10" fill="white"/>
-    <rect x="166" y="230" width="246" height="20" rx="10" fill="white"/>
-  </g>
-
-  <circle cx="480" cy="280" r="104" fill="#0F172A" opacity="0.22"/>
-  <path d="M554 216C530 202 504 194 480 194C456 194 430 202 406 216L388 386C410 402 444 412 480 412C516 412 550 402 572 386L554 216Z" fill="#F8FAFC"/>
-  <path d="M442 252C424 252 410 268 410 288C410 308 424 324 442 324C460 324 474 308 474 288C474 268 460 252 442 252Z" fill="#3342D6"/>
-  <path d="M518 252C500 252 486 268 486 288C486 308 500 324 518 324C536 324 550 308 550 288C550 268 536 252 518 252Z" fill="#3342D6"/>
-  <path d="M430 350C445 365 463 372 480 372C497 372 515 365 530 350" stroke="#3342D6" stroke-width="16" stroke-linecap="round"/>
-  <path d="M416 210L392 168" stroke="#F8FAFC" stroke-width="18" stroke-linecap="round"/>
-  <path d="M544 210L568 168" stroke="#F8FAFC" stroke-width="18" stroke-linecap="round"/>
-
-  <rect x="166" y="412" width="628" height="44" rx="22" fill="#0F172A" opacity="0.24"/>
-  <text x="184" y="440" fill="#F8FAFC" font-family="Sora, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="0.14em">
-    DISCORDBOT
-  </text>
-  <text x="184" y="466" fill="#D6DCFF" font-family="Manrope, Arial, sans-serif" font-size="16">
-    music, AutoDJ, mixtapes, voice groups, game feeds, and community automation
-  </text>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <circle cx="1320" cy="180" r="150" fill="#5865f2" opacity=".08"/>
+  <rect x="90" y="90" width="1420" height="820" rx="42" fill="none" stroke="#243752"/>
+  <rect x="160" y="160" width="400" height="600" rx="30" fill="#0d192a" stroke="#2b3e5c"/>
+  <rect x="620" y="160" width="820" height="110" rx="24" fill="#0d192a" stroke="#2b3e5c"/>
+  <rect x="620" y="320" width="390" height="220" rx="24" fill="#0d192a" stroke="#2b3e5c"/>
+  <rect x="1050" y="320" width="390" height="220" rx="24" fill="#0d192a" stroke="#2b3e5c"/>
+  <rect x="620" y="590" width="820" height="170" rx="28" fill="#0d192a" stroke="#2b3e5c"/>
+  <rect x="210" y="228" width="300" height="54" rx="27" fill="url(#accent)" opacity=".88"/>
+  <circle cx="360" cy="458" r="118" fill="#5865f2" opacity=".12"/>
+  <path d="M438 396C419 384 389 374 360 374C331 374 301 384 282 396L262 556C288 572 324 582 360 582C396 582 432 572 458 556L438 396Z" fill="#f4f7fb"/>
+  <circle cx="322" cy="470" r="22" fill="#5865f2"/>
+  <circle cx="398" cy="470" r="22" fill="#5865f2"/>
+  <path d="M320 528C332 540 346 546 360 546C374 546 388 540 400 528" stroke="#5865f2" stroke-width="12" stroke-linecap="round"/>
+  <path d="M304 390L278 348" stroke="#f4f7fb" stroke-width="14" stroke-linecap="round"/>
+  <path d="M416 390L442 348" stroke="#f4f7fb" stroke-width="14" stroke-linecap="round"/>
+  <text x="220" y="660" fill="#f4f7fb" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700">DiscordBot</text>
+  <text x="220" y="726" fill="#9fb0c6" font-family="Arial, Helvetica, sans-serif" font-size="26">Music, AutoDJ, voice tools, game feeds, and community automation.</text>
+  <text x="670" y="228" fill="#f4f7fb" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700">Server dashboard</text>
+  <text x="670" y="396" fill="#f4f7fb" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Queue and playback</text>
+  <text x="670" y="442" fill="#9fb0c6" font-family="Arial, Helvetica, sans-serif" font-size="24">YouTube, Spotify, queue, loop, shuffle, and volume control.</text>
+  <text x="1100" y="396" fill="#f4f7fb" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Community tools</text>
+  <text x="1100" y="442" fill="#9fb0c6" font-family="Arial, Helvetica, sans-serif" font-size="24">Voice groups, AutoDJ, AI mixtapes, and Steam deals feed.</text>
+  <rect x="670" y="652" width="320" height="52" rx="26" fill="url(#accent)" opacity=".86"/>
 </svg>
