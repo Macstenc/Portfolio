@@ -1415,21 +1415,21 @@ html[data-theme="eclipse"] .theme-switch::before {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 1.15rem;
+  left: 1.45rem;
   width: 1px;
   background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 42%, transparent), color-mix(in srgb, var(--accent-cool) 24%, transparent));
 }
 
 .timeline-item {
   position: relative;
-  padding-left: 3.3rem;
+  padding-left: 1.7rem;
 }
 
 .timeline-item::before {
   content: "";
   position: absolute;
   top: 1.35rem;
-  left: 0.75rem;
+  left: 1.05rem;
   width: 0.8rem;
   height: 0.8rem;
   border: 2px solid var(--accent);
@@ -2009,15 +2009,15 @@ html[data-theme="eclipse"] .theme-switch::before {
   }
 
   .timeline-item {
-    padding-left: 2.65rem;
+    padding-left: 1.45rem;
   }
 
   .timeline::before {
-    left: 0.95rem;
+    left: 1.2rem;
   }
 
   .timeline-item::before {
-    left: 0.55rem;
+    left: 0.8rem;
   }
 }
 
