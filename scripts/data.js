@@ -30,7 +30,7 @@ window.PORTFOLIO_DATA = {
       meta: {
         title: "Maciej Stencel | Full-Stack Developer",
         description:
-          "Full-stack developer building accessible interfaces, Django-backed products, and production-ready web applications with strong delivery discipline.",
+          "Full-stack developer building accessible interfaces, Django-backed products, and production-ready web applications with strong execution discipline.",
         locale: "en_GB",
         ogImage: "assets/img/og-cover.svg"
       },
@@ -48,7 +48,7 @@ window.PORTFOLIO_DATA = {
         nav: [
           { id: "about", label: "About" },
           { id: "skills", label: "Skills" },
-          { id: "workflow", label: "Workflow" },
+          { id: "workflow", label: "Process" },
           { id: "experience", label: "Experience" },
           { id: "projects", label: "Projects" },
           { id: "education", label: "Education" },
@@ -56,30 +56,30 @@ window.PORTFOLIO_DATA = {
         ]
       },
       hero: {
-        eyebrow: "Product-minded full-stack delivery with accessibility, performance, and long-term care",
+        eyebrow: "Product-minded full-stack execution with accessibility, performance, and long-term reliability",
         role: "Full-Stack Developer",
         summary:
-          "I build web products end to end with calm interfaces, dependable backend logic, and deployment-ready setups that keep working after launch.",
-        status: "Open to full-stack roles, web platform work, and product-focused teams",
+          "I build web products end to end with clear interfaces, dependable backend logic, and deployment-ready setups that remain stable after launch.",
+        status: "Open to full-stack roles, web platforms, and product-focused teams",
         highlights: [
-          "Accessible UI and thoughtful product flows",
+          "Accessible UI and thoughtful product journeys",
           "Django, APIs, payments, deployment, and production support",
-          "AI-assisted workflow with manual review and verification"
+          "AI-supported workflows with manual review and verification"
         ],
         primaryCta: "View projects",
         secondaryCta: "Download CV",
         stats: [
           {
-            value: "Full-stack delivery",
+            value: "Full-stack ownership",
             label: "Frontend, backend, integrations, and deployment treated as one connected responsibility."
           },
           {
             value: "Product discipline",
-            label: "Clear user journeys, practical decisions, and steady refinement shaped by real use."
+            label: "Clear user journeys, practical decisions, and steady refinement shaped by real usage."
           },
           {
-            value: "Quality control",
-            label: "Modern AI tools speed up research and refactoring, but the final result is still reviewed and verified manually."
+            value: "Quality assurance",
+            label: "Modern AI tools accelerate research and refactoring, but every release is reviewed and verified manually."
           }
         ],
         profileLabel: "Professional snapshot",
@@ -88,7 +88,7 @@ window.PORTFOLIO_DATA = {
         profileMeta: [
           { label: "Base", value: "Lublin, Poland" },
           { label: "Best fit", value: "Full-stack roles, web platforms, Django-backed products" },
-          { label: "Work style", value: "Calm delivery, strong review habits, practical ownership" }
+          { label: "Work style", value: "Calm execution, strong review habits, practical ownership" }
         ]
       },
         sections: {
@@ -100,19 +100,19 @@ window.PORTFOLIO_DATA = {
           },
           skills: {
             tag: "Skills",
-            heading: "Tools and practices that help me ship product work end to end",
+            heading: "Tools and practices that support product work from idea to release",
             intro:
-              "My strongest work sits where interface quality, backend thinking, and dependable delivery meet."
+              "My strongest work sits where interface quality, backend thinking, and dependable execution meet."
           },
           workflow: {
-            tag: "Workflow",
-            heading: "How I move from idea to release-ready delivery",
+            tag: "Proces",
+            heading: "How I move from idea to release-ready work",
             intro:
-              "A product-minded flow that starts with clarity, builds with restraint, and finishes with verification and care for the long term."
+              "A product-minded process that starts with clarity, builds with restraint, and finishes with verification and long-term care."
           },
           experience: {
             tag: "Experience",
-            heading: "Hands-on work across accessibility, product delivery, and live web environments",
+          heading: "Hands-on work across accessibility, product work, and live web environments",
             intro:
               "What matters most is scope: building interfaces, handling application logic, supporting platforms, and improving what already runs in production."
         },
@@ -130,7 +130,7 @@ window.PORTFOLIO_DATA = {
         },
         development: {
           tag: "Development",
-          heading: "A workflow that values speed, but not at the expense of judgment",
+          heading: "A process that values speed, without compromising judgment",
           intro:
             "I like modern tools and efficient processes, but quality, review, and accountability still come first."
         },
@@ -144,9 +144,9 @@ window.PORTFOLIO_DATA = {
       about: {
         storyTitle: "Profile",
         story: [
-          "I work as a full-stack developer with a strong eye for interface clarity. I care about hierarchy, pacing, semantics, and whether a product still feels reliable once it meets real data, real content, and production constraints.",
+          "I work as a full-stack developer with a strong focus on interface clarity. I care about hierarchy, pacing, semantics, and whether a product remains reliable once it meets real data, real content, and production constraints.",
           "My background covers public-facing and internal web platforms, accessibility work, multilingual content, Django-based applications, CMS maintenance, and Linux-based deployment support with Nginx, Docker, SSL, and production debugging.",
-          "I use tools such as Codex, Cursor, and Claude where they genuinely help: research, prototyping, refactoring, and code analysis. They accelerate the process, but they do not replace review. Anything important still needs manual verification, adjustment, and responsibility before it ships."
+          "I use tools such as Codex, Cursor, and Claude when they genuinely help: research, prototyping, refactoring, and code analysis. They accelerate the process, but they do not replace review. Anything important still requires manual verification, adjustment, and accountability before it ships."
         ],
         principlesTitle: "What you can expect",
         principles: [
@@ -175,14 +175,14 @@ window.PORTFOLIO_DATA = {
           },
           {
             title: "Backend & Integrations",
-            copy: "Application logic, APIs, and connected flows that support the product instead of slowing it down.",
+            copy: "Application logic, APIs, and connected journeys that support the product instead of slowing it down.",
             items: [
               "Python",
               "Django",
               "REST APIs",
               "Java",
               "Spring Boot",
-              "Authentication flows",
+              "Authentication patterns",
               "Stripe webhooks",
               "Data-driven features"
             ]
@@ -202,7 +202,7 @@ window.PORTFOLIO_DATA = {
             ]
           },
           {
-            title: "Workflow & Quality",
+            title: "Execution & Quality",
             copy: "Modern tooling used with judgment, review discipline, and accountability for the final result.",
             items: [
               "Code review",
@@ -212,7 +212,7 @@ window.PORTFOLIO_DATA = {
               "Codex",
               "Cursor",
               "Claude",
-              "AI-assisted development"
+              "AI-supported development"
             ]
           }
         ]
@@ -232,10 +232,10 @@ window.PORTFOLIO_DATA = {
           {
             title: "Build with guardrails",
             copy:
-              "Implementation is paced with structure: clean UI, stable APIs, and delivery choices that stay maintainable after release.",
+              "Implementation is paced with structure: clean UI, stable APIs, and execution choices that stay maintainable after release.",
             points: [
               "Accessible UI and design-system-style components",
-              "Backend logic aligned with data and product flow",
+              "Backend logic aligned with data and product journeys",
               "Deployment-ready configuration and documentation"
             ]
           },
@@ -262,7 +262,7 @@ window.PORTFOLIO_DATA = {
               "Worked across accessibility, platform maintenance, and production support for public-facing and internal services.",
             bullets: [
               "Delivered and maintained Django-based sites and internal tools with accessibility and institutional requirements in view.",
-              "Supported Linux and Nginx environments, SSL/TLS configuration, and steady development-to-production workflows.",
+              "Supported Linux and Nginx environments, SSL/TLS configuration, and steady development-to-production routines.",
               "Handled multilingual content, CMS upkeep, deployment support, documentation, and day-to-day reliability work."
             ]
           },
@@ -275,7 +275,7 @@ window.PORTFOLIO_DATA = {
               "Built practical web products end to end, combining frontend implementation, backend logic, payments, and deployment.",
             bullets: [
               "Shipped Django-based applications with Stripe Checkout, webhook verification, Docker, Nginx, and VPS hosting.",
-              "Built utility products and custom workflows such as payment flows, short-link tooling, and structured data features.",
+              "Built utility products and custom routines such as payment journeys, short-link tooling, and structured data features.",
               "Used AI assistants selectively for research, refactoring, and debugging support, then reviewed the final implementation before shipping."
             ]
           },
@@ -285,10 +285,10 @@ window.PORTFOLIO_DATA = {
             role: "Frontend and full-stack project execution",
             company: "Portfolio work, coursework, and applied product practice",
             summary:
-              "Used self-driven projects to build real delivery habits rather than one-off demos.",
+              "Used self-driven projects to build real production habits rather than one-off demos.",
             bullets: [
               "Designed interfaces with clearer hierarchy, calmer spacing, and stronger mobile behavior.",
-              "Implemented API-driven flows, user-facing logic, and maintainable structure with version control and iterative testing.",
+              "Implemented API-driven journeys, user-facing logic, and maintainable structure with version control and iterative testing.",
               "Treated generated suggestions as drafts to review, adapt, and verify instead of accepting them uncritically."
             ]
           }
@@ -310,11 +310,11 @@ window.PORTFOLIO_DATA = {
             stack: ["Django", "JavaScript", "Stripe", "Docker", "Nginx", "VPS"],
             filters: ["Django", "Python", "JavaScript", "Docker", "Stripe"],
             features: [
-              "Checkout flow connected to webhook-based payment verification",
+              "Checkout journey connected to webhook-based payment verification",
               "Containerized deployment behind Nginx with SSL and VPS hosting",
               "Frontend tuned for clarity, trust, and a calmer conversion path"
             ],
-            highlight: "Outcome: Payment flow verified with production-ready Stripe webhooks and deployment",
+            highlight: "Outcome: Payment journey verified with production-ready Stripe webhooks and stable deployment",
             featured: true,
             repoUrl: "",
             liveUrl: "https://showthecash.com/",
@@ -325,13 +325,13 @@ window.PORTFOLIO_DATA = {
             type: "Live platform",
             title: "Welcome Center",
             summary:
-              "A university-facing web platform focused on accessibility, multilingual content, and steady delivery improvements in a live environment.",
+              "A university-facing web platform focused on accessibility, multilingual content, and steady improvements in a live environment.",
             stack: ["Django", "JavaScript", "Accessibility", "Docker", "CMS"],
             filters: ["Django", "Python", "JavaScript", "Docker", "Accessibility"],
             features: [
               "Accessibility-minded implementation in a public-facing academic environment",
               "Multilingual content handling and iterative improvements on a live platform",
-              "Ongoing delivery support across CMS tooling, Linux hosting, and deployments"
+              "Ongoing platform support across CMS tooling, Linux hosting, and deployments"
             ],
             repoUrl: "",
             liveUrl: "https://welcome.uws.edu.pl/pl/",
@@ -342,7 +342,7 @@ window.PORTFOLIO_DATA = {
             type: "Live platform",
             title: "CWN Support Center",
             summary:
-              "A public-facing support center website built around clear navigation, accessible content structure, and a calmer information flow for students and candidates.",
+              "A public-facing support center website built around clear navigation, accessible content structure, and a calmer information structure for students and candidates.",
             stack: ["JavaScript", "Accessibility", "CMS", "Responsive UI"],
             filters: ["JavaScript", "Accessibility"],
             features: [
@@ -350,7 +350,7 @@ window.PORTFOLIO_DATA = {
               "Accessible content presentation with clear sectioning and practical calls to action",
               "Homepage and navigation refined to feel clearer, calmer, and easier to browse"
             ],
-            highlight: "Outcome: A calmer, accessible information flow for a public university audience",
+            highlight: "Outcome: Clearer, accessible information structure for a public university audience",
             featured: true,
             repoUrl: "",
             liveUrl: "https://cwn.uws.edu.pl/",
@@ -361,11 +361,11 @@ window.PORTFOLIO_DATA = {
             type: "Full-stack concept",
             title: "Intelligent Ecommerce Platform",
             summary:
-              "A full-stack commerce project built around recommendation logic, product flow decisions, and integration between frontend, backend, and data handling.",
+              "A full-stack commerce project built around recommendation logic, product journey decisions, and integration between frontend, backend, and data handling.",
             stack: ["Angular", "Java", "Spring Boot", "MongoDB", "Docker"],
             filters: ["Angular", "Java", "Docker"],
             features: [
-              "Recommendation logic connected to a fuller shopping flow",
+              "Recommendation logic connected to a fuller shopping journey",
               "REST API, authentication, order handling, and container-based local setup",
               "Interface work treated as product design practice, not a throwaway exercise"
             ],
@@ -378,11 +378,11 @@ window.PORTFOLIO_DATA = {
             type: "Utility tooling",
             title: "Link Shortener & Content Toolkit",
             summary:
-              "An internal university utility focused on short links, content workflows, and admin-friendly handling of recurring operational tasks.",
+              "An internal university utility focused on short links, content routines, and admin-friendly handling of recurring operational tasks.",
             stack: ["Python", "Django", "JavaScript", "PostgreSQL"],
             filters: ["Django", "Python", "JavaScript"],
             features: [
-              "Custom short-link generation with straightforward management workflows",
+              "Custom short-link generation with straightforward management routines",
               "Structured content handling and export patterns for internal operational use",
               "Built as an internal university project rather than a public-facing product"
             ],
@@ -396,12 +396,12 @@ window.PORTFOLIO_DATA = {
             type: "Community automation",
             title: "DiscordBot",
             summary:
-              "A multifunctional Discord bot for music, community automation, AI-assisted mixtapes, queue management, and server activity features.",
+              "A multifunctional Discord bot for music, community automation, AI-supported mixtapes, queue management, and server activity features.",
             stack: ["Node.js", "JavaScript", "Discord.js", "YouTube", "Spotify", "Steam"],
             filters: ["Node.js", "JavaScript"],
             features: [
               "Music playback from YouTube and Spotify with queue, loop, shuffle, and AutoDJ",
-              "AI-assisted mixtape generation, voice-channel group randomizer, and server dashboard tools",
+              "AI-supported mixtape generation, voice-channel group randomizer, and server dashboard tools",
               "Free games and Steam deals feed combined with practical moderation-style automation"
             ],
             repoUrl: "https://github.com/Macstenc/DiscordBot",
@@ -442,7 +442,7 @@ window.PORTFOLIO_DATA = {
               "I like understanding how frontend decisions connect to application state, APIs, business logic, and maintainable structure on the backend."
           },
           {
-            title: "AI-assisted development workflow",
+            title: "AI-supported development process",
             description:
               "I use tools such as Codex, Cursor, and Claude to accelerate research, prototyping, refactoring, and debugging. Final code still goes through manual review, adjustment, and verification."
           },
@@ -500,12 +500,12 @@ window.PORTFOLIO_DATA = {
         availabilityTitle: "Availability",
         availabilityText: [
           "Based in Lublin, Poland. Open to remote, hybrid, and selected on-site opportunities.",
-          "The strongest fit is full-stack web delivery, Django-backed products, accessibility-aware interfaces, and practical product development."
+          "The strongest fit is full-stack web work, Django-backed products, accessibility-aware interfaces, and practical product development."
         ]
       },
       footer: {
         summary:
-          "Full-stack portfolio built around clarity, delivery discipline, and responsibility for the final result.",
+          "Full-stack portfolio built around clarity, execution discipline, and responsibility for the final result.",
         quickLinksTitle: "Quick links",
         resourcesTitle: "Links",
         resources: [
@@ -524,7 +524,7 @@ window.PORTFOLIO_DATA = {
       meta: {
         title: "Maciej Stencel | Full-Stack Developer",
         description:
-          "Full-Stack Developer tworzący dopracowane interfejsy, aplikacje webowe oparte o Django i rozwiązania gotowe do wdrożenia, z naciskiem na jakość delivery.",
+          "Full-Stack Developer tworzący dopracowane interfejsy, aplikacje webowe oparte o Django i rozwiązania gotowe do wdrożenia, z naciskiem na jakość realizacji.",
         locale: "pl_PL",
         ogImage: "assets/img/og-cover.svg"
       },
@@ -542,7 +542,7 @@ window.PORTFOLIO_DATA = {
         nav: [
           { id: "about", label: "O mnie" },
           { id: "skills", label: "Umiejętności" },
-          { id: "workflow", label: "Workflow" },
+          { id: "workflow", label: "Proces" },
           { id: "experience", label: "Doświadczenie" },
           { id: "projects", label: "Projekty" },
           { id: "education", label: "Edukacja" },
@@ -550,13 +550,13 @@ window.PORTFOLIO_DATA = {
         ]
       },
       hero: {
-        eyebrow: "Full-stack delivery z myśleniem produktowym, dostępnością i długofalową jakością",
+        eyebrow: "Realizacja full-stack z myśleniem produktowym, dostępnością i długoterminową niezawodnością",
         role: "Full-Stack Developer",
         summary:
-          "Buduję produkty webowe end to end z czytelnym interfejsem, stabilną logiką backendową i wdrożeniem gotowym na realne użycie.",
+          "Buduję produkty webowe end to end z czytelnym interfejsem, stabilną logiką backendową i wdrożeniem gotowym na pracę w produkcji.",
         status: "Otwartość na role full-stack, platformy webowe i zespoły produktowe",
         highlights: [
-          "Dopracowany interfejs i spokojny user flow",
+          "Dopracowany interfejs i uporządkowane ścieżki użytkownika",
           "Django, API, płatności, wdrożenia i wsparcie produkcji",
           "AI jako wsparcie pracy, nie zastępstwo za weryfikację"
         ],
@@ -564,7 +564,7 @@ window.PORTFOLIO_DATA = {
         secondaryCta: "Pobierz CV",
         stats: [
           {
-            value: "Full-stack delivery",
+            value: "Odpowiedzialność full-stack",
             label: "Frontend, backend, integracje i wdrożenie traktuję jako jedną odpowiedzialność za efekt końcowy."
           },
           {
@@ -573,7 +573,7 @@ window.PORTFOLIO_DATA = {
           },
           {
             value: "Kontrola jakości",
-            label: "Nowoczesne narzędzia AI pomagają pracować szybciej, ale finalny rezultat zawsze przechodzi przeze mnie ręcznie."
+            label: "Nowoczesne narzędzia AI przyspieszają pracę, ale finalny rezultat przechodzi przeze mnie ręcznie."
           }
         ],
         profileLabel: "Szybki profil",
@@ -582,7 +582,7 @@ window.PORTFOLIO_DATA = {
         profileMeta: [
           { label: "Baza", value: "Lublin, Polska" },
           { label: "Najlepsze dopasowanie", value: "Role full-stack, platformy webowe, produkty oparte o Django" },
-          { label: "Styl pracy", value: "Spokojne dowożenie, mocny review, praktyczna odpowiedzialność" }
+          { label: "Styl pracy", value: "Spokojna realizacja, mocny review, praktyczna odpowiedzialność" }
         ]
       },
         sections: {
@@ -594,13 +594,13 @@ window.PORTFOLIO_DATA = {
           },
           skills: {
             tag: "Umiejętności",
-            heading: "Narzędzia i praktyki, które pomagają mi dowozić pracę end to end",
+            heading: "Narzędzia i praktyki, które wspierają pracę od pomysłu do wdrożenia",
             intro:
-              "Najmocniej działam tam, gdzie jakość interfejsu spotyka się z backendowym myśleniem i odpowiedzialnym delivery."
+              "Najmocniej działam tam, gdzie jakość interfejsu spotyka się z backendowym myśleniem i odpowiedzialną realizacją."
           },
           workflow: {
-            tag: "Workflow",
-            heading: "Jak dowożę od pomysłu do stabilnego wdrożenia",
+            tag: "Proces",
+            heading: "Jak prowadzę projekt od pomysłu do stabilnego wdrożenia",
             intro:
               "Proces, w którym najpierw doprecyzowuję cele, potem buduję z myślą o utrzymaniu i kończę realną weryfikacją."
           },
@@ -624,7 +624,7 @@ window.PORTFOLIO_DATA = {
         },
         development: {
           tag: "Rozwój",
-          heading: "Workflow, który przyspiesza pracę, ale nie oddaje kontroli nad jakością",
+          heading: "Proces, który przyspiesza pracę, ale nie oddaje kontroli nad jakością",
           intro:
             "Lubię nowoczesne narzędzia i sprawne procesy, ale review, odpowiedzialność i jakość końcowa nadal są dla mnie kluczowe."
         },
@@ -669,14 +669,14 @@ window.PORTFOLIO_DATA = {
           },
           {
             title: "Backend i integracje",
-            copy: "Logika aplikacji, API i spięte flow, które wspierają produkt zamiast go komplikować.",
+            copy: "Logika aplikacji, API i spięte ścieżki, które wspierają produkt zamiast go komplikować.",
             items: [
               "Python",
               "Django",
               "REST API",
               "Java",
               "Spring Boot",
-              "Authentication flows",
+              "Authentication patterns",
               "Stripe webhooks",
               "Data-driven features"
             ]
@@ -696,7 +696,7 @@ window.PORTFOLIO_DATA = {
             ]
           },
           {
-            title: "Workflow i jakość",
+            title: "Proces i jakość",
             copy: "Nowoczesne narzędzia wykorzystywane świadomie, z review i pełną odpowiedzialnością za efekt końcowy.",
             items: [
               "Code review",
@@ -706,7 +706,7 @@ window.PORTFOLIO_DATA = {
               "Codex",
               "Cursor",
               "Claude",
-              "AI-assisted development"
+              "AI-supported development"
             ]
           }
         ]
@@ -769,7 +769,7 @@ window.PORTFOLIO_DATA = {
               "Buduję praktyczne produkty webowe end to end, łącząc frontend, logikę backendową, płatności i wdrożenie.",
             bullets: [
               "Wdrażałem aplikacje oparte o Django, Stripe Checkout, webhooki, Docker, Nginx i hosting na VPS.",
-              "Tworzyłem użyteczne narzędzia i workflowy, między innymi wokół płatności, short linków i uporządkowanej pracy na danych.",
+              "Tworzyłem użyteczne narzędzia i procesy, między innymi wokół płatności, short linków i uporządkowanej pracy na danych.",
               "Korzystałem z asystentów AI przy researchu, refaktoryzacji i debugowaniu, ale finalne rozwiązania zawsze przechodziły przeze mnie przed wdrożeniem."
             ]
           },
@@ -779,10 +779,10 @@ window.PORTFOLIO_DATA = {
             role: "Realizacja projektów frontend i full-stack",
             company: "Portfolio, studia i rozwój własnego warsztatu",
             summary:
-              "Własne projekty traktuję jak poligon do budowania realnych nawyków delivery, a nie jednorazowe demo.",
+              "Własne projekty traktuję jak poligon do budowania realnych nawyków wdrożeniowych, a nie jednorazowe demo.",
             bullets: [
               "Projektowałem interfejsy z lepszą hierarchią, spokojniejszym spacingiem i pewniejszym zachowaniem na mobile.",
-              "Implementowałem flow oparte o API, logikę po stronie użytkownika i struktury kodu, które da się rozwijać bez chaosu.",
+              "Implementowałem ścieżki oparte o API, logikę po stronie użytkownika i struktury kodu, które da się rozwijać bez chaosu.",
               "Sugestie generowane przez narzędzia traktowałem jak draft do sprawdzenia, adaptacji i weryfikacji, a nie gotowy wynik."
             ]
           }
@@ -825,7 +825,7 @@ window.PORTFOLIO_DATA = {
             features: [
               "Implementacja z myśleniem o dostępności w publicznie dostępnej platformie uczelnianej",
               "Obsługa wielojęzyczności i iteracyjne poprawianie działającego serwisu",
-              "Wsparcie obejmujące CMS, hosting Linux i codzienne delivery"
+              "Wsparcie obejmujące CMS, hosting Linux i codzienną obsługę produkcji"
             ],
             repoUrl: "",
             liveUrl: "https://welcome.uws.edu.pl/pl/",
@@ -872,7 +872,7 @@ window.PORTFOLIO_DATA = {
             type: "Utility tooling",
             title: "Link Shortener & Content Toolkit",
             summary:
-              "Wewnętrzny projekt uczelniany zbudowany wokół short linków, pracy na treści i uporządkowanych workflowów administracyjnych.",
+              "Wewnętrzny projekt uczelniany zbudowany wokół short linków, pracy na treści i uporządkowanych procedur administracyjnych.",
             stack: ["Python", "Django", "JavaScript", "PostgreSQL"],
             filters: ["Django", "Python", "JavaScript"],
             features: [
@@ -936,12 +936,12 @@ window.PORTFOLIO_DATA = {
               "Lubię rozumieć, jak decyzje frontendowe łączą się ze stanem aplikacji, API, logiką biznesową i utrzymywalną strukturą po stronie backendu."
           },
           {
-            title: "AI-assisted development workflow",
+            title: "AI-supported development process",
             description:
               "Korzystam z narzędzi takich jak Codex, Cursor i Claude, żeby przyspieszyć research, prototypowanie, refaktoryzację i debugging. Finalny kod zawsze przechodzi jednak ręczne review, poprawki i weryfikację."
           },
           {
-            title: "Praktyka delivery i wdrożeń",
+            title: "Praktyka wdrożeń i utrzymania",
             description:
               "Linux, Docker, Nginx, SSL i codzienne wsparcie produkcji nauczyły mnie patrzeć szerzej niż tylko na sam kod w edytorze."
           }
@@ -994,12 +994,12 @@ window.PORTFOLIO_DATA = {
         availabilityTitle: "Dostępność",
         availabilityText: [
           "Na co dzień działam z Lublina. Jestem otwarty na remote, hybrydę i wybrane opcje on-site.",
-          "Najlepsze dopasowanie to full-stack web delivery, produkty oparte o Django, interfejsy z myśleniem o dostępności i praktyczny rozwój produktów webowych."
+          "Najlepsze dopasowanie to full-stack web, produkty oparte o Django, interfejsy z myśleniem o dostępności i praktyczny rozwój produktów webowych."
         ]
       },
       footer: {
         summary:
-          "Portfolio full-stack nastawione na czytelność, jakość delivery i odpowiedzialność za efekt końcowy.",
+          "Portfolio full-stack nastawione na czytelność, jakość realizacji i odpowiedzialność za efekt końcowy.",
         quickLinksTitle: "Szybkie linki",
         resourcesTitle: "Linki",
         resources: [

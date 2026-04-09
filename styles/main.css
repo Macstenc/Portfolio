@@ -1517,7 +1517,7 @@ html[data-theme="eclipse"] .theme-switch::before {
 }
 
 .project-card.is-featured .project-media {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
 }
 
 .project-card.is-featured .project-body {
