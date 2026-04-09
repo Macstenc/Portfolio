@@ -309,7 +309,7 @@ window.PORTFOLIO_DATA = {
             ],
             repoUrl: "",
             liveUrl: "https://cwn.uws.edu.pl/",
-            image: "assets/img/project-cwn.svg",
+            image: "assets/img/project-cwn.jpg",
             imageAlt: "CWN support center website preview"
           },
           {
@@ -758,7 +758,7 @@ window.PORTFOLIO_DATA = {
             ],
             repoUrl: "",
             liveUrl: "https://cwn.uws.edu.pl/",
-            image: "assets/img/project-cwn.svg",
+            image: "assets/img/project-cwn.jpg",
             imageAlt: "Podgląd strony centrum wsparcia CWN"
           },
           {

@@ -14,7 +14,7 @@
   --header-container-max: 1500px;
   --gutter: clamp(1rem, 3.3vw, 1.6rem);
   --container: min(var(--container-max), calc(100vw - (var(--gutter) * 2)));
-  --section-space: clamp(3.2rem, 5.2vw, 5rem);
+  --section-space: 0rem;
   --header-height: 5.6rem;
   --transition-fast: 180ms ease;
   --transition-medium: 280ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -316,7 +316,7 @@ figure {
 .section-heading {
   display: grid;
   gap: 1.15rem;
-  margin-bottom: clamp(1.55rem, 2.6vw, 2.1rem);
+  margin-bottom: 0;
 }
 
 .section-heading > div {
@@ -1803,7 +1803,7 @@ html[data-theme="eclipse"] .theme-switch::before {
 
 @media (max-width: 1024px) {
   :root {
-    --section-space: clamp(3rem, 6.8vw, 4.4rem);
+    --section-space: 0rem;
   }
 
   .cards-grid.balance-3 {
@@ -1884,7 +1884,7 @@ html[data-theme="eclipse"] .theme-switch::before {
 
 @media (max-width: 600px) {
   :root {
-    --section-space: clamp(2.7rem, 7.8vw, 3.8rem);
+    --section-space: 0rem;
   }
 
   .hero {
