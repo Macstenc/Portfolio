@@ -551,6 +551,26 @@ figure {
   grid-template-columns: auto;
 }
 
+.site-header.is-stacked .header-inner {
+  align-items: start;
+  gap: 0.8rem 1.2rem;
+  padding: 0.85rem 0 1rem;
+}
+
+.site-header.is-stacked .header-tools {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.85rem;
+}
+
+.site-header.is-stacked .site-nav {
+  justify-content: flex-start;
+}
+
+.site-header.is-stacked .nav-list {
+  width: 100%;
+}
+
 .site-header.is-compact .site-nav {
   justify-content: flex-end;
   flex: 0 0 auto;
