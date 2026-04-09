@@ -905,7 +905,7 @@ html[data-theme="eclipse"] .theme-switch::before {
 }
 
 .hero {
-  padding-top: clamp(6.4rem, 9vw, 9rem);
+  padding-top: 1.25rem;
 }
 
 .hero-grid {
@@ -1888,7 +1888,7 @@ html[data-theme="eclipse"] .theme-switch::before {
   }
 
   .hero {
-    padding-top: clamp(5.8rem, 10vw, 7rem);
+    padding-top: 0.95rem;
   }
 
   .eyebrow {
