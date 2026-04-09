@@ -112,6 +112,68 @@
     }
   };
 
+  App.getSkillIcon = function getSkillIcon(label) {
+    const value = String(label || "").toLowerCase();
+    const icons = {
+      code:
+        '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 6-4 4 4 4"></path><path d="m13 6 4 4-4 4"></path></svg>',
+      layout:
+        '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="14" height="12" rx="2"></rect><path d="M3 8.5h14"></path><path d="M8 8.5V16"></path></svg>',
+      server:
+        '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="14" height="5" rx="1.6"></rect><rect x="3" y="11" width="14" height="5" rx="1.6"></rect><path d="M6 6.5h.01"></path><path d="M6 13.5h.01"></path><path d="M9 6.5h4"></path><path d="M9 13.5h4"></path></svg>',
+      api:
+        '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 5 3.5 10 7 15"></path><path d="m13 5 3.5 5-3.5 5"></path><path d="m11.2 4-2.4 12"></path></svg>',
+      database:
+        '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="10" cy="5.5" rx="5.5" ry="2.5"></ellipse><path d="M4.5 5.5v6c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5v-6"></path><path d="M4.5 8.5c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5"></path></svg>',
+      deploy:
+        '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v8"></path><path d="m6.8 6.3 3.2-3.3 3.2 3.3"></path><rect x="4" y="12" width="12" height="4" rx="1.5"></rect></svg>',
+      shield:
+        '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 15 5v4.6c0 3-1.9 5.8-5 7.4-3.1-1.6-5-4.4-5-7.4V5l5-2Z"></path><path d="m7.7 9.9 1.6 1.6 3.1-3.3"></path></svg>',
+      terminal:
+        '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="14" height="12" rx="2"></rect><path d="m6.2 8 2 2-2 2"></path><path d="M10 12h3.5"></path></svg>',
+      review:
+        '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5h12"></path><path d="M4 10h7"></path><path d="M4 14.5h6"></path><path d="m12.8 13.8 1.5 1.5 2.7-3.1"></path></svg>',
+      search:
+        '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="8.5" r="4.5"></circle><path d="m12 12 4 4"></path></svg>',
+      spark:
+        '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 2 1.4 4.1L15.5 7.5l-4.1 1.4L10 13l-1.4-4.1L4.5 7.5l4.1-1.4L10 2Z"></path><path d="m15.2 13.6.7 2 .7-2 2-.7-2-.7-.7-2-.7 2-2 .7 2 .7Z"></path></svg>',
+      docs:
+        '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5h5l3 3V16a1.5 1.5 0 0 1-1.5 1.5h-6A1.5 1.5 0 0 1 5 16V5A1.5 1.5 0 0 1 6.5 3.5Z"></path><path d="M11 3.5V7h3"></path><path d="M7.5 10h5"></path><path d="M7.5 13h4"></path></svg>'
+    };
+
+    let icon = icons.code;
+
+    if (value.includes("html") || value.includes("javascript") || value.includes("typescript") || value.includes("angular")) {
+      icon = icons.code;
+    } else if (value.includes("css") || value.includes("design system") || value.includes("responsive") || value.includes("accessible ui") || value.includes("interaction")) {
+      icon = icons.layout;
+    } else if (value.includes("python") || value.includes("django") || (value.includes("java") && !value.includes("javascript")) || value.includes("spring")) {
+      icon = icons.server;
+    } else if (value.includes("rest")) {
+      icon = icons.api;
+    } else if (value.includes("data-driven")) {
+      icon = icons.database;
+    } else if (value.includes("docker") || value.includes("nginx") || value.includes("vps") || value.includes("deployment")) {
+      icon = icons.deploy;
+    } else if (value.includes("linux") || value.includes("git") || value.includes("github")) {
+      icon = icons.terminal;
+    } else if (value.includes("ssl") || value.includes("authentication") || value.includes("stripe")) {
+      icon = icons.shield;
+    } else if (value.includes("review")) {
+      icon = icons.review;
+    } else if (value.includes("debug")) {
+      icon = icons.search;
+    } else if (value.includes("refactor")) {
+      icon = icons.code;
+    } else if (value.includes("documentation") || value.includes("dokumentacja")) {
+      icon = icons.docs;
+    } else if (value.includes("codex") || value.includes("cursor") || value.includes("claude") || value.includes("ai")) {
+      icon = icons.spark;
+    }
+
+    return `<span class="skill-tag-icon" aria-hidden="true">${icon}</span>`;
+  };
+
   App.getIcon = function getIcon(kind) {
     const icons = {
       email:

@@ -3,10 +3,6 @@
   margin-inline: auto;
 }
 
-.site-header .container {
-  width: min(var(--header-container-max), calc(100vw - (var(--gutter) * 2)));
-}
-
 .header-inner > *,
 .header-tools > *,
 .hero-grid > *,
@@ -55,12 +51,12 @@
 
 .section-heading {
   display: grid;
-  gap: 1.15rem;
-  margin-bottom: clamp(2rem, 3.2vw, 2.8rem);
+  gap: 1.25rem;
+  margin-bottom: clamp(2.15rem, 3.5vw, 3rem);
 }
 
 .section-heading + .container {
-  margin-top: clamp(0.4rem, 0.9vw, 0.7rem);
+  margin-top: clamp(0.5rem, 1vw, 0.8rem);
 }
 
 .section-heading > div {
@@ -203,12 +199,12 @@
 }
 
 .panel-large {
-  padding: clamp(1.6rem, 2.6vw, 2.25rem);
+  padding: clamp(1.72rem, 2.8vw, 2.4rem);
 }
 
 .cards-grid {
   display: grid;
-  gap: clamp(1rem, 2vw, 1.35rem);
+  gap: clamp(1.1rem, 2.15vw, 1.5rem);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 17.5rem), 1fr));
 }
 
@@ -227,7 +223,7 @@
 
 .workflow-grid {
   display: grid;
-  gap: clamp(1rem, 2.2vw, 1.6rem);
+  gap: clamp(1.1rem, 2.35vw, 1.75rem);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 18.5rem), 1fr));
 }
 

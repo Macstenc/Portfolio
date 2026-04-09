@@ -11,10 +11,9 @@
   --space-xl: 2.6rem;
   --space-2xl: 3.6rem;
   --container-max: 1240px;
-  --header-container-max: 1500px;
-  --gutter: clamp(1rem, 3.3vw, 1.6rem);
+  --gutter: clamp(1.15rem, 3.6vw, 1.85rem);
   --container: min(var(--container-max), calc(100vw - (var(--gutter) * 2)));
-  --section-space: clamp(1.4rem, 2.6vw, 2.2rem);
+  --section-space: clamp(1.55rem, 2.9vw, 2.35rem);
   --header-height: 5.6rem;
   --transition-fast: 180ms ease;
   --transition-medium: 280ms cubic-bezier(0.22, 1, 0.36, 1);

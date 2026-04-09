@@ -65,7 +65,7 @@
             <h3>${group.title}</h3>
             <p class="card-copy">${group.copy}</p>
             <ul class="skill-tags">
-              ${group.items.map((item) => `<li>${item}</li>`).join("")}
+              ${group.items.map((item) => `<li>${App.getSkillIcon(item)}<span>${item}</span></li>`).join("")}
             </ul>
           </article>
         `

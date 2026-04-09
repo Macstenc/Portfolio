@@ -1,8 +1,4 @@
 @media (max-width: 1280px) {
-  .site-header .container {
-    width: min(var(--header-container-max), calc(100vw - 1.6rem));
-  }
-
   .brand-copy strong {
     font-size: 0.88rem;
   }
@@ -62,7 +58,7 @@
 
 @media (max-width: 1024px) {
   :root {
-    --section-space: clamp(1.1rem, 2.8vw, 1.75rem);
+    --section-space: clamp(1.25rem, 3vw, 1.95rem);
   }
 
   .cards-grid.balance-3 {
@@ -136,7 +132,7 @@
 
 @media (max-width: 600px) {
   :root {
-    --section-space: clamp(1rem, 3.6vw, 1.5rem);
+    --section-space: clamp(1.1rem, 3.9vw, 1.65rem);
   }
 
   .hero {
