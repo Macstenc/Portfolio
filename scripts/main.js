@@ -1,8 +1,7 @@
 (function () {
   const app = window.PORTFOLIO_DATA;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const stackedNavBreakpoint = 1480;
-  const compactNavBreakpoint = 1180;
+  const compactNavBreakpoint = 1120;
   const state = {
     lang: getInitialLanguage(),
     theme: getInitialTheme(),
@@ -521,7 +520,6 @@
     }
 
     dom.siteHeader.classList.remove("is-compact");
-    dom.siteHeader.classList.remove("is-stacked");
     syncPreferencePlacement(false);
 
     const headerWidth = dom.headerInner.clientWidth;
@@ -532,11 +530,8 @@
       ? dom.navList.scrollWidth > dom.siteNav.clientWidth - 8
       : false;
     const forceCompact = window.innerWidth <= compactNavBreakpoint;
-    const forceStacked = window.innerWidth <= stackedNavBreakpoint;
-    const shouldCompact = forceCompact;
-    const shouldStack = !shouldCompact && (forceStacked || headerIsTight || navIsTight);
+    const shouldCompact = forceCompact || headerIsTight || navIsTight;
 
-    dom.siteHeader.classList.toggle("is-stacked", shouldStack);
     dom.siteHeader.classList.toggle("is-compact", shouldCompact);
     syncPreferencePlacement(shouldCompact);
 
